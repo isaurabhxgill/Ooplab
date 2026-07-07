@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
 
 const inter = Inter({
@@ -9,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Saurabh's Firm",
+  title: "Ooplab  ",
   description:
     "Scalable digital consulting for web applications, mobile apps, and enterprise systems.",
 };

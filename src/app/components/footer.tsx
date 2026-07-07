@@ -3,147 +3,161 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer>
+      <section
+        className="mx-auto w-full max-w-[1120px] py-6 sm:py-10"
+        id="contact"
+      >
+        <div className="relative overflow-hidden rounded-[28px] bg-[#fb2c36] px-8 py-12 text-white bg-gradient-to-r from-[#fb2c36] to-[#8b1a23] sm:px-14 sm:py-16">
+          {/* Glow */}
+          <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-black/20 blur-3xl" />
 
-  <section
-      className="mx-auto w-full max-w-[1120px] py-6 sm:py-10"
-      id="contact"
-    >
-      <div className="relative overflow-hidden rounded-[28px] bg-[#fb2c36] px-8 py-12 text-white shadow-[0_0px_80px_rgba(251,44,54,0.35)] sm:px-14 sm:py-16">
-        {/* Glow */}
-        <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-black/20 blur-3xl" />
+          {/* Content */}
+          <div className="relative z-10">
+            <h2 className="max-w-3xl text-[34px] font-bold leading-tight sm:text-[44px]">
+              Let&apos;s Build Your Next Big Product
+            </h2>
 
-        {/* Content */}
-        <div className="relative z-10">
-          <h2 className="max-w-3xl text-[34px] font-bold leading-tight sm:text-[44px]">
-            Let&apos;s Build Your Next Big Product
-          </h2>
-
-          <a
-            href="mailto:sourabhgill79@gmail.com"
-            className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 text-sm font-semibold text-[#111827] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
-          >
-            Contact Us
-          </a>
+            <a
+              href="/contact"
+              className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 text-sm font-semibold text-[#111827] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
-      </div>
-      
-    </section>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-  <div className=" p-6"> 
-    <a
-            aria-label="GingerSoft"
+      </section>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className=" p-6">
+          <a
+            aria-label="Ooplab"
             className="flex items-center gap-1.5 text-[30px] font-bold tracking-[0] text-red-500 sm:text-xl"
             href="#"
           >
-            <Image
-              alt=""
-              aria-hidden="true"
-              className="h-9 w-12 object-contain sm:h-8 sm:w-11"
-              height={50}
-              priority
-              src="/Assest/ginger-g.png"
-              width={54}
-            />
-            <span aria-hidden="true">ingerSoft</span>
+            <span aria-hidden="true">Ooplab</span>
           </a>
 
-              <p className="mt-2 text-sm leading-5 text-neutral-600">
-                Add your company description here. Keep it around 3–5 lines so
-                it looks balanced and professional.
-              </p>
+          <p className="mt-2 text-sm leading-5 text-neutral-600">
+            Add your company description here. Keep it around 3–5 lines so it
+            looks balanced and professional.
+          </p>
 
-              <a
-                href="#"
-                className="mt-2 inline-flex items-center gap-3 text-lg font-semibold transition hover:text-[#fb2c36]"
-              >
-                Learn More
-                
-              </a></div>
-  <div className=" bg-gray-100 p-6">
-     <h3 className="mb-7 text-2xl font-semibold">
-              Company
-            </h3>
-
-            <ul className="space-y-3 text-sm text-neutral-600">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-  </div>
- <div className=" bg-gray-100 p-6">
-     <h3 className="mb-7 text-2xl font-semibold">
-              Support
-            </h3>
-
-            <ul className="space-y-3 text-sm text-neutral-600">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-  </div>
-   <div className=" bg-[#ece9f60] p-6">
-    <h3 className="text-2xl font-semibold">
-               Discover More
-              </h3>
-
-              <p className="mt-6 text-sm leading-8 text-neutral-600">
-                Keeping you informed
-              </p>
-               <button
-            
-            className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-[#2f6ae9] px-8 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1  hover:shadow-xl"
+          <a
+            href="#"
+            className="mt-2 inline-flex items-center gap-3 text-lg font-semibold transition hover:text-[#fb2c36]"
           >
+            Learn More
+          </a>
+        </div>
+        <div className=" bg-gray-100 p-6">
+          <h3 className="mb-7 text-2xl font-semibold">Company</h3>
+
+          <ul className="space-y-3 text-sm text-neutral-600">
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Our Team</a>
+            </li>
+            <li>
+              <a href="#">Portfolio</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Testimonials</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div className=" bg-gray-100 p-6">
+          <h3 className="mb-7 text-2xl font-semibold">Support</h3>
+
+          <ul className="space-y-3 text-sm text-neutral-600">
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Our Team</a>
+            </li>
+            <li>
+              <a href="#">Portfolio</a>
+            </li>
+            <li>
+              <a href="#">Careers</a>
+            </li>
+            <li>
+              <a href="#">Testimonials</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div className=" bg-[#ece9f60] p-6">
+          <h3 className="text-2xl font-semibold">Discover More</h3>
+
+          <p className="mt-6 text-sm leading-8 text-neutral-600">
+            Keeping you informed
+          </p>
+          <button className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-[#2f6ae9] px-8 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1  hover:shadow-xl">
             Subscribe
           </button>
-             
-              <div>
-              <h4 className="mb-2 mt-6 text-base font-semibold">
-                Follow Us
-              </h4>
 
-              <div className="flex gap-4">
-                <a
-                  href="#"
-                  className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
-                >
-                  Linkedin 
-                </a>
+          <div>
+            <h4 className="mb-2 mt-6 text-base font-semibold">Follow Us</h4>
 
-                <a
-                  href="#"
-                  className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
-                >
-                  Github 
-                </a>
+            <div className="flex gap-4 social-icons">
+              <a
+                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                href="https://www.linkedin.com/company/cgi/"
+                title="Follow CGI on LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-linkedin text-xl" aria-hidden="true"></i>
+                <span className="sr-only">LinkedIn</span>
+              </a>
 
-                <a
-                  href="#"
-                  className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
-                >
-                  Twitter 
-                </a>
+              <a
+                href="https://github.com"
+                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+              >
+                <i className="bi bi-github text-xl" aria-hidden="true"></i>
+                <span className="sr-only">GitHub</span>
+              </a>
 
-                <a
-                  href="#"
-                  className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
-                >
-                  Insta
-                </a>
-                </div>
-              </div>
-              
-  </div>
+              <a
+                href="https://twitter.com"
+                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Twitter"
+              >
+                <i className="bi bi-twitter-x text-xl" aria-hidden="true"></i>
+                <span className="sr-only">Twitter</span>
+              </a>
 
-</div>
-
+              <a
+                href="https://instagram.com"
+                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Instagram"
+              >
+                <i className="bi bi-instagram text-xl" aria-hidden="true"></i>
+                <span className="sr-only">Instagram</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-  
   );
 }
