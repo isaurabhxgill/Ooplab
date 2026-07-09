@@ -27,27 +27,27 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        <div className=" p-6">
-          <a
-            aria-label="Ooplab"
-            className="flex items-center gap-1.5 text-[30px] font-bold tracking-[0] text-red-500 sm:text-xl"
-            href="#"
-          >
-            <span aria-hidden="true">Ooplab</span>
-          </a>
+      <div className="grid grid-cols-3">
+        <div className="p-6">
+       <a
+               aria-label="Ooplab"
+               className=""
+               href="/"
+             >
+           <Image
+         src="/Assest/Ologo.png" // Double check if your folder is named "Asset" or "Assest"
+         alt="Ooplab Logo"
+         width={300}           // Increased slightly so the sub-text remains legible
+         height={170}         
+         style={{ width: 'auto' }}
+       />
+             </a>
 
-          <p className="mt-2 text-sm leading-5 text-neutral-600">
-            Add your company description here. Keep it around 3–5 lines so it
-            looks balanced and professional.
+          <p className="mt-2 text-xl text-black font-bold text-neutral-600">
+           
+Building Scalable Digital Solutions for Modern Businesses
           </p>
 
-          <a
-            href="#"
-            className="mt-2 inline-flex items-center gap-3 text-lg font-semibold transition hover:text-[#fb2c36]"
-          >
-            Learn More
-          </a>
         </div>
         <div className=" bg-gray-100 p-6">
           <h3 className="mb-7 text-2xl font-semibold">Company</h3>
@@ -60,43 +60,17 @@ export default function Footer() {
               <a href="#">Our Team</a>
             </li>
             <li>
-              <a href="#">Portfolio</a>
-            </li>
-            <li>
-              <a href="#">Careers</a>
-            </li>
-            <li>
-              <a href="#">Testimonials</a>
-            </li>
-            <li>
               <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Articles</a>
+            </li>
+            <li>
+              <a href="#">Blog</a>
             </li>
           </ul>
         </div>
-        <div className=" bg-gray-100 p-6">
-          <h3 className="mb-7 text-2xl font-semibold">Support</h3>
-
-          <ul className="space-y-3 text-sm text-neutral-600">
-            <li>
-              <a href="#">About</a>
-            </li>
-            <li>
-              <a href="#">Our Team</a>
-            </li>
-            <li>
-              <a href="#">Portfolio</a>
-            </li>
-            <li>
-              <a href="#">Careers</a>
-            </li>
-            <li>
-              <a href="#">Testimonials</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
+    
         <div className=" bg-[#ece9f60] p-6">
           <h3 className="text-2xl font-semibold">Discover More</h3>
 
@@ -157,6 +131,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="border-t border-neutral-200 bg-white py-4 text-center text-sm text-neutral-600">
+        © 2026 OopLabs Inc.
       </div>
     </footer>
   );

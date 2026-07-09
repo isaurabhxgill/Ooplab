@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { saveContactMessage } from '../../../lib/contact';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -18,6 +19,7 @@ export default function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [toastVisible, setToastVisible] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -39,38 +41,50 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
 
-    try {
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+  setIsSubmitting(true);
 
-      console.log('Form submitted:', formData);
-      setSubmitStatus('success');
-      setFormData({
-        inquiryType: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        company: '',
-        jobTitle: '',
-        country: '',
-        phone: '',
-        message: '',
-        agreeToContact: false,
-      });
+  try {
+    await saveContactMessage(formData);
 
-      setTimeout(() => setSubmitStatus('idle'), 5000);
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus('idle'), 5000);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    setSubmitStatus("success");
+
+    setFormData({
+      inquiryType: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      company: "",
+      jobTitle: "",
+      country: "",
+      phone: "",
+      message: "",
+      agreeToContact: false,
+    });
+
+    setSubmitStatus("success");
+    setToastVisible(true);
+
+    setTimeout(() => {
+      setSubmitStatus("idle");
+      setToastVisible(false);
+    }, 5000);
+
+  } catch (error) {
+    console.error(error);
+
+    setSubmitStatus("error");
+
+    setTimeout(() => {
+      setSubmitStatus("idle");
+    }, 5000);
+
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-lg p-8 shadow-sm border border-gray-200">
@@ -269,6 +283,14 @@ export default function ContactForm() {
       >
         {isSubmitting ? 'Sending...' : 'Submit'}
       </button>
+
+      {toastVisible && (
+        <div className="fixed bottom-6 right-6 z-50 rounded-2xl border border-green-200 bg-white px-5 py-4 shadow-2xl shadow-slate-900/10">
+          <p className="text-sm font-semibold text-green-800">
+            ✓ Message sent successfully. We&apos;ll be in touch soon.
+          </p>
+        </div>
+      )}
 
       {/* Success Message */}
       {submitStatus === 'success' && (

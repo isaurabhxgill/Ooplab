@@ -41,3 +41,20 @@ body {
 .case-study-card:hover::after {
   transform: translateX(120%) skewX(-20deg);
 }
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.group:hover .floating-card {
+  animation: float 2s ease-in-out infinite;
+}

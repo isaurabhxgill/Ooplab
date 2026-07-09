@@ -60,11 +60,12 @@ export default function ContactPage() {
 
             {/* Right: Image */}
             <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 to-white/5" />
               <Image
                 src="/Assest/contact-us-oop.png"
                 alt="Contact us"
                 fill
+                sizes="(max-width: 1024px) 100vw, 640px"
                 className=""
               />
             </div>
