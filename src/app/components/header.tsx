@@ -5,6 +5,7 @@ const navItems = ["Services", "Products", "About", "Book a call"];
 
 // Route mapping for navigation items
 const getHref = (item: string): string => {
+  if (item.toLowerCase() === "about") return "/about";
   return `/#${item.toLowerCase().replaceAll(" ", "-")}`;
 };
 

@@ -54,19 +54,19 @@ Building Scalable Digital Solutions for Modern Businesses
 
           <ul className="space-y-3 text-sm text-neutral-600">
             <li>
-              <a href="#">About</a>
+              <a href="/about" className="transition hover:text-[#2f6ae9]">About</a>
             </li>
             <li>
-              <a href="#">Our Team</a>
+              <a href="#" className="transition hover:text-[#2f6ae9]">Our Team</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="/contact" className="transition hover:text-[#2f6ae9]">Contact</a>
             </li>
             <li>
-              <a href="#">Articles</a>
+              <a href="#" className="transition hover:text-[#2f6ae9]">Articles</a>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <a href="#" className="transition hover:text-[#2f6ae9]">Blog</a>
             </li>
           </ul>
         </div>

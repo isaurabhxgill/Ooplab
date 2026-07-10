@@ -22,7 +22,7 @@ export default function ProductList({ products }: ProductListProps) {
 
       <div className="grid gap-6">
         {products.map((product) => {
-          const isBharatExit = product.slug === "BharatExit";
+          const isBharatExit = product.slug === "bharatexit";
 
           return (
             <article

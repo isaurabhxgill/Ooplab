@@ -30,7 +30,7 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "BharatExit",
+    slug: "bharatexit",
     tag: "BharatExit",
     title: "Indian micro-SaaS, B2B tools, and bootstrapped digital businesses"
 ,previewType: "desktop",

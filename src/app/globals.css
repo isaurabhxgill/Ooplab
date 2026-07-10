@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant hover (&:hover);
+@custom-variant group-hover (.group:hover &);
+
+
 :root {
   --background: #f5fbff;
   --foreground: #0f172a;
@@ -53,8 +57,4 @@ body {
   100% {
     transform: translateY(0px);
   }
-}
-
-.group:hover .floating-card {
-  animation: float 2s ease-in-out infinite;
 }

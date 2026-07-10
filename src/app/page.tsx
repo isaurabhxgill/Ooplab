@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import "./globals.css";
+import { useEffect, useRef } from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import CustomerStories from "./components/customer-stories";
@@ -82,12 +83,17 @@ const services = [
 
 
 export default function Landing() {
- 
 
+  useEffect(() => {
+    document.addEventListener("mousemove", () => {
+      console.log("mouse moving");
+    });
+  }, []);
   return (
     <main className="min-h-screen overflow-hidden bg-[#f5fbff] text-[#0f172a]">
       <div className="mx-auto w-full max-w-[1440px]">
         <Header />
+
         <section className="relative mx-auto flex justify-center min-h-[620px] w-full gap-12 pt-10 pb-10 sm:min-h-0 sm:pt-20 lg:grid-cols-[1fr_420px] lg:gap-16 lg:pt-24">
           <video
             className="pointer-events-none absolute inset-0 h-full w-full object-cover"
@@ -130,11 +136,11 @@ export default function Landing() {
             <div className="pointer-events-none absolute -right-16 top-8 h-44 w-44 rounded-full bg-[#c7e7ff] opacity-70 blur-3xl" />
             <div className="pointer-events-none absolute left-0 top-24 h-64 w-64 rounded-full bg-[#f5f3ff] opacity-80 blur-3xl" />
             <div className="pointer-events-none absolute bottom-4 right-10 h-52 w-52 rounded-full bg-[#dff6f7] opacity-75 blur-3xl" />
-  <div>
-          <p className="text-[32px] uppercase tracking-[0.24em] text-Black">Our Services</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">Modern technical solutions tailored for startups and enterprises.</h2>
-        </div>
- 
+            <div>
+              <p className="text-[32px] uppercase tracking-[0.24em] text-Black">Our Services</p>
+              <h2 className="mt-3 text-3xl font-bold text-slate-950">Modern technical solutions tailored for startups and enterprises.</h2>
+            </div>
+
 
             <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
@@ -147,9 +153,7 @@ export default function Landing() {
                     style={{ backgroundColor: service.accent }}
                   />
                   <div className="relative z-10 flex items-center justify-between gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-3xl border border-[#dbeafe] bg-[#eff6ff] text-2xl shadow-sm">
-                      {service.icon}
-                    </div>
+
                     <span className="rounded-full border border-[#e2e8f0] bg-[#f8fafc] px-3 py-1 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#2563eb]">
                       Featured
                     </span>
