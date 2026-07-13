@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Footer from "../../components/footer";
@@ -20,13 +21,45 @@ import {
   QrCode,
   BellRing,
   Award,
-  ChevronRight
+  ChevronRight,
+  MapPin,
+  MessageSquare,
+  Wallet,
+  Users
 } from "lucide-react";
 
 interface PageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = (resolvedParams?.slug ?? "").toLowerCase();
+  const product = products.find((item) => item.slug.toLowerCase() === slug);
+
+  if (!product) {
+    return { title: "Product Not Found" };
+  }
+
+  return {
+    title: product.tag,
+    description: product.description,
+    openGraph: {
+      title: `${product.tag} — ${product.title}`,
+      description: product.description,
+      images: product.previewImages?.[0]
+        ? [{ url: product.previewImages[0], alt: product.tag }]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.tag} — ${product.title}`,
+      description: product.description,
+      images: product.previewImages?.[0] ? [product.previewImages[0]] : [],
+    },
+  };
 }
 
 export default async function ProductPage({ params }: PageProps) {
@@ -39,6 +72,7 @@ export default async function ProductPage({ params }: PageProps) {
   }
 
   const isCarzPark = product.slug.toLowerCase() === "carzpark";
+  const isEventSync = product.slug.toLowerCase() === "eventsync";
 
   const carzparkStories = [
     {
@@ -108,11 +142,230 @@ export default async function ProductPage({ params }: PageProps) {
     },
   ];
 
+  // ── EventSync data ───────────────────────────────────────────────
+  const eventsyncStories = [
+    {
+      title: "Google I/O Extended Delhi NCR",
+      subtitle: "Corporate Organizers",
+      quote: "EventSync confirmed 40 verified crew members in under 3 hours. Live geofenced check-in meant zero no-shows and zero paperwork for our team.",
+      company: "Google Developer Groups",
+      image: "/Assest/cp-2.png",
+    },
+    {
+      title: "Volunteer Payout Experience",
+      subtitle: "Student Volunteers",
+      quote: "I earned ₹2,800 over two days at a Razorpay summit. UPI payout hit my account the very next morning. Super smooth.",
+      company: "EventSync Volunteer Network",
+      image: "/Assest/cp-3.png",
+    },
+  ];
+
+  const eventsyncReviews = [
+    {
+      author: "Priya Sharma",
+      role: "Events Head",
+      company: "TechMeet India",
+      rating: 5,
+      text: "EventSync is the only platform that removes the chaos from event staffing. From intake to payout — everything just works.",
+    },
+    {
+      author: "Arjun Menon",
+      role: "Operations Lead",
+      company: "Nasscom Events",
+      rating: 5,
+      text: "Geofenced check-in alone saved us 2 hours of admin on event day. The WhatsApp broadcast to volunteers is a brilliant touch.",
+    },
+  ];
+
   return (
     <main className="min-h-screen bg-[#f5fbff] text-slate-800">
       <Header />
       <div className="mx-auto w-full max-w-[1440px] px-4 py-8 sm:px-8 sm:py-12">
-        {isCarzPark ? (
+        {isEventSync ? (
+          // ==========================================
+          // EVENTSYNC PRODUCT LAYOUT
+          // ==========================================
+          <section className="space-y-10">
+            {/* Hero Card */}
+            <div className="relative overflow-hidden rounded-[32px] bg-[#18181B] p-8 sm:p-12">
+              {/* Glow orbs */}
+              <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-[#3ECF8E]/10 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-10 right-0 h-64 w-64 rounded-full bg-[#3ECF8E]/6 blur-3xl" />
+              <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl">
+                  {/* Live badge */}
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#3ECF8E]/10 px-3 py-1 ring-1 ring-[#3ECF8E]/20">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3ECF8E] opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3ECF8E]" />
+                    </span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#3ECF8E]">
+                      Live Operations Active · 5 Cities
+                    </span>
+                  </div>
+                  <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#3ECF8E]">
+                    EventSync
+                  </p>
+                  <h1 className="mt-3 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
+                    High-precision staffing for{" "}
+                    <span className="relative inline-block">
+                      India's biggest
+                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#3ECF8E]" />
+                    </span>{" "}
+                    tech events.
+                  </h1>
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-400">
+                    Orchestrate technical crew, hospitality teams, and site leads for corporate summits across India — with zero friction and full real-time visibility.
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <a
+                      href="https://eventsync-xi.vercel.app/intake"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg bg-[#3ECF8E] px-5 py-2.5 text-sm font-bold text-[#18181B] transition hover:opacity-90"
+                    >
+                      Deploy Crew <ExternalLink className="h-4 w-4" />
+                    </a>
+                    <a
+                      href="https://eventsync-xi.vercel.app"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                    >
+                      Visit Site <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+                {/* Stats */}
+                <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                  {[
+                    { value: "12,400+", label: "Vetted Volunteers", sub: "Age-verified & trained" },
+                    { value: "4.8s", label: "Avg Response Time", sub: "To crew confirmation" },
+                    { value: "₹45.2M", label: "Payouts Disbursed", sub: "T+1 via UPI" },
+                    { value: "15+", label: "Tier 1 Cities", sub: "Active coverage" },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded-2xl border border-white/8 bg-white/5 p-4">
+                      <div className="text-2xl font-bold text-white">{s.value}</div>
+                      <div className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400">{s.label}</div>
+                      <div className="mt-0.5 text-[10px] text-[#3ECF8E]">{s.sub}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Three Apps */}
+            <div className="rounded-[32px] border border-white/10 bg-[#18181B] p-8 sm:p-10">
+              <p className="font-mono text-xs font-medium uppercase tracking-widest text-[#3ECF8E]">Platform</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-white">One platform. Three powerful apps.</h2>
+              <p className="mt-2 text-slate-400">Built for every stakeholder in the event staffing chain — from corporate organizers to field supervisors.</p>
+              <div className="mt-8 grid gap-5 md:grid-cols-3">
+                {[
+                  {
+                    emoji: "🏢",
+                    role: "For Organizers",
+                    name: "Client Web App",
+                    desc: "Submit event briefs, choose roles and headcount, get crew confirmed within 4 hours. Live budget estimator included.",
+                    href: "https://eventsync-xi.vercel.app/intake",
+                    cta: "Submit Event Intake →",
+                    dark: false,
+                  },
+                  {
+                    emoji: "⚙️",
+                    role: "For EventSync Ops",
+                    name: "Admin Portal",
+                    desc: "Full command center: shift roster, volunteer management, WhatsApp broadcast, live check-in, and analytics.",
+                    href: "https://eventsync-xi.vercel.app/admin",
+                    cta: "Open Command Center →",
+                    dark: true,
+                  },
+                  {
+                    emoji: "📱",
+                    role: "For Volunteers",
+                    name: "Volunteer App",
+                    desc: "Browse local shifts, apply with a buddy, clock in via geofence, and receive daily UPI payouts. Android & iOS.",
+                    href: "https://eventsync-xi.vercel.app/download",
+                    cta: "Download the App →",
+                    dark: false,
+                  },
+                ].map((app) => (
+                  <a
+                    key={app.name}
+                    href={app.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`group relative overflow-hidden rounded-2xl p-7 ring-1 transition-all hover:ring-[#3ECF8E]/40 ${app.dark
+                      ? "bg-[#3ECF8E]/10 ring-[#3ECF8E]/20"
+                      : "bg-white/5 ring-white/10 hover:bg-white/8"
+                      }`}
+                  >
+                    <div className="mb-4 grid h-10 w-10 place-items-center rounded-xl bg-[#3ECF8E]/15 text-xl">{app.emoji}</div>
+                    <div className="font-mono text-[10px] font-medium uppercase tracking-widest text-[#3ECF8E]">{app.role}</div>
+                    <h3 className="mt-2 text-xl font-bold text-white">{app.name}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-400">{app.desc}</p>
+                    <span className="mt-6 inline-flex text-sm font-medium text-[#3ECF8E]/70 transition group-hover:text-[#3ECF8E]">{app.cta}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Why EventSync — 4 feature cards */}
+            <div className="rounded-[32px] bg-white p-8 shadow-[0_20px_50px_rgba(15,23,42,0.04)] sm:p-10">
+              <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#3ECF8E]">Why EventSync</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-slate-900">Built for the speed of live events.</h2>
+              <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+                {[
+                  { icon: Zap, title: "4-Hour Crew Confirmation", desc: "Submit requirements. Our ops team confirms verified crew in under 4 hours, guaranteed." },
+                  { icon: MapPin, title: "Geofenced Check-In", desc: "Supervisors verify attendance via GPS-locked clock-in — no paper, no disputes." },
+                  { icon: MessageSquare, title: "WhatsApp Bridge", desc: "Shift drops broadcast to city-specific volunteer communities with one click." },
+                  { icon: Wallet, title: "Daily UPI Payouts", desc: "Volunteers paid T+1 via UPI. No float, no delays, no angry crew." },
+                ].map((f) => (
+                  <div key={f.title} className="rounded-2xl bg-slate-50 p-6 ring-1 ring-black/5">
+                    <f.icon className="h-7 w-7 text-[#3ECF8E]" />
+                    <h3 className="mt-4 text-base font-bold text-slate-900">{f.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-500">{f.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Cities Coverage */}
+            <div className="rounded-[32px] bg-[#18181B] p-8 sm:p-10">
+              <p className="font-mono text-xs font-medium uppercase tracking-widest text-[#3ECF8E]">Coverage</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-white">Active across India's top tech hubs.</h2>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {["Delhi NCR", "Bengaluru", "Mumbai", "Hyderabad", "Pune", "Chennai", "Kolkata", "Ahmedabad", "Jaipur"].map((city) => (
+                  <span key={city} className="flex items-center gap-1.5 rounded-full border border-[#3ECF8E]/20 bg-[#3ECF8E]/8 px-4 py-1.5 text-sm font-medium text-[#3ECF8E]">
+                    <MapPin className="h-3 w-3" />{city}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Testimonials */}
+            {/* <div className="mt-4">
+              <CustomerStories stories={eventsyncStories} />
+            </div>
+            <div className="mt-4">
+              <Reviews reviews={eventsyncReviews} />
+            </div> */}
+
+            {/* Final CTA */}
+            <div className="rounded-[32px] bg-[#3ECF8E] p-10 text-center">
+              <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#18181B]/60">Get started</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-[#18181B]">Your next event deserves precision.</h2>
+              <p className="mt-3 text-[#18181B]/70">Submit requirements in under 2 minutes. Crew confirmed in 4 hours.</p>
+              <a
+                href="https://eventsync-xi.vercel.app/intake"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#18181B] px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+              >
+                Start Event Intake <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+          </section>
+        ) : isCarzPark ? (
           // ==========================================
           // CARZPARK PRODUCT LAYOUT
           // ==========================================
@@ -350,13 +603,13 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
 
             {/* Testimonials & Reviews */}
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <CustomerStories stories={carzparkStories} />
             </div>
 
             <div className="mt-8">
               <Reviews reviews={carzparkReviews} />
-            </div>
+            </div> */}
           </section>
         ) : (
           // ==========================================
@@ -643,13 +896,13 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
 
             {/* Testimonials & Reviews */}
-            <div className="mt-8">
+            {/* <div className="mt-8">
               <CustomerStories stories={bharatexitStories} />
             </div>
 
             <div className="mt-8">
               <Reviews reviews={bharatexitReviews} />
-            </div>
+            </div> */}
           </section>
         )}
       </div>

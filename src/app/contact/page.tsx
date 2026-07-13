@@ -1,9 +1,20 @@
-'use client';
-
+import type { Metadata } from "next";
 import Footer from '../components/footer';
 import Header from '../components/header';
 import ContactForm from '../components/contact-form';
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Ooplab. Send us a message, book a consultation, or find us at our office in Indrapuram, India. We respond within one business day.",
+  openGraph: {
+    title: "Contact Ooplab — Get in Touch",
+    description:
+      "Reach out to start a project, ask a question, or book a consultation with the Ooplab team.",
+    images: ["/Assest/contact-us-oop.png"],
+  },
+};
 
 export default function ContactPage() {
   return (
@@ -12,25 +23,25 @@ export default function ContactPage() {
         <Header />
 
         {/* Banner Section */}
-        <section className="relative w-full overflow-hidden bg-gradient-to-r from-[#fb2c36] to-[#8b1a23] py-16 sm:py-24 mt-7 rounded-[28px]">
+        <section className="relative mx-4 mt-7 overflow-hidden rounded-[28px] brand-gradient py-12 sm:mx-0 sm:py-24">
           {/* Background elements */}
           <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-white/10 blur-3xl -translate-x-1/2 -translate-y-1/2" />
           <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-white/5 blur-3xl translate-x-1/2 translate-y-1/2" />
 
           <div className="relative z-10 mx-auto max-w-[1120px] px-6 sm:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
               {/* Left: Text Content */}
               <div className="text-white">
-                <h1 className="text-5xl sm:text-6xl font-bold leading-tight mb-4">
+                <h1 className="text-3xl font-bold leading-tight mb-4 sm:text-4xl lg:text-5xl">
                   Get in Touch
                 </h1>
-                <p className="text-xl text-white/90 mb-6">
+                <p className="text-base text-white/90 mb-6 sm:text-xl">
                   Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
                 </p>
                 <div className="flex flex-col gap-4">
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0">
-                      <i className="bi bi-envelope text-2xl"></i>
+                      <i className="bi bi-envelope text-2xl" aria-hidden="true"></i>
                     </div>
                     <div>
                       <p className="font-semibold">Email</p>
@@ -39,7 +50,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0">
-                      <i className="bi bi-phone text-2xl"></i>
+                      <i className="bi bi-phone text-2xl" aria-hidden="true"></i>
                     </div>
                     <div>
                       <p className="font-semibold">Phone</p>
@@ -48,7 +59,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0">
-                      <i className="bi bi-geo-alt text-2xl"></i>
+                      <i className="bi bi-geo-alt text-2xl" aria-hidden="true"></i>
                     </div>
                     <div>
                       <p className="font-semibold">Location</p>
@@ -59,14 +70,14 @@ export default function ContactPage() {
               </div>
 
               {/* Right: Image */}
-              <div className="relative h-96 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-64 rounded-2xl overflow-hidden shadow-2xl sm:h-80 md:h-96">
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 to-white/5" />
                 <Image
-                  src="/Assest/contact-us-oop.png"
-                  alt="Contact us"
+                  src="/Assest/contact-us-ooplab.png"
+                  alt="Ooplab team at work — contact us"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 640px"
-                  className=""
+                  sizes="(max-width: 768px) 90vw, 50vw"
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -74,9 +85,9 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-16 sm:py-24 bg-gray-50">
-          <div className="mx-auto max-w-[1120px] px-6 sm:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <section className="py-12 sm:py-24 bg-gray-50">
+          <div className="mx-auto max-w-[1120px] px-4 sm:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
               {/* Form Column */}
               <div className="lg:col-span-2">
                 <ContactForm />
@@ -85,44 +96,43 @@ export default function ContactPage() {
               {/* Other Ways to Contact */}
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                  <h2 className="text-xl font-bold mb-3 text-gray-900 sm:text-2xl">
                     Other ways to contact us
-                  </h3>
+                  </h2>
                   <p className="text-gray-600 text-sm">
                     Connect with us through alternative channels to find what works best for you.
                   </p>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {/* Find a location */}
-                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#fb2c36] hover:shadow-md transition">
+                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#079447] hover:shadow-md transition">
                     <div className="flex items-start gap-3">
-                      <i className="bi bi-geo-alt text-[#fb2c36] text-xl mt-1"></i>
+                      <i className="bi bi-geo-alt text-[#079447] text-xl mt-1" aria-hidden="true"></i>
                       <div>
-                        <h4 className="font-semibold text-gray-900">Find a location</h4>
+                        <h3 className="font-semibold text-gray-900">Find a location</h3>
                         <p className="text-sm text-gray-600 mt-1">Discover our offices worldwide</p>
                       </div>
                     </div>
                   </div>
 
-
                   {/* Stay up to date */}
-                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#fb2c36] hover:shadow-md transition">
+                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#079447] hover:shadow-md transition">
                     <div className="flex items-start gap-3">
-                      <i className="bi bi-bell text-[#fb2c36] text-xl mt-1"></i>
+                      <i className="bi bi-bell text-[#079447] text-xl mt-1" aria-hidden="true"></i>
                       <div>
-                        <h4 className="font-semibold text-gray-900">Stay up to date</h4>
+                        <h3 className="font-semibold text-gray-900">Stay up to date</h3>
                         <p className="text-sm text-gray-600 mt-1">Subscribe to our newsletter</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Follow us */}
-                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#fb2c36] hover:shadow-md transition">
+                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#079447] hover:shadow-md transition">
                     <div className="flex items-start gap-3">
-                      <i className="bi bi-share text-[#fb2c36] text-xl mt-1"></i>
+                      <i className="bi bi-share text-[#079447] text-xl mt-1" aria-hidden="true"></i>
                       <div>
-                        <h4 className="font-semibold text-gray-900">Follow us on social media</h4>
+                        <h3 className="font-semibold text-gray-900">Follow us on social media</h3>
                         <p className="text-sm text-gray-600 mt-1">Connect with us online</p>
                       </div>
                     </div>
@@ -132,9 +142,9 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
         <Footer />
       </div>
-
     </main>
   );
 }

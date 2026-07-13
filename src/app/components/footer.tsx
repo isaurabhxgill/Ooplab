@@ -1,23 +1,44 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import "../globals.css";
 
 export default function Footer() {
+  const [showForm, setShowForm] = useState(false);
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
+
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setStatus("submitting");
+
+    // Simulate submission delay
+    setTimeout(() => {
+      setStatus("success");
+      setEmail("");
+    }, 800);
+  };
+
   return (
     <footer>
+      {/* CTA Banner */}
       <section
-        className="mx-auto w-full max-w-[1120px] py-6 sm:py-10"
+        className="mx-auto w-full max-w-[1120px] px-4 py-6 sm:px-6 sm:py-10"
         id="contact"
       >
-        <div className="relative overflow-hidden rounded-[28px] bg-[#fb2c36] px-8 py-12 text-white bg-gradient-to-r from-[#fb2c36] to-[#8b1a23] sm:px-14 sm:py-16">
+        <div className="relative overflow-hidden rounded-[28px] bg-[#079447] px-6 py-10 text-white brand-gradient sm:px-14 sm:py-16">
           {/* Glow */}
           <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-black/20 blur-3xl" />
 
           {/* Content */}
           <div className="relative z-10">
-            <h2 className="max-w-3xl text-[34px] font-bold leading-tight sm:text-[44px]">
+            <h2 className="max-w-3xl text-[28px] font-bold leading-tight sm:text-[34px] lg:text-[44px]">
               Let&apos;s Build Your Next Big Product
             </h2>
-
             <a
               href="/contact"
               className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 text-sm font-semibold text-[#111827] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
@@ -27,113 +48,135 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <div className="grid grid-cols-3">
+
+      {/* Links Grid — responsive: 1 col mobile, 2 col tablet, 3 col desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Logo + tagline */}
         <div className="p-6">
-       <a
-               aria-label="Ooplab"
-               className=""
-               href="/"
-             >
-           <Image
-         src="/Assest/Ologo.png" // Double check if your folder is named "Asset" or "Assest"
-         alt="Ooplab Logo"
-         width={300}           // Increased slightly so the sub-text remains legible
-         height={170}         
-         style={{ width: 'auto' }}
-       />
-             </a>
-
-          <p className="mt-2 text-xl text-black font-bold text-neutral-600">
-           
-Building Scalable Digital Solutions for Modern Businesses
+          <a aria-label="Ooplab home" href="/">
+            <Image
+              src="/Assest/Ologo.png"
+              alt="Ooplab Logo"
+              width={250}
+              height={250}
+              style={{ width: "auto", height: "auto", maxHeight: "95px" }}
+            />
+          </a>
+          <p className="mt-4 max-w-[260px] text-sm leading-6 font-medium text-neutral-600">
+            Building Scalable Digital Solutions for Modern Businesses
           </p>
-
         </div>
-        <div className=" bg-gray-100 p-6">
-          <h3 className="mb-7 text-2xl font-semibold">Company</h3>
 
+        {/* Company links */}
+        <div className=" p-6">
+          <h3 className="mb-5 text-lg font-semibold sm:text-xl">Company</h3>
           <ul className="space-y-3 text-sm text-neutral-600">
-            <li>
-              <a href="/about" className="transition hover:text-[#2f6ae9]">About</a>
-            </li>
-            <li>
-              <a href="#" className="transition hover:text-[#2f6ae9]">Our Team</a>
-            </li>
-            <li>
-              <a href="/contact" className="transition hover:text-[#2f6ae9]">Contact</a>
-            </li>
-            <li>
-              <a href="#" className="transition hover:text-[#2f6ae9]">Articles</a>
-            </li>
-            <li>
-              <a href="#" className="transition hover:text-[#2f6ae9]">Blog</a>
-            </li>
+            <li><a href="/about" className="text-brand-hover">About Us</a></li>
+            <li><a href="/services#team" className="text-brand-hover">Our Team</a></li>
+            <li><a href="/contact" className="text-brand-hover">Contact</a></li>
+            <li><a href="/services" className="text-brand-hover">Services</a></li>
+            <li><a href="/privacy" className="text-brand-hover">Privacy Policy</a></li>
+            <li><a href="/privacy" className="text-brand-hover">Terms</a></li>
+            <li><a href="/privacy" className="text-brand-hover">FAQ</a></li>
           </ul>
         </div>
-    
-        <div className=" bg-[#ece9f60] p-6">
-          <h3 className="text-2xl font-semibold">Discover More</h3>
 
-          <p className="mt-6 text-sm leading-8 text-neutral-600">
+        {/* Discover + Social */}
+        <div className="p-6 sm:col-span-2 lg:col-span-1">
+          <h3 className="text-lg font-semibold sm:text-xl">Discover More</h3>
+          <p className="mt-4 text-sm leading-7 text-neutral-600">
             Keeping you informed
           </p>
-          <button className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-[#2f6ae9] px-8 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1  hover:shadow-xl">
-            Subscribe
-          </button>
 
-          <div>
-            <h4 className="mb-2 mt-6 text-base font-semibold">Follow Us</h4>
+          {/* Interactive subscription flow */}
+          {status === "success" ? (
+            <p className="mt-3 text-sm font-semibold text-green-700">
+              ✓ You&apos;re subscribed! We&apos;ll keep you updated.
+            </p>
+          ) : !showForm ? (
+            <button
+              onClick={() => setShowForm(true)}
+              className="mt-3 inline-flex h-11 items-center justify-center rounded-xl brand-bg brand-hover px-7 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+            >
+              Subscribe
+            </button>
+          ) : (
+            <form onSubmit={handleSubscribe} className="mt-3 space-y-2">
+              <label htmlFor="newsletter-email" className="block text-xs font-semibold text-neutral-600">
+                Enter your email address
+              </label>
+              <div className="flex gap-2 max-w-sm">
+                <input
+                  id="newsletter-email"
+                  type="email"
+                  required
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 min-w-0 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent"
+                />
+                <button
+                  type="submit"
+                  disabled={status === "submitting"}
+                  className="inline-flex h-10 items-center justify-center rounded-xl brand-bg brand-hover px-4 text-sm font-semibold text-white shadow-sm transition hover:opacity-90 disabled:opacity-50"
+                >
+                  {status === "submitting" ? "..." : "Subscribe"}
+                </button>
+              </div>
+            </form>
+          )}
 
-            <div className="flex gap-4 social-icons">
+          <div className="mt-6">
+            <h4 className="mb-3 text-sm font-semibold">Follow Us</h4>
+            <div className="flex flex-wrap gap-3 social-icons">
               <a
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
                 href="https://www.linkedin.com/company/cgi/"
-                title="Follow CGI on LinkedIn"
+                title="Follow Ooplab on LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
               >
                 <i className="bi bi-linkedin text-xl" aria-hidden="true"></i>
-                <span className="sr-only">LinkedIn</span>
               </a>
-
               <a
                 href="https://github.com"
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="GitHub"
+                aria-label="GitHub"
               >
                 <i className="bi bi-github text-xl" aria-hidden="true"></i>
-                <span className="sr-only">GitHub</span>
               </a>
-
               <a
                 href="https://twitter.com"
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Twitter"
+                aria-label="Twitter / X"
               >
                 <i className="bi bi-twitter-x text-xl" aria-hidden="true"></i>
-                <span className="sr-only">Twitter</span>
               </a>
-
               <a
                 href="https://instagram.com"
-                className="flex h-14 w-14 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#fb2c36] hover:text-[#fb2c36]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Instagram"
+                aria-label="Instagram"
               >
                 <i className="bi bi-instagram text-xl" aria-hidden="true"></i>
-                <span className="sr-only">Instagram</span>
               </a>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Bottom bar */}
       <div className="border-t border-neutral-200 bg-white py-4 text-center text-sm text-neutral-600">
-        © 2026 OopLabs Inc.
+        © 2026 OopLabs Inc. All Rights Reserved.
       </div>
     </footer>
   );

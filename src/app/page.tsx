@@ -121,11 +121,10 @@ export default function Landing() {
 
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                className="inline-flex h-11 items-center justify-center rounded-md bg-[#2f6ae9] px-6 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,106,233,0.2)] transition hover:bg-[#255bd3] sm:h-11"
+                className="inline-flex h-11 items-center justify-center brand-bg brand-hover rounded-md px-6 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(7,148,71,0.2)] transition sm:h-11"
                 href="#contact"
               >
-                <span className="sm:hidden">Get Started</span>
-                <span className="hidden sm:inline">Book Consultation</span>
+                Book Consultation
               </a>
             </div>
           </div>
@@ -145,7 +144,7 @@ export default function Landing() {
             <div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
                 <article
-                  className="group relative overflow-hidden rounded-[28px] border border-white/90 bg-white/95 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(47,106,233,0.16)] hover:bg-gradient-to-r from-[#fb2c36] to-[#8b1a23]"
+                  className="group relative overflow-hidden rounded-[28px] border border-white/90 bg-white/95 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(47,106,233,0.16)] brand-hover"
                   key={service.title}
                 >
                   <div
@@ -176,7 +175,7 @@ export default function Landing() {
             <div className="mt-10 flex justify-center">
               <a
                 href="/services"
-                className="inline-flex items-center gap-2 rounded-full bg-[#2f6ae9] px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,106,233,0.28)] transition hover:bg-[#255bd3]"
+                className="inline-flex items-center gap-2 rounded-full brand-bg brand-hover px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(7,148,71,0.28)] transition"
               >
                 Click here to explore more
                 <svg
@@ -208,18 +207,18 @@ export default function Landing() {
           </div>
         </section>
 
-        <section className="mx-auto w-full max-w-[1120px] pt-24" id="articles">
+        {/* <section className="mx-auto w-full max-w-[1120px] pt-24" id="articles">
           <Article articles={articles} />
         </section>
 
         <section className="mx-auto w-full max-w-[1120px] pt-24" id="blog">
           <Blog posts={blogPosts} />
-        </section>
+        </section> */}
 
-        <section className="mx-auto w-full max-w-[1120px] pt-24" id="stories">
+        {/* <section className="mx-auto w-full max-w-[1120px] pt-24" id="stories">
           <CustomerStories stories={customerStories} />
         </section>
-
+ */}
 
 
         <section

@@ -6,7 +6,7 @@ export type Product = {
   image: string;
   previewImages?: string[];
   features: string[];
-  previewType: "mobile" | "desktop";
+  previewType: "mobile" | "desktop" | "event";
 };
 
 export const products: Product[] = [
@@ -46,5 +46,25 @@ export const products: Product[] = [
   "Built for India with UPI/IMPS escrow and Aadhaar-based KYC.",
   "Blind pitches, NDA-protected data rooms, and zero hidden fees.",
 ],
-  }
+  },
+  {
+    slug: "eventsync",
+    tag: "EventSync",
+    title: "Precision Staffing for India's Biggest Tech Events",
+    previewType: "event",
+    description:
+      "EventSync is a real-time event staffing platform that orchestrates technical crew, hospitality teams, and site leads for corporate tech summits across India — with zero friction and full real-time visibility.",
+    image: "/Assest/ES_1.png",
+    previewImages: [
+      "/Assest/ES_1.png", // replace with your screenshot 1
+      "/Assest/ES_2.png", // replace with your screenshot 2
+      "/Assest/ES_3.png", // replace with your screenshot 3
+    ],
+    features: [
+      "Crew confirmed in under 4 hours — guaranteed.",
+      "Geofenced check-in with live GPS attendance tracking.",
+      "WhatsApp shift broadcasts to city-specific volunteer pools.",
+      "T+1 daily UPI payouts for 12,400+ vetted volunteers.",
+    ],
+  },
 ];

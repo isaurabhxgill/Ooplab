@@ -96,7 +96,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       {/* Inquiry Type */}
       <div className="mb-6">
         <label htmlFor="inquiryType" className="block text-sm font-semibold text-gray-900 mb-2">
-          Inquiry type<span className="text-[#fb2c36]">*</span>
+          Inquiry type<span className="text-[#079447]">*</span>
         </label>
         <select
           id="inquiryType"
@@ -104,7 +104,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           value={formData.inquiryType}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent bg-white text-gray-900"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent bg-white text-gray-900"
         >
           <option value="">Please Select</option>
           <option value="sales">Sales Inquiry</option>
@@ -119,7 +119,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
           <label htmlFor="firstName" className="block text-sm font-semibold text-gray-900 mb-2">
-            Your first name<span className="text-[#fb2c36]">*</span>
+            Your first name<span className="text-[#079447]">*</span>
           </label>
           <input
             id="firstName"
@@ -129,12 +129,12 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             onChange={handleChange}
             required
             placeholder="John"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent text-gray-900"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent text-gray-900"
           />
         </div>
         <div>
           <label htmlFor="lastName" className="block text-sm font-semibold text-gray-900 mb-2">
-            Your last name<span className="text-[#fb2c36]">*</span>
+            Your last name<span className="text-[#079447]">*</span>
           </label>
           <input
             id="lastName"
@@ -144,7 +144,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             onChange={handleChange}
             required
             placeholder="Doe"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent text-gray-900"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent text-gray-900"
           />
         </div>
       </div>
@@ -152,7 +152,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       {/* Email */}
       <div className="mb-6">
         <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-          Your email<span className="text-[#fb2c36]">*</span>
+          Your email<span className="text-[#079447]">*</span>
         </label>
         <input
           id="email"
@@ -162,7 +162,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           onChange={handleChange}
           required
           placeholder="john@example.com"
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent text-gray-900"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent text-gray-900"
         />
       </div>
 
@@ -170,7 +170,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
           <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
-            Company<span className="text-[#fb2c36]">*</span>
+            Company<span className="text-[#079447]">*</span>
           </label>
           <input
             id="company"
@@ -180,12 +180,12 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             onChange={handleChange}
             required
             placeholder="Your company"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent text-gray-900"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent text-gray-900"
           />
         </div>
         <div>
           <label htmlFor="jobTitle" className="block text-sm font-semibold text-gray-900 mb-2">
-            Job title<span className="text-[#fb2c36]">*</span>
+            Job title<span className="text-[#079447]">*</span>
           </label>
           <input
             id="jobTitle"
@@ -195,7 +195,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             onChange={handleChange}
             required
             placeholder="Your job title"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent text-gray-900"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent text-gray-900"
           />
         </div>
       </div>
@@ -204,7 +204,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div>
           <label htmlFor="country" className="block text-sm font-semibold text-gray-900 mb-2">
-            Country<span className="text-[#fb2c36]">*</span>
+            Country<span className="text-[#079447]">*</span>
           </label>
           <select
             id="country"
@@ -212,7 +212,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             value={formData.country}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent bg-white text-gray-900"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent bg-white text-gray-900"
           >
             <option value="">Please Select</option>
             <option value="usa">United States</option>
@@ -234,7 +234,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             value={formData.phone}
             onChange={handleChange}
             placeholder="+1 (555) 000-0000"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent text-gray-900"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent text-gray-900"
           />
         </div>
       </div>
@@ -242,7 +242,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       {/* Message */}
       <div className="mb-6">
         <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-          Message<span className="text-[#fb2c36]">*</span>
+          Message<span className="text-[#079447]">*</span>
         </label>
         <textarea
           id="message"
@@ -252,7 +252,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           required
           placeholder="Tell us about your inquiry..."
           rows={5}
-          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fb2c36] focus:border-transparent text-gray-900 resize-none"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent text-gray-900 resize-none"
         />
       </div>
 
@@ -265,11 +265,11 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           checked={formData.agreeToContact}
           onChange={handleChange}
           required
-          className="w-4 h-4 rounded border-gray-300 text-[#fb2c36] focus:ring-[#fb2c36] cursor-pointer mt-1"
+          className="w-4 h-4 rounded border-gray-300 text-[#079447] focus:ring-[#079447] cursor-pointer mt-1"
         />
         <label htmlFor="agreeToContact" className="text-sm text-gray-600">
           I agree to receive communications from this company. For information on how we process your data, please see our
-          <a href="#" className="text-[#fb2c36] hover:underline ml-1">
+          <a href="/privacy" className="text-[#079447] hover:underline ml-1">
             Privacy Policy
           </a>
         </label>
@@ -279,7 +279,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-[#fb2c36] hover:bg-[#e01c26] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full brand-bg brand-hover text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:-translate-y-1 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? 'Sending...' : 'Submit'}
       </button>

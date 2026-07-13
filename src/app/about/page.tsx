@@ -1,12 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import type { Metadata } from "next";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Reviews from "../components/reviews";
 import { reviews } from "../data/reviews";
 import { products } from "../products/data";
 import StatCards from "./StatCards";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about Ooplab — a premium digital product studio building scalable web apps, mobile apps, and AI products for startups and enterprises worldwide.",
+  openGraph: {
+    title: "About Ooplab — Premium Digital Product Studio",
+    description:
+      "We partner with ambitious founders and enterprises to design, build, and ship world-class digital products.",
+    images: ["/Assest/bg-about.png"],
+  },
+};
 
 const services = [
   { title: "Web Application Development", description: "Modern web experiences built for performance, accessibility, and rapid growth.", icon: "🖥️", accent: "#dbeafe" },
@@ -43,6 +56,15 @@ const techStack = [
   { label: "PostgreSQL", icon: "bi-database" },
   { label: "Tailwind CSS", icon: "bi-brush" },
   { label: "Docker", icon: "bi-box-seam" },
+  { label: "Python", icon: "bi-terminal" },
+  { label: "Go", icon: "bi-lightning" },
+  { label: "React Native", icon: "bi-phone" },
+  { label: "MongoDB", icon: "bi-hdd-network" },
+  { label: "Redis", icon: "bi-database-fill" },
+  { label: "Firebase", icon: "bi-fire" },
+  { label: "GCP", icon: "bi-cloud-fill" },
+  { label: "OpenAI", icon: "bi-robot" },
+  { label: "GraphQL", icon: "bi-diagram-3" },
 ];
 
 const industries = [
@@ -101,7 +123,7 @@ export default function AboutPage() {
         </section> */}
 
 
-        <section className="relative h-screen w-full overflow-hidden">
+        <section className="relative min-h-[480px] w-full overflow-hidden sm:min-h-[560px] lg:h-screen">
           {/* Background Image */}
           <Image
             src="/Assest/bg-about.png"
@@ -134,7 +156,7 @@ export default function AboutPage() {
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex h-11 items-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-[#fb2c36] shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition hover:bg-white/90"
+                  className="inline-flex h-11 items-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-[#079447] shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition hover:bg-white/90"
                 >
                   Start a Project <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -151,10 +173,10 @@ export default function AboutPage() {
         </section>
 
         {/* ── 2. COMPANY OVERVIEW ─────────────────────────────────────── */}
-        <section className="mx-auto w-full max-w-[1120px] py-20">
+        <section className="mx-auto w-full max-w-[1120px] px-4 py-12 sm:px-6 sm:py-20">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
-              <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2f6ae9]">Who We Are</p>
+              <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Who We Are</p>
               <h2 className="mt-3 text-[36px] font-bold leading-tight text-slate-950 sm:text-[44px]">
                 A Premium Digital Product Studio
               </h2>
@@ -167,7 +189,7 @@ export default function AboutPage() {
               <div className="mt-8 flex gap-4">
                 <Link
                   href="/contact"
-                  className="inline-flex h-11 items-center gap-2 rounded-md bg-[#2f6ae9] px-6 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(47,106,233,0.2)] transition hover:bg-[#255bd3]"
+                  className="inline-flex h-11 items-center gap-2 rounded-md brand-bg brand-hover px-6 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(7,148,71,0.2)] transition"
                 >
                   Book a Call
                 </Link>
@@ -210,7 +232,7 @@ export default function AboutPage() {
             <div className="pointer-events-none absolute bottom-4 right-10 h-52 w-52 rounded-full bg-[#dff6f7] opacity-75 blur-3xl" />
 
             <div className="relative">
-              <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2f6ae9]">What We Do</p>
+              <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">What We Do</p>
               <h2 className="mt-3 text-3xl font-bold text-slate-950">Modern technical solutions tailored for startups and enterprises.</h2>
             </div>
 
@@ -218,7 +240,7 @@ export default function AboutPage() {
               {services.map((service) => (
                 <article
                   key={service.title}
-                  className="group relative overflow-hidden rounded-[28px] border border-white/90 bg-white/95 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(47,106,233,0.16)] hover:bg-gradient-to-r from-[#fb2c36] to-[#8b1a23]"
+                  className="group relative overflow-hidden rounded-[28px] border border-white/90 bg-white/95 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(47,106,233,0.16)] brand-hover"
                 >
                   <div
                     className="absolute -right-10 -top-10 h-36 w-36 rounded-full opacity-30 blur-3xl"
@@ -255,7 +277,7 @@ export default function AboutPage() {
                 return (
                   <article
                     key={product.slug}
-                    className="rounded-[24px] border border-white/10 bg-white/5 p-6 transition hover:border-[#2f6ae9]/60 hover:bg-white/10"
+                    className="rounded-[24px] border border-white/10 bg-white/5 p-6 transition hover:border-[#079447]/60 hover:bg-white/10"
                   >
                     <div className="grid items-center gap-12 lg:grid-cols-2">
                       <div className="min-w-0">
@@ -292,7 +314,8 @@ export default function AboutPage() {
                           />
                         ) : (
                           product.previewImages && product.previewImages.length >= 3 && (
-                            <div className="relative h-[420px] w-[500px]">
+                      <div className="relative h-[380px] w-full max-w-[500px]">
+
                               <div className="absolute left-4 top-16 z-10 rotate-[-10deg] transition-all duration-500 hover:-translate-x-4 hover:-rotate-[14deg]">
                                 <Image src={product.previewImages[0]} alt="" width={190} height={380} className="rounded-[24px] object-cover" />
                               </div>
@@ -316,19 +339,19 @@ export default function AboutPage() {
 
         {/* ── 6. PROCESS ──────────────────────────────────────────────── */}
         <section className="mx-auto w-full max-w-[1120px] py-20">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2f6ae9]">How We Work</p>
+          <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">How We Work</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-950">Our Development Process</h2>
           <div className="relative mt-12">
             {/* Connector line */}
-            <div className="absolute left-[19px] top-0 hidden h-full w-px bg-gradient-to-b from-[#2f6ae9]/40 via-[#2f6ae9]/20 to-transparent sm:block" />
+            <div className="absolute left-[19px] top-0 hidden h-full w-px bg-gradient-to-b from-[#079447]/40 via-[#079447]/20 to-transparent sm:block" />
             <div className="space-y-8">
               {steps.map((step, i) => (
                 <div key={step.num} className="flex gap-6">
-                  <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-[#2f6ae9] text-sm font-bold text-white shadow-[0_4px_16px_rgba(47,106,233,0.4)]">
+                  <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full brand-bg text-sm font-bold text-white shadow-[0_4px_16px_rgba(7,148,71,0.4)]">
                     {i + 1}
                   </div>
                   <div className="rounded-[20px] border border-slate-200 bg-white p-6 shadow-[0_8px_32px_rgba(15,23,42,0.04)] flex-1 transition hover:-translate-y-0.5 hover:shadow-[0_16px_48px_rgba(47,106,233,0.1)]">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#2f6ae9]">Step {step.num}</p>
+                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#079447]">Step {step.num}</p>
                     <h3 className="mt-1 text-lg font-semibold text-slate-950">{step.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-500">{step.desc}</p>
                   </div>
@@ -341,12 +364,12 @@ export default function AboutPage() {
         {/* ── 7. WHY CHOOSE ───────────────────────────────────────────── */}
         <section className="w-full bg-[#eef8ff] py-16">
           <div className="mx-auto max-w-[1120px] px-6">
-            <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2f6ae9]">Why Ooplab</p>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Why Ooplab</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-950">The Ooplab Advantage</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {strengths.map((s) => (
                 <div key={s.title} className="rounded-[24px] border border-white/90 bg-white p-7 shadow-[0_8px_32px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(47,106,233,0.12)]">
-                  <i className={`bi ${s.icon} text-3xl text-[#2f6ae9]`} aria-hidden />
+                  <i className={`bi ${s.icon} text-3xl text-[#079447]`} aria-hidden />
                   <h3 className="mt-4 text-lg font-semibold text-slate-950">{s.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-slate-500">{s.desc}</p>
                 </div>
@@ -357,15 +380,15 @@ export default function AboutPage() {
 
         {/* ── 8. TECH STACK ───────────────────────────────────────────── */}
         <section className="mx-auto w-full max-w-[1120px] py-20">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2f6ae9]">Tech Stack</p>
+          <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Tech Stack</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-950">Built with the Best</h2>
           <div className="mt-10 flex flex-wrap gap-4">
             {techStack.map((t) => (
               <div
                 key={t.label}
-                className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 shadow-sm transition hover:border-[#2f6ae9]/50 hover:shadow-md"
+                className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 shadow-sm transition hover:border-[#079447]/50 hover:shadow-md"
               >
-                <i className={`bi ${t.icon} text-[#2f6ae9]`} />
+                <i className={`bi ${t.icon} text-[#079447]`} />
                 <span className="text-sm font-medium text-slate-700">{t.label}</span>
               </div>
             ))}
@@ -379,7 +402,7 @@ export default function AboutPage() {
             <h2 className="mt-3 text-3xl font-bold text-white">We Build Across Sectors</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {industries.map((ind) => (
-                <div key={ind.label} className="flex items-center gap-4 rounded-[20px] border border-white/10 bg-white/5 p-5 transition hover:border-[#2f6ae9]/60 hover:bg-white/10">
+                <div key={ind.label} className="flex items-center gap-4 rounded-[20px] border border-white/10 bg-white/5 p-5 transition hover:border-[#079447]/60 hover:bg-white/10">
                   <i className={`bi ${ind.icon} text-2xl text-cyan-300`} aria-hidden />
                   <span className="text-base font-semibold text-white">{ind.label}</span>
                 </div>
@@ -390,12 +413,12 @@ export default function AboutPage() {
 
         {/* ── 10. VALUES ──────────────────────────────────────────────── */}
         <section className="mx-auto w-full max-w-[1120px] py-20">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#2f6ae9]">Core Values</p>
+          <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Core Values</p>
           <h2 className="mt-3 text-3xl font-bold text-slate-950">What Drives Us</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
               <div key={v.title} className="rounded-[24px] border border-slate-200 bg-white p-7 shadow-[0_8px_32px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(47,106,233,0.12)]">
-                <i className={`bi ${v.icon} text-3xl text-[#fb2c36]`} aria-hidden />
+                <i className={`bi ${v.icon} text-3xl text-[#079447]`} aria-hidden />
                 <h3 className="mt-4 text-base font-semibold text-slate-950">{v.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-slate-500">{v.desc}</p>
               </div>

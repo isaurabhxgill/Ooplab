@@ -3,7 +3,7 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import Image from "next/image";
 import "../globals.css";
-import {useRef} from "react";
+import { useRef } from "react";
 const caseStudies = [
   {
     title: "Healthcare SaaS Platform",
@@ -12,7 +12,7 @@ const caseStudies = [
     description:
       "A patient-first platform that streamlined onboarding, appointment flows, and analytics for a fast-growing care network.",
     tags: ["AI workflows", "HIPAA-ready", "Analytics"],
-    accent: "from-[#2f6ae9] via-[#4d92ff] to-[#8dd5ff]",
+    accent: "from-[#079447] via-[#43b649] to-[#006838]",
   },
   {
     title: "Fintech Mobile App",
@@ -30,7 +30,7 @@ const caseStudies = [
     description:
       "A patient-first platform that streamlined onboarding, appointment flows, and analytics for a fast-growing care network.",
     tags: ["AI workflows", "HIPAA-ready", "Analytics"],
-    accent: "from-[#2f6ae9] via-[#4d92ff] to-[#8dd5ff]",
+    accent: "from-[#079447] via-[#43b649] to-[#006838]",
   },
   {
     title: "Fintech Mobile App",
@@ -84,7 +84,7 @@ const services = [
 const experts = [
   {
     name: "Rohan Kumar",
-    role: "CEO & Founder",
+    role: "Co-Founders",
     summary:
       "Guides product vision with an emphasis on usability, speed, and business impact.",
     accent: "bg-[#ede9fe]",
@@ -93,75 +93,75 @@ const experts = [
   },
   {
     name: "Saurabh Kumar",
-    role: "CEO & Founder",
+    role: "Co-Founders",
     summary:
       "Builds scalable systems and keeps development aligned to performance and reliability.",
     accent: "bg-[#cffafe]",
-      image: "/Assest/saurabh.jpg",
+    image: "/Assest/saurabh.jpeg",
     linkedin: "https://www.linkedin.com/in/saurabh-kumar-476606292/",
   },
 
 ];
 
 export default function ServicesPage() {
-    const caseStudiesRef = useRef<HTMLDivElement>(null);
-  
-    const scrollCaseStudies = (direction: "left" | "right") => {
-      if (!caseStudiesRef.current) return;
-  
-      const card = caseStudiesRef.current.querySelector("article");
-      const cardWidth = card?.getBoundingClientRect().width ?? 320;
-      const gap = 24;
-  
-      caseStudiesRef.current.scrollBy({
-        left: direction === "left" ? -(cardWidth + gap) : cardWidth + gap,
-        behavior: "smooth",
-      });
-    };
-// const process = [
-//   {
-//     step: "01",
-//     title: "Discover",
-//     description:
-//       "We understand your business goals, users, competitors, and project vision before writing a single line of code.",
-//   },
-//   {
-//     step: "02",
-//     title: "Strategy",
-//     description:
-//       "Our team prepares product roadmaps, technical architecture, feature planning, and execution strategy.",
-//   },
-//   {
-//     step: "03",
-//     title: "Design",
-//     description:
-//       "Creating intuitive UI/UX, wireframes, interactive prototypes, and design systems focused on user experience.",
-//   },
-//   {
-//     step: "04",
-//     title: "Develop",
-//     description:
-//       "Building scalable web and mobile applications using modern technologies with clean, maintainable code.",
-//   },
-//   {
-//     step: "05",
-//     title: "Test",
-//     description:
-//       "Rigorous quality assurance, security testing, accessibility checks, and performance optimization.",
-//   },
-//   {
-//     step: "06",
-//     title: "Launch",
-//     description:
-//       "Deployment, monitoring, analytics setup, and production optimization for a smooth release.",
-//   },
-//   {
-//     step: "07",
-//     title: "Support",
-//     description:
-//       "Continuous improvements, feature updates, maintenance, and long-term technical partnership.",
-//   },
-// ];
+  const caseStudiesRef = useRef<HTMLDivElement>(null);
+
+  const scrollCaseStudies = (direction: "left" | "right") => {
+    if (!caseStudiesRef.current) return;
+
+    const card = caseStudiesRef.current.querySelector("article");
+    const cardWidth = card?.getBoundingClientRect().width ?? 320;
+    const gap = 24;
+
+    caseStudiesRef.current.scrollBy({
+      left: direction === "left" ? -(cardWidth + gap) : cardWidth + gap,
+      behavior: "smooth",
+    });
+  };
+  // const process = [
+  //   {
+  //     step: "01",
+  //     title: "Discover",
+  //     description:
+  //       "We understand your business goals, users, competitors, and project vision before writing a single line of code.",
+  //   },
+  //   {
+  //     step: "02",
+  //     title: "Strategy",
+  //     description:
+  //       "Our team prepares product roadmaps, technical architecture, feature planning, and execution strategy.",
+  //   },
+  //   {
+  //     step: "03",
+  //     title: "Design",
+  //     description:
+  //       "Creating intuitive UI/UX, wireframes, interactive prototypes, and design systems focused on user experience.",
+  //   },
+  //   {
+  //     step: "04",
+  //     title: "Develop",
+  //     description:
+  //       "Building scalable web and mobile applications using modern technologies with clean, maintainable code.",
+  //   },
+  //   {
+  //     step: "05",
+  //     title: "Test",
+  //     description:
+  //       "Rigorous quality assurance, security testing, accessibility checks, and performance optimization.",
+  //   },
+  //   {
+  //     step: "06",
+  //     title: "Launch",
+  //     description:
+  //       "Deployment, monitoring, analytics setup, and production optimization for a smooth release.",
+  //   },
+  //   {
+  //     step: "07",
+  //     title: "Support",
+  //     description:
+  //       "Continuous improvements, feature updates, maintenance, and long-term technical partnership.",
+  //   },
+  // ];
   return (
     <main className="min-h-screen bg-[#f5fbff] text-[#0f172a]">
       <div className="mx-auto w-full max-w-[1440px]">
@@ -191,7 +191,7 @@ export default function ServicesPage() {
                 className="group relative overflow-hidden rounded-[28px] border border-[#e5e7eb] bg-white p-6 shadow-[0_18px_48px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(47,106,233,0.14)]"
               >
                 <div
-                  className={`absolute inset-x-0 top-0 h-40 bg-gradient-to-br ${service.accent} opacity-80 blur-3xl`} 
+                  className={`absolute inset-x-0 top-0 h-40 bg-gradient-to-br ${service.accent} opacity-80 blur-3xl`}
                   style={{ clipPath: 'circle(60% at 80% -10%)' }}
                 />
                 <div className="relative z-10">
@@ -206,7 +206,7 @@ export default function ServicesPage() {
             ))}
           </div>
 
-        {/* <section className="relative overflow-hidden py-28">
+          {/* <section className="relative overflow-hidden py-28">
 
  
   <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[180px]" />
@@ -279,7 +279,7 @@ export default function ServicesPage() {
 
 </section> */}
 
-          <section className="mt-14 rounded-[32px] bg-[#eef8ff] px-6 py-10 shadow-[0_18px_60px_rgba(47,106,233,0.08)] sm:px-10 sm:py-12">
+          <section id="team" className="mt-14 rounded-[32px] bg-[#eef8ff] px-6 py-10 shadow-[0_18px_60px_rgba(47,106,233,0.08)] sm:px-10 sm:py-12">
             <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7c93c5]">
@@ -294,76 +294,113 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {experts.map((expert) => (
                 <article
                   key={expert.name}
-                  className={`${expert.accent} rounded-[28px] p-6 shadow-[0_18px_48px_rgba(15,23,42,0.06)]`}
+                  className={`${expert.accent} rounded-[28px] p-6 shadow-[0_18px_48px_rgba(15,23,42,0.06)] flex flex-col justify-between`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="relative h-20 w-20 shrink-0 rounded-full border-4 border-white bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
-                      <Image
-                        src={expert.image}
-                        alt={`${expert.name} avatar`}
-                        width={80}
-                        height={80}
-                        className="h-full w-full rounded-full object-cover"
-                      />
+                  <div>
+                    <div className="flex items-start gap-4">
+                      <div className="relative h-20 w-20 shrink-0 rounded-full border-4 border-white bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+                        <Image
+                          src={expert.image}
+                          alt={`${expert.name} avatar`}
+                          width={80}
+                          height={80}
+                          className="h-full w-full rounded-full object-cover"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#079447]">
+                          Expert
+                        </p>
+                        <h3 className="mt-2 text-2xl font-bold text-[#0b1220]">
+                          {expert.name}
+                        </h3>
+                        <p className="mt-1 text-sm font-semibold text-[#475569]">
+                          {expert.role}
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#4338ca]">
-                        Expert
+                    <p className="mt-6 text-sm leading-6 text-[#475569]">
+                      {expert.summary}
+                    </p>
+                  </div>
+                  <div className="mt-6">
+                    <a
+                      href={expert.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-white/90 px-4 py-2 text-sm font-semibold text-[#079447] transition hover:bg-green-50 hover:text-[#006838] w-fit shadow-sm"
+                    >
+                      <i className="bi bi-linkedin text-base" aria-hidden="true" />
+                      Connect on LinkedIn
+                    </a>
+                  </div>
+                </article>
+              ))}
+
+              {/* Third Card taking all remaining space (col-span-2 on tablet/mobile size, col-span-1 on desktop size) */}
+              <article className="bg-[#f0fdf4] rounded-[28px] p-6 shadow-[0_18px_48px_rgba(15,23,42,0.06)] border border-[#bbf7d0] flex flex-col justify-between sm:col-span-2 lg:col-span-1">
+                <div>
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#079447]">
+                        Ooplab Team
                       </p>
                       <h3 className="mt-2 text-2xl font-bold text-[#0b1220]">
-                        {expert.name}
+                        Our Product Builders
                       </h3>
-                      <p className="mt-1 text-sm font-semibold text-[#475569]">
-                        {expert.role}
+                      <p className="mt-2 text-sm leading-6 text-[#475569]">
+                        Meet our dedicated crew of frontend, backend, AI engineers, designers, and specialists who co-create high-performing digital platforms.
                       </p>
                     </div>
                   </div>
-                  <p className="mt-6 text-sm leading-6 text-[#475569]">
-                    {expert.summary}
-                  </p>
+
+                  {/* Team profiles starting letters grid */}
+                  <div className="grid grid-cols-4 gap-3 mt-6 w-fit">
+                    <div className="h-10 w-10 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center text-sm font-bold shadow-sm border border-orange-200/50">J</div>
+                    <div className="h-10 w-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold shadow-sm border border-blue-200/50">A</div>
+                    <div className="h-10 w-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold shadow-sm border border-emerald-200/50">S</div>
+                    <div className="h-10 w-10 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold shadow-sm border border-purple-200/50">N</div>
+                    <div className="h-10 w-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center text-sm font-bold shadow-sm border border-cyan-200/50">H</div>
+                    <div className="h-10 w-10 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-sm font-bold shadow-sm border border-pink-200/50">V</div>
+                    <div className="h-10 w-10 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold shadow-sm border border-yellow-200/50">R</div>
+                    <div className="h-10 w-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center text-sm font-bold shadow-sm border border-slate-200/50">+12</div>
+                  </div>
+                </div>
+
+                <div className="mt-6">
                   <a
-                    href={expert.linkedin}
+                    href="https://www.linkedin.com/company/cgi/"
                     target="_blank"
                     rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#c7d2fe] bg-white/90 px-4 py-2 text-sm font-semibold text-[#1d4ed8] transition hover:bg-[#eff6ff] hover:text-[#1e40af]"
+                    className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-white/90 px-4 py-2 text-sm font-semibold text-[#079447] transition hover:bg-green-50 hover:text-[#006838] w-fit shadow-sm"
                   >
-                    <svg
-                      className="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6C1.12 6 0 4.88 0 3.5C0 2.12 1.12 1 2.5 1C3.88 1 4.98 2.12 4.98 3.5ZM0 8.25H5V24H0V8.25ZM7.5 8.25H12.3V10.3H12.36C12.99 9.16 14.5 7.88 17.05 7.88C21.68 7.88 24 10.82 24 15.02V24H18.07V15.94C18.07 13.96 17.97 11.57 15.16 11.57C12.24 11.57 11.63 13.69 11.63 15.78V24H5.7V8.25H7.5Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    Connect on LinkedIn
+                    <i className="bi bi-linkedin text-base" aria-hidden="true" />
+                    Follow Ooplab
                   </a>
-                </article>
-              ))}
+                </div>
+              </article>
             </div>
           </section>
         </section>
-          <section
+        <section
           className="mx-auto w-full max-w-[1120px] pt-24"
           id="case-studies"
         >
           <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-          <p className="text-[32px] uppercase tracking-[0.24em] text-Black">Case Studies</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">Selected projects and digital transformations.</h2>
-        </div>
-      
+            <div>
+              <p className="text-[32px] uppercase tracking-[0.24em] text-Black">Case Studies</p>
+              <h2 className="mt-3 text-3xl font-bold text-slate-950">Selected projects and digital transformations.</h2>
+            </div>
+
 
             <div className="flex items-center gap-2">
               <button
                 aria-label="Scroll case studies left"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#dceafe] bg-white text-[#245188] shadow-sm transition hover:border-[#2f6ae9] hover:text-[#2f6ae9]"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#dceafe] bg-white text-[#006838] shadow-sm transition hover:border-[#079447] hover:text-[#079447]"
                 onClick={() => scrollCaseStudies("left")}
                 type="button"
               >
@@ -384,7 +421,7 @@ export default function ServicesPage() {
               </button>
               <button
                 aria-label="Scroll case studies right"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#dceafe] bg-white text-[#245188] shadow-sm transition hover:border-[#2f6ae9] hover:text-[#2f6ae9]"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#dceafe] bg-white text-[#006838] shadow-sm transition hover:border-[#079447] hover:text-[#079447]"
                 onClick={() => scrollCaseStudies("right")}
                 type="button"
               >
@@ -413,7 +450,7 @@ export default function ServicesPage() {
             <div className="flex min-w-max gap-6">
               {caseStudies.map((study) => (
                 <article
-                  className="case-study-card group relative flex min-h-[320px] w-[85vw] max-w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-[24px] border border-[#dceafe] bg-white/90 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.025)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_70px_rgba(47,106,233,0.16)] sm:w-[320px]"
+                  className="case-study-card group relative flex min-h-[320px] w-[85vw] max-w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-[24px] border border-[#dceafe] bg-white/90 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.025)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_70px_rgba(7,148,71,0.16)] sm:w-[320px]"
                   key={study.title}
                 >
                   <div
@@ -423,17 +460,17 @@ export default function ServicesPage() {
 
                   <div className="relative z-10">
                     <div className="flex items-center justify-between gap-4">
-                      <span className="rounded-full border border-white/40 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2f6ae9] transition group-hover:border-white/70 group-hover:bg-white/15 group-hover:text-white">
+                      <span className="rounded-full border border-white/40 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#079447] transition group-hover:border-white/70 group-hover:bg-white/15 group-hover:text-white">
                         {study.category}
                       </span>
-                      <span className="text-sm font-semibold text-[#245188] transition group-hover:text-white">
+                      <span className="text-sm font-semibold text-[#006838] transition group-hover:text-white">
                         {study.metric}
                       </span>
                     </div>
 
                     {/* <div className="mt-6 rounded-[18px] border border-white/60 bg-white/70 p-4 backdrop-blur-sm transition group-hover:border-white/80 group-hover:bg-white/20">
                       <div className="flex items-end gap-3">
-                        <div className="h-12 w-20 rounded-xl bg-[#2f6ae9]" />
+                        <div className="h-12 w-20 rounded-xl brand-bg" />
                         <div className="flex-1 space-y-2">
                           <div className="h-2 rounded-full bg-[#cfe0ff]" />
                           <div className="h-2 w-4/5 rounded-full bg-[#dceafe]" />
@@ -452,7 +489,7 @@ export default function ServicesPage() {
                   <div className="relative z-10 mt-6 flex flex-wrap gap-2">
                     {study.tags.map((tag) => (
                       <span
-                        className="rounded-full border border-[#dceafe] bg-white/80 px-3 py-1 text-[12px] font-medium text-[#2563c9] transition group-hover:border-white/50 group-hover:bg-white/15 group-hover:text-white"
+                        className="rounded-full border border-[#dceafe] bg-white/80 px-3 py-1 text-[12px] font-medium text-[#079447] transition group-hover:border-white/50 group-hover:bg-white/15 group-hover:text-white"
                         key={tag}
                       >
                         {tag}

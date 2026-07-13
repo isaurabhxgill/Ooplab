@@ -45,6 +45,7 @@ body {
 .case-study-card:hover::after {
   transform: translateX(120%) skewX(-20deg);
 }
+
 @keyframes float {
   0% {
     transform: translateY(0px);
@@ -57,4 +58,34 @@ body {
   100% {
     transform: translateY(0px);
   }
+}
+
+/* OopLab Brand Colors */
+.brand-bg {
+  background-color: #079447;
+}
+
+
+.brand-hover:hover {
+  background-color: #006838;
+}
+
+.text-brand-hover {
+  transition: color 0.3s ease;
+}
+
+.text-brand-hover:hover {
+  color: #079447;
+}
+
+.border-brand {
+  border-color: #079447;
+}
+
+.brand-gradient {
+  background: linear-gradient(110deg,
+      #43b649 0%,
+      #079447 45%,
+      #006838 75%,
+      #004d2a 100%);
 }
