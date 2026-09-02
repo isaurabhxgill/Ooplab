@@ -22,7 +22,7 @@ export default function PhoneMockup({
       bg-[#111]
       rounded-[42px]
       border-[8px]
-      border-[#1d1d1d]
+      border-[#0c2517]
       shadow-[0_35px_80px_rgba(0,0,0,.35)]
       overflow-hidden
       ${large ? "w-[220px] h-[455px]" : "w-[180px] h-[370px]"}
@@ -44,10 +44,10 @@ export default function PhoneMockup({
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent" />
 
       {/* Side buttons */}
-      <div className="absolute left-[-8px] top-24 h-12 w-[4px] rounded-full bg-neutral-700" />
-      <div className="absolute left-[-8px] top-40 h-16 w-[4px] rounded-full bg-neutral-700" />
+      <div className="absolute left-[-8px] top-24 h-12 w-[4px] rounded-full bg-ink-700" />
+      <div className="absolute left-[-8px] top-40 h-16 w-[4px] rounded-full bg-ink-700" />
 
-      <div className="absolute right-[-8px] top-32 h-20 w-[4px] rounded-full bg-neutral-700" />
+      <div className="absolute right-[-8px] top-32 h-20 w-[4px] rounded-full bg-ink-700" />
     </div>
   );
 }

@@ -1,509 +1,232 @@
-"use client"
+import Link from "next/link";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import Image from "next/image";
-import "../globals.css";
-import { useRef } from "react";
-const caseStudies = [
-  {
-    title: "Healthcare SaaS Platform",
-    category: "Product Design",
-    metric: "+42% faster onboarding",
-    description:
-      "A patient-first platform that streamlined onboarding, appointment flows, and analytics for a fast-growing care network.",
-    tags: ["AI workflows", "HIPAA-ready", "Analytics"],
-    accent: "from-[#079447] via-[#43b649] to-[#006838]",
-  },
-  {
-    title: "Fintech Mobile App",
-    category: "Mobile Experience",
-    metric: "+28% weekly retention",
-    description:
-      "A secure, delightfully intuitive banking experience with real-time insights and frictionless account management.",
-    tags: ["Secure UX", "Realtime", "Growth"],
-    accent: "from-[#183153] via-[#2657b7] to-[#5ea3ff]",
-  },
-  {
-    title: "Healthcare SaaS Platform",
-    category: "Product Design",
-    metric: "+42% faster onboarding",
-    description:
-      "A patient-first platform that streamlined onboarding, appointment flows, and analytics for a fast-growing care network.",
-    tags: ["AI workflows", "HIPAA-ready", "Analytics"],
-    accent: "from-[#079447] via-[#43b649] to-[#006838]",
-  },
-  {
-    title: "Fintech Mobile App",
-    category: "Mobile Experience",
-    metric: "+28% weekly retention",
-    description:
-      "A secure, delightfully intuitive banking experience with real-time insights and frictionless account management.",
-    tags: ["Secure UX", "Realtime", "Growth"],
-    accent: "from-[#183153] via-[#2657b7] to-[#5ea3ff]",
-  },
-];
-const services = [
-  {
-    title: "Digital Product Strategy",
-    description:
-      "From discovery to launch, we build product roadmaps that align market needs with long-term growth.",
-    accent: "from-[#c7e7ff] via-[#eff6ff] to-[#f8fbff]",
-  },
-  {
-    title: "UI/UX Design & Prototyping",
-    description:
-      "We design delightful interfaces and prototypes to validate ideas quickly and confidently.",
-    accent: "from-[#e9d5ff] via-[#f7f1ff] to-[#eef8ff]",
-  },
-  {
-    title: "Web & Mobile Engineering",
-    description:
-      "Building polished web and mobile experiences with modern stacks, performance and reliability in mind.",
-    accent: "from-[#cffafe] via-[#eff6ff] to-[#f8fbff]",
-  },
-  {
-    title: "Cloud Architecture",
-    description:
-      "Secure, scalable cloud platforms designed for automation, uptime, and seamless integration.",
-    accent: "from-[#fef3c7] via-[#fff7cd] to-[#f8fbff]",
-  },
-  {
-    title: "AI & Data Intelligence",
-    description:
-      "We deliver intelligent insights, automation, and predictive experiences powered by data.",
-    accent: "from-[#dbeafe] via-[#e0f2fe] to-[#eff6ff]",
-  },
-  {
-    title: "Enterprise Systems",
-    description:
-      "Robust backend platforms and integrations built to support complex teams and evolving workflows.",
-    accent: "from-[#fee2e2] via-[#fff1f2] to-[#f8fbff]",
-  },
-];
+import ServiceCatalog from "./ServiceCatalog";
+import SceneAnchor from "../webgl/SceneAnchor";
+import StageMount from "../webgl/StageMount";
+import { engagementModels, processSteps, services } from "../data/services";
 
-const experts = [
-  {
-    name: "Rohan Kumar",
-    role: "Co-Founders",
-    summary:
-      "Guides product vision with an emphasis on usability, speed, and business impact.",
-    accent: "bg-[#ede9fe]",
-    image: "/Assest/Rohan.jpg",
-    linkedin: "https://www.linkedin.com/in/rohan-kumar7/",
-  },
-  {
-    name: "Saurabh Kumar",
-    role: "Co-Founders",
-    summary:
-      "Builds scalable systems and keeps development aligned to performance and reliability.",
-    accent: "bg-[#cffafe]",
-    image: "/Assest/saurabh.jpeg",
-    linkedin: "https://www.linkedin.com/in/saurabh-kumar-476606292/",
-  },
-
+const stats = [
+  { value: `${services.length}`, label: "Services across five practices" },
+  { value: "6–10", label: "Weeks to a working MVP" },
+  { value: "2wk", label: "Sprint cadence, always deployed" },
+  { value: "100%", label: "Source code and IP handed over" },
 ];
 
 export default function ServicesPage() {
-  const caseStudiesRef = useRef<HTMLDivElement>(null);
-
-  const scrollCaseStudies = (direction: "left" | "right") => {
-    if (!caseStudiesRef.current) return;
-
-    const card = caseStudiesRef.current.querySelector("article");
-    const cardWidth = card?.getBoundingClientRect().width ?? 320;
-    const gap = 24;
-
-    caseStudiesRef.current.scrollBy({
-      left: direction === "left" ? -(cardWidth + gap) : cardWidth + gap,
-      behavior: "smooth",
-    });
-  };
-  // const process = [
-  //   {
-  //     step: "01",
-  //     title: "Discover",
-  //     description:
-  //       "We understand your business goals, users, competitors, and project vision before writing a single line of code.",
-  //   },
-  //   {
-  //     step: "02",
-  //     title: "Strategy",
-  //     description:
-  //       "Our team prepares product roadmaps, technical architecture, feature planning, and execution strategy.",
-  //   },
-  //   {
-  //     step: "03",
-  //     title: "Design",
-  //     description:
-  //       "Creating intuitive UI/UX, wireframes, interactive prototypes, and design systems focused on user experience.",
-  //   },
-  //   {
-  //     step: "04",
-  //     title: "Develop",
-  //     description:
-  //       "Building scalable web and mobile applications using modern technologies with clean, maintainable code.",
-  //   },
-  //   {
-  //     step: "05",
-  //     title: "Test",
-  //     description:
-  //       "Rigorous quality assurance, security testing, accessibility checks, and performance optimization.",
-  //   },
-  //   {
-  //     step: "06",
-  //     title: "Launch",
-  //     description:
-  //       "Deployment, monitoring, analytics setup, and production optimization for a smooth release.",
-  //   },
-  //   {
-  //     step: "07",
-  //     title: "Support",
-  //     description:
-  //       "Continuous improvements, feature updates, maintenance, and long-term technical partnership.",
-  //   },
-  // ];
   return (
-    <main className="min-h-screen bg-[#f5fbff] text-[#0f172a]">
-      <div className="mx-auto w-full max-w-[1440px]">
-        <Header />
+    <>
+      <StageMount slides={[]} serviceCount={0} />
 
-        <section className="mt-7 rounded-[32px] bg-white/95 px-6 py-10 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-10 sm:py-12">
-          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-[#eef7ff] via-[#f8fcff] to-[#ffffff] px-6 py-10 sm:px-10 sm:py-14">
-            <div className="pointer-events-none absolute -right-16 top-4 h-40 w-40 rounded-full bg-[#c7e7ff] blur-3xl opacity-50" />
-            <div className="pointer-events-none absolute left-0 top-24 h-56 w-56 rounded-full bg-[#dff6f7] blur-3xl opacity-50" />
-            <div className="relative z-10 mx-auto max-w-[900px] text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7c93c5]">
-                End-to-end services
-              </p>
-              <h1 className="mt-4 text-4xl font-bold tracking-[-0.03em] text-[#0b1220] sm:text-5xl">
-                Services and solutions for the full digital journey.
-              </h1>
-              <p className="mx-auto mt-5 max-w-3xl text-base leading-8 text-[#475569] sm:text-lg">
-                Ooplab helps you move from idea to product, with strategy, design, engineering, cloud, and AI support.
-              </p>
+      <main className="stage-content min-h-screen">
+      <div className="stage-content mx-auto w-full max-w-[1440px]">
+        <Header variant="ink" />
+
+        {/* ------------------------------------------------------------ hero */}
+        <SceneAnchor id="section:hero">
+        <section className="band-ink on-ink relative overflow-hidden px-5 pb-24 pt-20 sm:px-9 sm:pb-32 sm:pt-28">
+          <div className="stage-fallback" aria-hidden="true" />
+          <div className="hero-scrim" aria-hidden="true" />
+
+          <div className="relative z-10 mx-auto w-full max-w-[1120px]">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-300">
+              What we do
+            </p>
+            <h1 className="mt-5 max-w-[900px] text-[40px] font-extrabold leading-[1.05] tracking-tight sm:text-[62px]">
+              Every discipline needed to take a product from{" "}
+              <span className="text-gradient-lime">idea to scale</span>.
+            </h1>
+            <p className="mt-6 max-w-[640px] text-base leading-7 text-on-ink-muted sm:text-lg">
+              Ooplab is a full-stack product studio. Strategy, design,
+              engineering and the platform work underneath — delivered by one
+              team, under one roadmap, with no handoffs between agencies.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-brand-600 px-7 text-sm font-semibold text-white shadow-cta transition hover:bg-brand-500"
+              >
+                Book a consultation
+              </Link>
+              <a
+                href="#catalogue"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-line-inv px-7 text-sm font-semibold text-on-ink transition hover:border-brand-300 hover:text-brand-300"
+              >
+                Browse all services
+                <i className="bi bi-arrow-down" aria-hidden="true" />
+              </a>
             </div>
+
+            <dl className="mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line-inv pt-10 lg:grid-cols-4">
+              {stats.map((stat) => (
+                <div key={stat.label}>
+                  <dt className="sr-only">{stat.label}</dt>
+                  <dd>
+                    <span className="block text-3xl font-bold text-brand-300 sm:text-4xl">
+                      {stat.value}
+                    </span>
+                    <span className="mt-2 block text-sm leading-6 text-on-ink-muted">
+                      {stat.label}
+                    </span>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+        </SceneAnchor>
+
+        {/* ------------------------------------------------------- catalogue */}
+        <section
+          id="catalogue"
+          className="mx-auto w-full max-w-[1280px] px-5 py-24 sm:px-9 sm:py-32"
+        >
+          <div className="mx-auto max-w-[760px] text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
+              Capabilities
+            </p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-fg sm:text-[42px]">
+              The full catalogue
+            </h2>
+            <p className="mt-5 text-base leading-7 text-fg-muted">
+              Most engagements combine several of these. Filter by practice to
+              see what sits where, or talk to us and we will shape the mix
+              around the outcome you are after.
+            </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <article
-                key={service.title}
-                className="group relative overflow-hidden rounded-[28px] border border-[#e5e7eb] bg-white p-6 shadow-[0_18px_48px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_80px_rgba(47,106,233,0.14)]"
-              >
-                <div
-                  className={`absolute inset-x-0 top-0 h-40 bg-gradient-to-br ${service.accent} opacity-80 blur-3xl`}
-                  style={{ clipPath: 'circle(60% at 80% -10%)' }}
-                />
-                <div className="relative z-10">
-                  <h2 className="text-xl font-semibold text-[#0b1220]">
-                    {service.title}
-                  </h2>
-                  <p className="mt-4 text-sm leading-6 text-[#475569]">
-                    {service.description}
+          <div className="mt-14">
+            <ServiceCatalog />
+          </div>
+        </section>
+
+        {/* --------------------------------------------------------- process */}
+        <section className="band-ink-soft on-ink relative overflow-hidden px-5 py-24 sm:px-9 sm:py-32">
+          <div className="relative z-10 mx-auto w-full max-w-[1120px]">
+            <div className="max-w-[680px]">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-300">
+                How we work
+              </p>
+              <h2 className="mt-4 text-3xl font-bold leading-tight sm:text-[42px]">
+                Five phases, no surprises at the end
+              </h2>
+              <p className="mt-5 text-base leading-7 text-on-ink-muted">
+                Every engagement runs the same shape. You see working software
+                from the third week onward, and you own everything we write.
+              </p>
+            </div>
+
+            <ol className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-line-inv bg-line-inv md:grid-cols-2 lg:grid-cols-5">
+              {processSteps.map((step) => (
+                <li
+                  key={step.phase}
+                  className="group relative bg-ink-900 p-7 transition duration-500 hover:bg-ink-800"
+                >
+                  <span className="font-mono text-xs tracking-[0.2em] text-brand-300">
+                    {step.phase}
+                  </span>
+                  <h3 className="mt-4 text-xl font-semibold text-on-ink">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-xs uppercase tracking-[0.14em] text-on-ink-muted">
+                    {step.duration}
                   </p>
-                </div>
+                  <p className="mt-4 text-sm leading-6 text-on-ink-muted">
+                    {step.description}
+                  </p>
+                  <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-brand-300 transition-all duration-500 group-hover:w-full" />
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        {/* ------------------------------------------------------ engagement */}
+        <section className="mx-auto w-full max-w-[1120px] px-5 py-24 sm:px-9 sm:py-32">
+          <div className="max-w-[680px]">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
+              Engagement models
+            </p>
+            <h2 className="mt-4 text-3xl font-bold leading-tight text-fg sm:text-[42px]">
+              Three ways to work with us
+            </h2>
+            <p className="mt-5 text-base leading-7 text-fg-muted">
+              The right structure depends on how settled the scope is and how
+              much technical leadership you already have in house.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            {engagementModels.map((model) => (
+              <article
+                key={model.name}
+                className="card group flex flex-col rounded-3xl p-8"
+              >
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-50 text-xl text-brand-700 transition duration-500 group-hover:bg-brand-600 group-hover:text-white">
+                  <i className={`bi ${model.icon}`} aria-hidden="true" />
+                </span>
+
+                <p className="mt-6 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-700">
+                  {model.tagline}
+                </p>
+                <h3 className="accent-rule mt-2 pb-3 text-2xl font-semibold text-fg">
+                  {model.name}
+                </h3>
+                <p className="mt-4 text-sm leading-6 text-fg-muted">
+                  {model.description}
+                </p>
+
+                <ul className="mt-6 flex-1 space-y-2.5">
+                  {model.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex gap-2.5 text-sm leading-6 text-fg-muted"
+                    >
+                      <i
+                        className="bi bi-dot text-lg leading-none text-brand-300"
+                        aria-hidden="true"
+                      />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-7 border-t border-line pt-5 text-sm text-fg-subtle">
+                  <span className="font-medium text-fg">Best for:</span>{" "}
+                  {model.bestFor}
+                </p>
               </article>
             ))}
           </div>
-
-          {/* <section className="relative overflow-hidden py-28">
-
- 
-  <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[180px]" />
-
-  <div className="relative z-10">
-
-    <div className="text-center">
-      <span className="rounded-full border border-cyan-400/20 bg-cyan-400/10 px-5 py-2 text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
-        Our Process
-      </span>
-
-      <h2 className="mt-6 text-5xl font-bold text-[#0b1220]">
-        From Idea to Launch
-      </h2>
-
-      <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-[#475569]">
-        Every successful product begins with a clear strategy. We combine
-        design thinking, engineering excellence, and agile execution to build
-        products users love.
-      </p>
-    </div>
-
-  
-    <div className="relative mt-24">
-     
-      <svg viewBox="0 0 1200 200" className="hidden lg:block absolute left-0 right-0 mx-auto w-full h-48 overflow-visible z-0">
-        <path d="M50 140 C300 10, 900 10, 1150 140" stroke="rgba(34,211,238,0.18)" strokeWidth="12" fill="none" strokeLinecap="round" />
-        <path d="M50 140 C300 10, 900 10, 1150 140" stroke="rgba(34,211,238,0.1)" strokeWidth="4" fill="none" strokeLinecap="round" />
-      </svg>
-
-      <div className="relative mt-10 lg:mt-24">
-       
-        <div className="hidden lg:block relative h-56 z-20">
-          {process.map((item, idx) => {
-            const leftPct = (idx / (process.length - 1)) * 100;
-            return (
-              <div key={item.step} style={{ left: `${leftPct}%` }} className="absolute top-0 w-1/3 -translate-x-1/2 text-center">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-cyan-300 bg-gradient-to-br from-[#0f1724] to-[#071022] shadow-[0_10px_30px_rgba(34,211,238,0.12)]">
-                  <span className="bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-xl font-bold text-transparent">
-                    {item.step}
-                  </span>
-                </div>
-                <div className="mt-6 mx-auto max-w-[300px] rounded-[20px] bg-white p-5 shadow-lg">
-                  <h4 className="text-lg font-semibold text-[#0b1220]">{item.title}</h4>
-                  <p className="mt-2 text-sm text-[#475569]">{item.description}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        
-        <div className="lg:hidden mt-6 space-y-6">
-          {process.map((item) => (
-            <div key={item.step} className="flex items-start gap-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-300 bg-gradient-to-br from-[#0f1724] to-[#071022] text-white">
-                {item.step}
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-[#0b1220]">{item.title}</h4>
-                <p className="mt-2 text-sm text-[#475569]">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-</section> */}
-
-          <section id="team" className="mt-14 rounded-[32px] bg-[#eef8ff] px-6 py-10 shadow-[0_18px_60px_rgba(47,106,233,0.08)] sm:px-10 sm:py-12">
-            <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#7c93c5]">
-                  Ooplab experts
-                </p>
-                <h2 className="mt-4 text-3xl font-bold text-[#0b1220] sm:text-4xl">
-                  Professionals delivering product-led outcomes.
-                </h2>
-              </div>
-              <p className="max-w-xl text-sm leading-6 text-[#475569] sm:text-base">
-                Our experienced team blends product strategy, engineering excellence, and design craft for every engagement.
-              </p>
-            </div>
-
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {experts.map((expert) => (
-                <article
-                  key={expert.name}
-                  className={`${expert.accent} rounded-[28px] p-6 shadow-[0_18px_48px_rgba(15,23,42,0.06)] flex flex-col justify-between`}
-                >
-                  <div>
-                    <div className="flex items-start gap-4">
-                      <div className="relative h-20 w-20 shrink-0 rounded-full border-4 border-white bg-white shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
-                        <Image
-                          src={expert.image}
-                          alt={`${expert.name} avatar`}
-                          width={80}
-                          height={80}
-                          className="h-full w-full rounded-full object-cover"
-                        />
-                      </div>
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#079447]">
-                          Expert
-                        </p>
-                        <h3 className="mt-2 text-2xl font-bold text-[#0b1220]">
-                          {expert.name}
-                        </h3>
-                        <p className="mt-1 text-sm font-semibold text-[#475569]">
-                          {expert.role}
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-6 text-sm leading-6 text-[#475569]">
-                      {expert.summary}
-                    </p>
-                  </div>
-                  <div className="mt-6">
-                    <a
-                      href={expert.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-white/90 px-4 py-2 text-sm font-semibold text-[#079447] transition hover:bg-green-50 hover:text-[#006838] w-fit shadow-sm"
-                    >
-                      <i className="bi bi-linkedin text-base" aria-hidden="true" />
-                      Connect on LinkedIn
-                    </a>
-                  </div>
-                </article>
-              ))}
-
-              {/* Third Card taking all remaining space (col-span-2 on tablet/mobile size, col-span-1 on desktop size) */}
-              <article className="bg-[#f0fdf4] rounded-[28px] p-6 shadow-[0_18px_48px_rgba(15,23,42,0.06)] border border-[#bbf7d0] flex flex-col justify-between sm:col-span-2 lg:col-span-1">
-                <div>
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#079447]">
-                        Ooplab Team
-                      </p>
-                      <h3 className="mt-2 text-2xl font-bold text-[#0b1220]">
-                        Our Product Builders
-                      </h3>
-                      <p className="mt-2 text-sm leading-6 text-[#475569]">
-                        Meet our dedicated crew of frontend, backend, AI engineers, designers, and specialists who co-create high-performing digital platforms.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Team profiles starting letters grid */}
-                  <div className="grid grid-cols-4 gap-3 mt-6 w-fit">
-                    <div className="h-10 w-10 rounded-full bg-orange-100 text-orange-700 flex items-center justify-center text-sm font-bold shadow-sm border border-orange-200/50">J</div>
-                    <div className="h-10 w-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-bold shadow-sm border border-blue-200/50">A</div>
-                    <div className="h-10 w-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold shadow-sm border border-emerald-200/50">S</div>
-                    <div className="h-10 w-10 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold shadow-sm border border-purple-200/50">N</div>
-                    <div className="h-10 w-10 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center text-sm font-bold shadow-sm border border-cyan-200/50">H</div>
-                    <div className="h-10 w-10 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-sm font-bold shadow-sm border border-pink-200/50">V</div>
-                    <div className="h-10 w-10 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-sm font-bold shadow-sm border border-yellow-200/50">R</div>
-                    <div className="h-10 w-10 rounded-full bg-slate-100 text-slate-700 flex items-center justify-center text-sm font-bold shadow-sm border border-slate-200/50">+12</div>
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <a
-                    href="https://www.linkedin.com/company/cgi/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-green-200 bg-white/90 px-4 py-2 text-sm font-semibold text-[#079447] transition hover:bg-green-50 hover:text-[#006838] w-fit shadow-sm"
-                  >
-                    <i className="bi bi-linkedin text-base" aria-hidden="true" />
-                    Follow Ooplab
-                  </a>
-                </div>
-              </article>
-            </div>
-          </section>
         </section>
-        <section
-          className="mx-auto w-full max-w-[1120px] pt-24"
-          id="case-studies"
-        >
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <p className="text-[32px] uppercase tracking-[0.24em] text-Black">Case Studies</p>
-              <h2 className="mt-3 text-3xl font-bold text-slate-950">Selected projects and digital transformations.</h2>
-            </div>
 
-
-            <div className="flex items-center gap-2">
-              <button
-                aria-label="Scroll case studies left"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#dceafe] bg-white text-[#006838] shadow-sm transition hover:border-[#079447] hover:text-[#079447]"
-                onClick={() => scrollCaseStudies("left")}
-                type="button"
-              >
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M15 18L9 12L15 6"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </button>
-              <button
-                aria-label="Scroll case studies right"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#dceafe] bg-white text-[#006838] shadow-sm transition hover:border-[#079447] hover:text-[#079447]"
-                onClick={() => scrollCaseStudies("right")}
-                type="button"
-              >
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9 6L15 12L9 18"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div
-            className="mt-8 flex gap-6 overflow-x-auto pb-3 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            ref={caseStudiesRef}
-          >
-            <div className="flex min-w-max gap-6">
-              {caseStudies.map((study) => (
-                <article
-                  className="case-study-card group relative flex min-h-[320px] w-[85vw] max-w-[360px] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-[24px] border border-[#dceafe] bg-white/90 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.025)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_28px_70px_rgba(7,148,71,0.16)] sm:w-[320px]"
-                  key={study.title}
-                >
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${study.accent} opacity-0 transition duration-300 group-hover:opacity-100`}
-                  />
-                  <div className="absolute right-5 top-5 h-20 w-20 rounded-full bg-white/20 blur-2xl transition duration-300 group-hover:scale-125" />
-
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between gap-4">
-                      <span className="rounded-full border border-white/40 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#079447] transition group-hover:border-white/70 group-hover:bg-white/15 group-hover:text-white">
-                        {study.category}
-                      </span>
-                      <span className="text-sm font-semibold text-[#006838] transition group-hover:text-white">
-                        {study.metric}
-                      </span>
-                    </div>
-
-                    {/* <div className="mt-6 rounded-[18px] border border-white/60 bg-white/70 p-4 backdrop-blur-sm transition group-hover:border-white/80 group-hover:bg-white/20">
-                      <div className="flex items-end gap-3">
-                        <div className="h-12 w-20 rounded-xl brand-bg" />
-                        <div className="flex-1 space-y-2">
-                          <div className="h-2 rounded-full bg-[#cfe0ff]" />
-                          <div className="h-2 w-4/5 rounded-full bg-[#dceafe]" />
-                        </div>
-                      </div>
-                    </div> */}
-
-                    <h3 className="mt-6 text-xl font-bold text-[#101828] transition duration-300 group-hover:text-white">
-                      {study.title}
-                    </h3>
-                    <p className="mt-3 text-[13px] leading-6 text-[#667085] transition duration-300 group-hover:text-white/90">
-                      {study.description}
-                    </p>
-                  </div>
-
-                  <div className="relative z-10 mt-6 flex flex-wrap gap-2">
-                    {study.tags.map((tag) => (
-                      <span
-                        className="rounded-full border border-[#dceafe] bg-white/80 px-3 py-1 text-[12px] font-medium text-[#079447] transition group-hover:border-white/50 group-hover:bg-white/15 group-hover:text-white"
-                        key={tag}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
+        {/* ------------------------------------------------------------- cta */}
+        <section className="mx-auto w-full max-w-[1120px] px-5 pb-24 sm:px-9 sm:pb-32">
+          <div className="brand-gradient relative overflow-hidden rounded-[32px] px-8 py-16 text-center sm:px-16 sm:py-20">
+            <div
+              className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand-200 opacity-25 blur-3xl"
+              aria-hidden="true"
+            />
+            <h2 className="relative z-10 mx-auto max-w-[720px] text-3xl font-bold leading-tight text-white sm:text-[42px]">
+              Tell us what you are trying to build
+            </h2>
+            <p className="relative z-10 mx-auto mt-5 max-w-[560px] text-base leading-7 text-white/85">
+              A thirty-minute call is usually enough to tell you whether we are
+              the right studio for it — and what it would realistically take.
+            </p>
+            <Link
+              href="/contact"
+              className="relative z-10 mt-9 inline-flex h-12 items-center justify-center rounded-full bg-white px-8 text-sm font-semibold text-brand-700 transition hover:bg-brand-50"
+            >
+              Book a consultation
+            </Link>
           </div>
         </section>
 
         <Footer />
       </div>
     </main>
+    </>
   );
 }

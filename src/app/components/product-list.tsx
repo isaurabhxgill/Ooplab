@@ -14,7 +14,7 @@ export default function ProductList({ products }: ProductListProps) {
           Our Products
         </h2>
 
-        <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base">
+        <p className="mt-3 text-sm leading-6 text-on-ink-muted sm:text-base">
           Products built for Indian micro-SaaS, B2B tools, bootstrapped digital
           businesses, and vehicle privacy & safety platforms.
         </p>
@@ -30,7 +30,7 @@ export default function ProductList({ products }: ProductListProps) {
               key={product.slug}
               className={`rounded-[24px] border p-6 transition ${
                 isEventSync
-                  ? "border-[#3ECF8E]/20 bg-[#18181B] hover:border-[#3ECF8E]/50 hover:bg-[#1e1e21]"
+                  ? "border-[#84c030]/20 bg-[#04120a] hover:border-[#84c030]/50 hover:bg-[#143222]"
                   : "border-white/10 bg-white/5 hover:border-[#079447]/60 hover:bg-white/10"
               }`}
             >
@@ -40,10 +40,10 @@ export default function ProductList({ products }: ProductListProps) {
                   <p
                     className={`text-xl font-bold uppercase tracking-[0.24em] ${
                       isEventSync
-                        ? "text-[#3ECF8E]"
+                        ? "text-[#84c030]"
                         : isBharatExit
                         ? "text-lime-400"
-                        : "text-cyan-300"
+                        : "text-brand-200"
                     }`}
                   >
                     {product.tag}
@@ -53,20 +53,20 @@ export default function ProductList({ products }: ProductListProps) {
                     {product.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-slate-300">
+                  <p className="mt-3 text-sm leading-6 text-line-strong">
                     {product.description}
                   </p>
 
-                  <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                  <ul className="mt-4 space-y-3 text-sm text-line-strong">
                     {product.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2">
                         <span
                           className={`mt-1 h-2.5 w-2.5 shrink-0 rounded-full ${
                             isEventSync
-                              ? "bg-[#3ECF8E]"
+                              ? "bg-[#84c030]"
                               : isBharatExit
                               ? "bg-lime-400"
-                              : "bg-cyan-300"
+                              : "bg-brand-200"
                           }`}
                         />
                         <span>{feature}</span>
@@ -79,7 +79,7 @@ export default function ProductList({ products }: ProductListProps) {
                       href={`/products/${product.slug}`}
                       className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white transition ${
                         isEventSync
-                          ? "bg-[#3ECF8E]/15 hover:bg-[#3ECF8E]/30"
+                          ? "bg-[#84c030]/15 hover:bg-[#84c030]/30"
                           : "bg-white/10 hover:bg-white/20"
                       }`}
                     >
@@ -95,7 +95,7 @@ export default function ProductList({ products }: ProductListProps) {
                   {isEventSync && product.previewImages && product.previewImages.length >= 3 ? (
                     <div className="relative flex h-[280px] w-full max-w-full gap-3 sm:h-[340px] lg:h-[380px] lg:max-w-[480px]">
                       {/* Primary large screenshot */}
-                      <div className="relative h-full flex-1 overflow-hidden rounded-[20px] border border-[#3ECF8E]/20 shadow-[0_0_40px_rgba(62,207,142,0.08)] transition-all duration-500 hover:shadow-[0_0_60px_rgba(62,207,142,0.18)] hover:scale-[1.02]">
+                      <div className="relative h-full flex-1 overflow-hidden rounded-[20px] border border-[#84c030]/20 shadow-[0_0_40px_rgba(62,207,142,0.08)] transition-all duration-500 hover:shadow-[0_0_60px_rgba(62,207,142,0.18)] hover:scale-[1.02]">
                         <Image
                           src={product.previewImages[0]}
                           alt="EventSync admin dashboard"
@@ -107,7 +107,7 @@ export default function ProductList({ products }: ProductListProps) {
                       </div>
                       {/* Two stacked thumbnails */}
                       <div className="flex w-[40%] flex-col gap-3">
-                        <div className="relative flex-1 overflow-hidden rounded-[16px] border border-[#3ECF8E]/20 shadow-sm transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(62,207,142,0.15)]">
+                        <div className="relative flex-1 overflow-hidden rounded-[16px] border border-[#84c030]/20 shadow-sm transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(62,207,142,0.15)]">
                           <Image
                             src={product.previewImages[1]}
                             alt="EventSync volunteer app"
@@ -116,7 +116,7 @@ export default function ProductList({ products }: ProductListProps) {
                             className="object-cover object-top"
                           />
                         </div>
-                        <div className="relative flex-1 overflow-hidden rounded-[16px] border border-[#3ECF8E]/20 shadow-sm transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(62,207,142,0.15)]">
+                        <div className="relative flex-1 overflow-hidden rounded-[16px] border border-[#84c030]/20 shadow-sm transition-all duration-500 hover:scale-[1.03] hover:shadow-[0_0_30px_rgba(62,207,142,0.15)]">
                           <Image
                             src={product.previewImages[2]}
                             alt="EventSync intake form"

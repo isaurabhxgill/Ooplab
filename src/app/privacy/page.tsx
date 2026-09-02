@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-[#f5fbff] text-[#0f172a]">
+    <main className="min-h-screen bg-[#fafaf5] text-[#11201a]">
       <div className="mx-auto w-full max-w-[1440px]">
         <Header />
 
@@ -34,21 +34,21 @@ export default function PrivacyPage() {
           </div>
         </section>
 
-        <section className="py-12 sm:py-20 px-6 sm:px-8 bg-white my-8 rounded-[28px] shadow-sm max-w-[1120px] mx-auto border border-gray-100">
+        <section className="py-12 sm:py-20 px-6 sm:px-8 bg-white my-8 rounded-[28px] shadow-sm max-w-[1120px] mx-auto border border-paper-sunk">
           <div className="prose prose-slate max-w-none space-y-8">
             <div>
-              <h2 className="text-2xl font-bold text-[#0b1220] mb-4">1. Information We Collect</h2>
-              <p className="text-gray-600 leading-7">
+              <h2 className="text-2xl font-bold text-[#11201a] mb-4">1. Information We Collect</h2>
+              <p className="text-fg-muted leading-7">
                 We collect information you provide directly to us when filling out our contact forms, subscribing to our newsletter, or collaborating on projects. This includes names, email addresses, phone numbers, company details, and project requirements.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0b1220] mb-4">2. How We Use Your Information</h2>
-              <p className="text-gray-600 leading-7">
+              <h2 className="text-2xl font-bold text-[#11201a] mb-4">2. How We Use Your Information</h2>
+              <p className="text-fg-muted leading-7">
                 We use the information we collect to:
               </p>
-              <ul className="list-disc pl-5 mt-2 text-gray-600 space-y-2">
+              <ul className="list-disc pl-5 mt-2 text-fg-muted space-y-2">
                 <li>Respond to your inquiries and deliver digital consulting services.</li>
                 <li>Keep you updated with newsletters and announcements (when subscribed).</li>
                 <li>Analyze website performance and optimize user experience.</li>
@@ -57,22 +57,22 @@ export default function PrivacyPage() {
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0b1220] mb-4">3. Data Sharing and Security</h2>
-              <p className="text-gray-600 leading-7">
+              <h2 className="text-2xl font-bold text-[#11201a] mb-4">3. Data Sharing and Security</h2>
+              <p className="text-fg-muted leading-7">
                 Ooplab does not sell, rent, or trade your personal data. We implement industry-standard encryption and security protocols to safeguard your credentials and information. We only share details with trusted hosting, email newsletter, or communication utilities necessary to deliver our services.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0b1220] mb-4">4. Your Rights and Choices</h2>
-              <p className="text-gray-600 leading-7">
+              <h2 className="text-2xl font-bold text-[#11201a] mb-4">4. Your Rights and Choices</h2>
+              <p className="text-fg-muted leading-7">
                 You can opt-out of our newsletter at any time by clicking the unsubscribe link or contacting us directly at <span className="font-semibold text-[#079447]">Ooplabhr@gmail.com</span>. You also have the right to request access to or deletion of any personal data we hold about you.
               </p>
             </div>
 
             <div>
-              <h2 className="text-2xl font-bold text-[#0b1220] mb-4">5. Updates to This Policy</h2>
-              <p className="text-gray-600 leading-7">
+              <h2 className="text-2xl font-bold text-[#11201a] mb-4">5. Updates to This Policy</h2>
+              <p className="text-fg-muted leading-7">
                 We may update our Privacy Policy periodically to reflect changes in our workflows or regulatory updates. We encourage you to check this page periodically for any modifications.
               </p>
             </div>

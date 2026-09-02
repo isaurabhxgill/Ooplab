@@ -178,7 +178,7 @@ export default async function ProductPage({ params }: PageProps) {
   ];
 
   return (
-    <main className="min-h-screen bg-[#f5fbff] text-slate-800">
+    <main className="min-h-screen bg-[#fafaf5] text-ink-800">
       <Header />
       <div className="mx-auto w-full max-w-[1440px] px-4 py-8 sm:px-8 sm:py-12">
         {isEventSync ? (
@@ -187,34 +187,34 @@ export default async function ProductPage({ params }: PageProps) {
           // ==========================================
           <section className="space-y-10">
             {/* Hero Card */}
-            <div className="relative overflow-hidden rounded-[32px] bg-[#18181B] p-8 sm:p-12">
+            <div className="relative overflow-hidden rounded-[32px] bg-[#04120a] p-8 sm:p-12">
               {/* Glow orbs */}
-              <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-[#3ECF8E]/10 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-10 right-0 h-64 w-64 rounded-full bg-[#3ECF8E]/6 blur-3xl" />
+              <div className="pointer-events-none absolute -left-20 -top-20 h-80 w-80 rounded-full bg-[#84c030]/10 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-10 right-0 h-64 w-64 rounded-full bg-[#84c030]/6 blur-3xl" />
               <div className="relative z-10 flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
                 <div className="max-w-2xl">
                   {/* Live badge */}
-                  <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#3ECF8E]/10 px-3 py-1 ring-1 ring-[#3ECF8E]/20">
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#84c030]/10 px-3 py-1 ring-1 ring-[#84c030]/20">
                     <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#3ECF8E] opacity-75" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#3ECF8E]" />
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#84c030] opacity-75" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-[#84c030]" />
                     </span>
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#3ECF8E]">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#84c030]">
                       Live Operations Active · 5 Cities
                     </span>
                   </div>
-                  <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#3ECF8E]">
+                  <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#84c030]">
                     EventSync
                   </p>
                   <h1 className="mt-3 text-4xl font-extrabold leading-tight text-white sm:text-5xl">
                     High-precision staffing for{" "}
                     <span className="relative inline-block">
-                      India's biggest
-                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#3ECF8E]" />
+                      India&apos;s biggest
+                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#84c030]" />
                     </span>{" "}
                     tech events.
                   </h1>
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-400">
+                  <p className="mt-4 max-w-xl text-base leading-relaxed text-on-ink-muted">
                     Orchestrate technical crew, hospitality teams, and site leads for corporate summits across India — with zero friction and full real-time visibility.
                   </p>
                   <div className="mt-8 flex flex-wrap gap-3">
@@ -222,7 +222,7 @@ export default async function ProductPage({ params }: PageProps) {
                       href="https://eventsync-xi.vercel.app/intake"
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-lg bg-[#3ECF8E] px-5 py-2.5 text-sm font-bold text-[#18181B] transition hover:opacity-90"
+                      className="inline-flex items-center gap-2 rounded-lg bg-[#84c030] px-5 py-2.5 text-sm font-bold text-[#04120a] transition hover:opacity-90"
                     >
                       Deploy Crew <ExternalLink className="h-4 w-4" />
                     </a>
@@ -246,8 +246,8 @@ export default async function ProductPage({ params }: PageProps) {
                   ].map((s) => (
                     <div key={s.label} className="rounded-2xl border border-white/8 bg-white/5 p-4">
                       <div className="text-2xl font-bold text-white">{s.value}</div>
-                      <div className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-slate-400">{s.label}</div>
-                      <div className="mt-0.5 text-[10px] text-[#3ECF8E]">{s.sub}</div>
+                      <div className="mt-0.5 text-[11px] font-semibold uppercase tracking-wider text-on-ink-muted">{s.label}</div>
+                      <div className="mt-0.5 text-[10px] text-[#84c030]">{s.sub}</div>
                     </div>
                   ))}
                 </div>
@@ -255,10 +255,10 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
 
             {/* Three Apps */}
-            <div className="rounded-[32px] border border-white/10 bg-[#18181B] p-8 sm:p-10">
-              <p className="font-mono text-xs font-medium uppercase tracking-widest text-[#3ECF8E]">Platform</p>
+            <div className="rounded-[32px] border border-white/10 bg-[#04120a] p-8 sm:p-10">
+              <p className="font-mono text-xs font-medium uppercase tracking-widest text-[#84c030]">Platform</p>
               <h2 className="mt-3 text-3xl font-extrabold text-white">One platform. Three powerful apps.</h2>
-              <p className="mt-2 text-slate-400">Built for every stakeholder in the event staffing chain — from corporate organizers to field supervisors.</p>
+              <p className="mt-2 text-on-ink-muted">Built for every stakeholder in the event staffing chain — from corporate organizers to field supervisors.</p>
               <div className="mt-8 grid gap-5 md:grid-cols-3">
                 {[
                   {
@@ -294,25 +294,25 @@ export default async function ProductPage({ params }: PageProps) {
                     href={app.href}
                     target="_blank"
                     rel="noreferrer"
-                    className={`group relative overflow-hidden rounded-2xl p-7 ring-1 transition-all hover:ring-[#3ECF8E]/40 ${app.dark
-                      ? "bg-[#3ECF8E]/10 ring-[#3ECF8E]/20"
+                    className={`group relative overflow-hidden rounded-2xl p-7 ring-1 transition-all hover:ring-[#84c030]/40 ${app.dark
+                      ? "bg-[#84c030]/10 ring-[#84c030]/20"
                       : "bg-white/5 ring-white/10 hover:bg-white/8"
                       }`}
                   >
-                    <div className="mb-4 grid h-10 w-10 place-items-center rounded-xl bg-[#3ECF8E]/15 text-xl">{app.emoji}</div>
-                    <div className="font-mono text-[10px] font-medium uppercase tracking-widest text-[#3ECF8E]">{app.role}</div>
+                    <div className="mb-4 grid h-10 w-10 place-items-center rounded-xl bg-[#84c030]/15 text-xl">{app.emoji}</div>
+                    <div className="font-mono text-[10px] font-medium uppercase tracking-widest text-[#84c030]">{app.role}</div>
                     <h3 className="mt-2 text-xl font-bold text-white">{app.name}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-400">{app.desc}</p>
-                    <span className="mt-6 inline-flex text-sm font-medium text-[#3ECF8E]/70 transition group-hover:text-[#3ECF8E]">{app.cta}</span>
+                    <p className="mt-3 text-sm leading-relaxed text-on-ink-muted">{app.desc}</p>
+                    <span className="mt-6 inline-flex text-sm font-medium text-[#84c030]/70 transition group-hover:text-[#84c030]">{app.cta}</span>
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Why EventSync — 4 feature cards */}
-            <div className="rounded-[32px] bg-white p-8 shadow-[0_20px_50px_rgba(15,23,42,0.04)] sm:p-10">
-              <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#3ECF8E]">Why EventSync</p>
-              <h2 className="mt-3 text-3xl font-extrabold text-slate-900">Built for the speed of live events.</h2>
+            <div className="rounded-[32px] bg-white p-8 shadow-[0_20px_50px_rgba(6,48,27,0.04)] sm:p-10">
+              <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#84c030]">Why EventSync</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-ink-900">Built for the speed of live events.</h2>
               <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                 {[
                   { icon: Zap, title: "4-Hour Crew Confirmation", desc: "Submit requirements. Our ops team confirms verified crew in under 4 hours, guaranteed." },
@@ -320,22 +320,22 @@ export default async function ProductPage({ params }: PageProps) {
                   { icon: MessageSquare, title: "WhatsApp Bridge", desc: "Shift drops broadcast to city-specific volunteer communities with one click." },
                   { icon: Wallet, title: "Daily UPI Payouts", desc: "Volunteers paid T+1 via UPI. No float, no delays, no angry crew." },
                 ].map((f) => (
-                  <div key={f.title} className="rounded-2xl bg-slate-50 p-6 ring-1 ring-black/5">
-                    <f.icon className="h-7 w-7 text-[#3ECF8E]" />
-                    <h3 className="mt-4 text-base font-bold text-slate-900">{f.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-slate-500">{f.desc}</p>
+                  <div key={f.title} className="rounded-2xl bg-paper p-6 ring-1 ring-black/5">
+                    <f.icon className="h-7 w-7 text-[#84c030]" />
+                    <h3 className="mt-4 text-base font-bold text-ink-900">{f.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-fg-subtle">{f.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Cities Coverage */}
-            <div className="rounded-[32px] bg-[#18181B] p-8 sm:p-10">
-              <p className="font-mono text-xs font-medium uppercase tracking-widest text-[#3ECF8E]">Coverage</p>
-              <h2 className="mt-3 text-3xl font-extrabold text-white">Active across India's top tech hubs.</h2>
+            <div className="rounded-[32px] bg-[#04120a] p-8 sm:p-10">
+              <p className="font-mono text-xs font-medium uppercase tracking-widest text-[#84c030]">Coverage</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-white">Active across India&apos;s top tech hubs.</h2>
               <div className="mt-8 flex flex-wrap gap-3">
                 {["Delhi NCR", "Bengaluru", "Mumbai", "Hyderabad", "Pune", "Chennai", "Kolkata", "Ahmedabad", "Jaipur"].map((city) => (
-                  <span key={city} className="flex items-center gap-1.5 rounded-full border border-[#3ECF8E]/20 bg-[#3ECF8E]/8 px-4 py-1.5 text-sm font-medium text-[#3ECF8E]">
+                  <span key={city} className="flex items-center gap-1.5 rounded-full border border-[#84c030]/20 bg-[#84c030]/8 px-4 py-1.5 text-sm font-medium text-[#84c030]">
                     <MapPin className="h-3 w-3" />{city}
                   </span>
                 ))}
@@ -351,15 +351,15 @@ export default async function ProductPage({ params }: PageProps) {
             </div> */}
 
             {/* Final CTA */}
-            <div className="rounded-[32px] bg-[#3ECF8E] p-10 text-center">
-              <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#18181B]/60">Get started</p>
-              <h2 className="mt-3 text-3xl font-extrabold text-[#18181B]">Your next event deserves precision.</h2>
-              <p className="mt-3 text-[#18181B]/70">Submit requirements in under 2 minutes. Crew confirmed in 4 hours.</p>
+            <div className="rounded-[32px] bg-[#84c030] p-10 text-center">
+              <p className="font-mono text-xs font-bold uppercase tracking-widest text-[#04120a]/60">Get started</p>
+              <h2 className="mt-3 text-3xl font-extrabold text-[#04120a]">Your next event deserves precision.</h2>
+              <p className="mt-3 text-[#04120a]/70">Submit requirements in under 2 minutes. Crew confirmed in 4 hours.</p>
               <a
                 href="https://eventsync-xi.vercel.app/intake"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#18181B] px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-[#04120a] px-6 py-3 text-sm font-bold text-white transition hover:opacity-90"
               >
                 Start Event Intake <ArrowRight className="h-4 w-4" />
               </a>
@@ -371,26 +371,26 @@ export default async function ProductPage({ params }: PageProps) {
           // ==========================================
           <section className="space-y-12">
             {/* Hero Card */}
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-950 via-[#0a1128] to-slate-950 px-6 py-12 shadow-[0_35px_120px_rgba(0,0,0,0.4)] sm:px-10 lg:px-16">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-ink-950 via-[#071a0f] to-ink-950 px-6 py-12 shadow-[0_35px_120px_rgba(0,0,0,0.4)] sm:px-10 lg:px-16">
               {/* Floating tech background shapes */}
-              <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl" />
-              <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
+              <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl" />
+              <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl" />
 
               <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-cyan-400">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">
                     <QrCode className="h-3.5 w-3.5" />
                     Windshield QR Tag
                   </div>
 
                   <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.1]">
                     AI-Powered Vehicle <br className="hidden sm:inline" />
-                    <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-brand-300 via-brand-300 to-brand-300 bg-clip-text text-transparent">
                       Privacy & Safety
                     </span>
                   </h1>
 
-                  <p className="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+                  <p className="max-w-xl text-base leading-8 text-line-strong sm:text-lg">
                     Premium windshield QR tag for Indian vehicle owners. Let others contact you anonymously in emergency, wrong-parking, or tow-zone situations without exposing your mobile number.
                   </p>
 
@@ -398,9 +398,9 @@ export default async function ProductPage({ params }: PageProps) {
                     {["Masked Calls", "Emergency Alerts", "Wrong Parking", "Zero Spam", "DPDP Compliant"].map((item) => (
                       <span
                         key={item}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-slate-200"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-line"
                       >
-                        <CheckCircle2 className="h-3 w-3 text-cyan-400" />
+                        <CheckCircle2 className="h-3 w-3 text-brand-300" />
                         {item}
                       </span>
                     ))}
@@ -410,7 +410,7 @@ export default async function ProductPage({ params }: PageProps) {
                     <a
                       href="https://carzpark.com/shop"
                       target="_blank"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-7 py-3.5 text-sm font-bold text-slate-950 shadow-[0_12px_30px_rgba(6,182,212,0.3)] transition hover:-translate-y-0.5 hover:bg-cyan-400"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 text-sm font-bold text-ink-950 shadow-[0_12px_30px_rgba(6,182,212,0.3)] transition hover:-translate-y-0.5 hover:bg-brand-300"
                     >
                       Buy windshield tag
                       <ArrowRight className="h-4 w-4" />
@@ -421,15 +421,15 @@ export default async function ProductPage({ params }: PageProps) {
                       className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10"
                     >
                       Visit Platform
-                      <ExternalLink className="h-4 w-4 text-slate-400" />
+                      <ExternalLink className="h-4 w-4 text-on-ink-muted" />
                     </a>
                   </div>
                 </div>
 
                 {/* Hero Graphic */}
                 <div className="relative mx-auto w-full max-w-[500px]">
-                  <div className="absolute -inset-2 rounded-[36px] bg-gradient-to-r from-cyan-500 to-blue-500 opacity-20 blur-xl" />
-                  <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-slate-900/90 p-3 shadow-2xl">
+                  <div className="absolute -inset-2 rounded-[36px] bg-gradient-to-r from-brand-500 to-brand-500 opacity-20 blur-xl" />
+                  <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-ink-900/90 p-3 shadow-2xl">
                     <div className="relative overflow-hidden rounded-[24px]">
                       <Image
                         src="/Assest/cp-1.png"
@@ -439,10 +439,10 @@ export default async function ProductPage({ params }: PageProps) {
                         className="h-[280px] w-full object-cover transition-transform duration-500 hover:scale-105"
                         priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-lg bg-black/60 px-4 py-2.5 backdrop-blur-md">
                         <span className="text-xs font-semibold text-white">Smart QR Sticker Preview</span>
-                        <span className="rounded bg-cyan-500/20 px-2 py-0.5 text-[10px] font-bold text-cyan-400 uppercase">Live</span>
+                        <span className="rounded bg-brand-500/20 px-2 py-0.5 text-[10px] font-bold text-brand-300 uppercase">Live</span>
                       </div>
                     </div>
                   </div>
@@ -453,8 +453,8 @@ export default async function ProductPage({ params }: PageProps) {
             {/* Core Features Grid */}
             <div className="space-y-6">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-500">Value Proposition</p>
-                <h2 className="mt-2 text-3xl font-extrabold text-slate-950">Why vehicle owners choose CarzPark</h2>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand-500">Value Proposition</p>
+                <h2 className="mt-2 text-3xl font-extrabold text-ink-950">Why vehicle owners choose CarzPark</h2>
               </div>
 
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -463,7 +463,7 @@ export default async function ProductPage({ params }: PageProps) {
                     title: "100% Identity Shield",
                     description: "No caller can see your phone number. All calls and messages are fully routed anonymously through our secure proxy.",
                     icon: Shield,
-                    color: "text-cyan-400",
+                    color: "text-brand-300",
                     image: "/Assest/cp-2.png"
                   },
                   {
@@ -484,15 +484,15 @@ export default async function ProductPage({ params }: PageProps) {
                     title: "DPDP Law Compliant",
                     description: "Designed for India. Fully aligned with the Digital Personal Data Protection Act, keeping user privacy guarded at all times.",
                     icon: Award,
-                    color: "text-emerald-400",
+                    color: "text-brand-300",
                     image: "/Assest/cp-5.png"
                   }
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="group overflow-hidden rounded-3xl border border-slate-200 bg-white p-5 shadow-[0_15px_45px_rgba(15,23,42,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    className="group overflow-hidden rounded-3xl border border-line bg-white p-5 shadow-[0_15px_45px_rgba(6,48,27,0.05)] transition duration-300 hover:-translate-y-1 hover:shadow-xl"
                   >
-                    <div className="mb-4 overflow-hidden rounded-2xl bg-slate-50 border border-slate-100">
+                    <div className="mb-4 overflow-hidden rounded-2xl bg-paper border border-paper-sunk">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -503,21 +503,21 @@ export default async function ProductPage({ params }: PageProps) {
                     </div>
                     <div className="flex items-center gap-2">
                       <item.icon className={`h-5 w-5 ${item.color}`} />
-                      <h3 className="text-lg font-bold text-slate-900">{item.title}</h3>
+                      <h3 className="text-lg font-bold text-ink-900">{item.title}</h3>
                     </div>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">{item.description}</p>
+                    <p className="mt-2 text-sm leading-6 text-fg-subtle">{item.description}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* App Screen Showcase */}
-            <div className="rounded-[32px] bg-slate-950 p-8 text-white relative overflow-hidden">
-              <div className="pointer-events-none absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-blue-500/10 blur-3xl" />
+            <div className="rounded-[32px] bg-ink-950 p-8 text-white relative overflow-hidden">
+              <div className="pointer-events-none absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl" />
               <div className="relative z-10 text-center max-w-2xl mx-auto mb-12">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-400">Mobile Interface</p>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand-300">Mobile Interface</p>
                 <h2 className="mt-2 text-3xl font-extrabold text-white">Privacy in your pocket</h2>
-                <p className="mt-3 text-slate-400">Manage tags, view live emergency alerts, and control caller blocking directly from the premium mobile app dashboard.</p>
+                <p className="mt-3 text-on-ink-muted">Manage tags, view live emergency alerts, and control caller blocking directly from the premium mobile app dashboard.</p>
               </div>
 
               <div className="relative z-10 grid gap-8 md:grid-cols-3 max-w-5xl mx-auto items-center justify-center">
@@ -539,9 +539,9 @@ export default async function ProductPage({ params }: PageProps) {
                   }
                 ].map((screen, idx) => (
                   <div key={screen.title} className="flex flex-col items-center text-center space-y-4">
-                    <div className="relative h-[400px] w-[210px] rounded-[36px] p-2 bg-slate-900 border border-white/10 shadow-2xl transition duration-500 hover:scale-105">
+                    <div className="relative h-[400px] w-[210px] rounded-[36px] p-2 bg-ink-900 border border-white/10 shadow-2xl transition duration-500 hover:scale-105">
                       <div className="absolute left-1/2 top-4 z-20 h-4 w-16 -translate-x-1/2 rounded-full bg-black" /> {/* Island */}
-                      <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-slate-950">
+                      <div className="relative h-full w-full overflow-hidden rounded-[28px] bg-ink-950">
                         <Image
                           src={screen.img}
                           alt={screen.title}
@@ -553,7 +553,7 @@ export default async function ProductPage({ params }: PageProps) {
                     </div>
                     <div className="max-w-xs">
                       <h4 className="text-base font-bold text-white">{screen.title}</h4>
-                      <p className="mt-1 text-xs text-slate-400 leading-5">{screen.desc}</p>
+                      <p className="mt-1 text-xs text-on-ink-muted leading-5">{screen.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -561,13 +561,13 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
 
             {/* CarzPark FAQ */}
-            <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.04)] sm:p-10">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-slate-100 pb-6">
+            <div className="rounded-[32px] border border-line bg-white p-6 shadow-[0_20px_50px_rgba(6,48,27,0.04)] sm:p-10">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-paper-sunk pb-6">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-cyan-500">FAQ</p>
-                  <h2 className="mt-2 text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand-500">FAQ</p>
+                  <h2 className="mt-2 text-3xl font-extrabold text-ink-900">Frequently Asked Questions</h2>
                 </div>
-                <span className="inline-flex rounded-full bg-cyan-50 px-3.5 py-1.5 text-xs font-bold text-cyan-600">
+                <span className="inline-flex rounded-full bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-600">
                   CarzPark Mobility Labs
                 </span>
               </div>
@@ -591,12 +591,12 @@ export default async function ProductPage({ params }: PageProps) {
                     answer: "Our system runs an AI screening layer on messages and allows you to block callers with a single tap. Spammers are permanently blacklisted across our platform."
                   }
                 ].map((faq) => (
-                  <div key={faq.question} className="rounded-2xl bg-slate-50 border border-slate-100 p-5">
-                    <h3 className="text-base font-bold text-slate-900 flex items-start gap-2">
-                      <HelpCircle className="h-5 w-5 text-cyan-500 shrink-0 mt-0.5" />
+                  <div key={faq.question} className="rounded-2xl bg-paper border border-paper-sunk p-5">
+                    <h3 className="text-base font-bold text-ink-900 flex items-start gap-2">
+                      <HelpCircle className="h-5 w-5 text-brand-500 shrink-0 mt-0.5" />
                       {faq.question}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600 pl-7">{faq.answer}</p>
+                    <p className="mt-2 text-sm leading-6 text-fg-muted pl-7">{faq.answer}</p>
                   </div>
                 ))}
               </div>
@@ -617,26 +617,26 @@ export default async function ProductPage({ params }: PageProps) {
           // ==========================================
           <section className="space-y-12">
             {/* Hero Card */}
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-slate-950 via-[#061e14] to-slate-950 px-6 py-12 shadow-[0_35px_120px_rgba(0,0,0,0.4)] sm:px-10 lg:px-16">
+            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-gradient-to-br from-ink-950 via-[#071a0f] to-ink-950 px-6 py-12 shadow-[0_35px_120px_rgba(0,0,0,0.4)] sm:px-10 lg:px-16">
               {/* Floating glow effects */}
-              <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
-              <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-teal-500/10 blur-3xl" />
+              <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl" />
+              <div className="pointer-events-none absolute -left-24 -bottom-24 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl" />
 
               <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
                 <div className="space-y-6">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-400">
-                    <Activity className="h-3.5 w-3.5 animate-pulse text-emerald-400" />
+                  <div className="inline-flex items-center gap-2 rounded-full border border-brand-500/20 bg-brand-500/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-300">
+                    <Activity className="h-3.5 w-3.5 animate-pulse text-brand-300" />
                     India&apos;s Micro-SaaS M&amp;A Layer
                   </div>
 
                   <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-[1.1]">
                     Exit your side-project. <br className="hidden sm:inline" />
-                    <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-brand-300 via-brand-300 to-brand-300 bg-clip-text text-transparent">
                       Acquire the next one.
                     </span>
                   </h1>
 
-                  <p className="max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+                  <p className="max-w-xl text-base leading-8 text-line-strong sm:text-lg">
                     BharatExit turns months of legal friction and metric disputes into a seamless 48-hour flow. Verified API metrics, blind video pitches, Aadhaar KYC, and secure INR escrow.
                   </p>
 
@@ -644,9 +644,9 @@ export default async function ProductPage({ params }: PageProps) {
                     {["Razorpay/Stripe Verified", "NDA-Gated Rooms", "48h Auctions", "INR Escrow", "Blind Video Pitches"].map((item) => (
                       <span
                         key={item}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-slate-200"
+                        className="inline-flex items-center gap-1.5 rounded-full border border-white/5 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-line"
                       >
-                        <CheckCircle2 className="h-3 w-3 text-emerald-400" />
+                        <CheckCircle2 className="h-3 w-3 text-brand-300" />
                         {item}
                       </span>
                     ))}
@@ -656,7 +656,7 @@ export default async function ProductPage({ params }: PageProps) {
                     <a
                       href="https://sharkin-three.vercel.app/marketplace"
                       target="_blank"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-7 py-3.5 text-sm font-bold text-slate-950 shadow-[0_12px_30px_rgba(16,185,129,0.3)] transition hover:-translate-y-0.5 hover:bg-emerald-400"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 text-sm font-bold text-ink-950 shadow-[0_12px_30px_rgba(16,185,129,0.3)] transition hover:-translate-y-0.5 hover:bg-brand-300"
                     >
                       Browse marketplace
                       <ArrowRight className="h-4 w-4" />
@@ -667,15 +667,15 @@ export default async function ProductPage({ params }: PageProps) {
                       className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-7 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10"
                     >
                       Sell your SaaS
-                      <ExternalLink className="h-4 w-4 text-slate-400" />
+                      <ExternalLink className="h-4 w-4 text-on-ink-muted" />
                     </a>
                   </div>
                 </div>
 
                 {/* Hero Dashboard Screenshot */}
                 <div className="relative mx-auto w-full max-w-[520px]">
-                  <div className="absolute -inset-2 rounded-[28px] bg-gradient-to-r from-emerald-500 to-teal-500 opacity-20 blur-xl" />
-                  <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-slate-900/90 p-2 shadow-2xl">
+                  <div className="absolute -inset-2 rounded-[28px] bg-gradient-to-r from-brand-500 to-brand-500 opacity-20 blur-xl" />
+                  <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-ink-900/90 p-2 shadow-2xl">
                     <div className="relative overflow-hidden rounded-[18px]">
                       <Image
                         src="/Assest/Sharkin.png"
@@ -685,10 +685,10 @@ export default async function ProductPage({ params }: PageProps) {
                         className="h-[194px] w-full object-cover transition-transform duration-500 hover:scale-105"
                         priority
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
                       <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-lg bg-black/60 px-4 py-2.5 backdrop-blur-md">
                         <span className="text-xs font-semibold text-white">Deal flow Board</span>
-                        <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-bold text-emerald-400 uppercase">Beta</span>
+                        <span className="rounded bg-brand-500/20 px-2 py-0.5 text-[10px] font-bold text-brand-300 uppercase">Beta</span>
                       </div>
                     </div>
                   </div>
@@ -697,18 +697,18 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
 
             {/* Platform Stats Row */}
-            <div className="grid gap-6 grid-cols-3 text-center rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
+            <div className="grid gap-6 grid-cols-3 text-center rounded-[28px] border border-line bg-white p-6 shadow-[0_15px_40px_rgba(0,0,0,0.03)]">
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Active Listings</p>
-                <p className="mt-1.5 text-3xl font-extrabold text-slate-900 sm:text-4xl">9</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-on-ink-muted">Active Listings</p>
+                <p className="mt-1.5 text-3xl font-extrabold text-ink-900 sm:text-4xl">9</p>
               </div>
-              <div className="border-x border-slate-100">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Total Bids</p>
-                <p className="mt-1.5 text-3xl font-extrabold text-slate-900 sm:text-4xl">18</p>
+              <div className="border-x border-paper-sunk">
+                <p className="text-xs font-bold uppercase tracking-widest text-on-ink-muted">Total Bids</p>
+                <p className="mt-1.5 text-3xl font-extrabold text-ink-900 sm:text-4xl">18</p>
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-400">GMV (Bids)</p>
-                <p className="mt-1.5 text-3xl font-extrabold text-emerald-600 sm:text-4xl">₹2.4 Cr</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-on-ink-muted">GMV (Bids)</p>
+                <p className="mt-1.5 text-3xl font-extrabold text-brand-600 sm:text-4xl">₹2.4 Cr</p>
               </div>
             </div>
 
@@ -716,10 +716,10 @@ export default async function ProductPage({ params }: PageProps) {
             <div className="space-y-6">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-500">Live Deal Flow</p>
-                  <h2 className="mt-1 text-3xl font-extrabold text-slate-900">Featured active listings</h2>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand-500">Live Deal Flow</p>
+                  <h2 className="mt-1 text-3xl font-extrabold text-ink-900">Featured active listings</h2>
                 </div>
-                <span className="text-sm font-medium text-slate-500">Auto-updated metrics</span>
+                <span className="text-sm font-medium text-fg-subtle">Auto-updated metrics</span>
               </div>
 
               <div className="grid gap-6 md:grid-cols-3">
@@ -757,45 +757,45 @@ export default async function ProductPage({ params }: PageProps) {
                 ].map((listing) => (
                   <div
                     key={listing.title}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_15px_40px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-lg"
+                    className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-line bg-white p-6 shadow-[0_15px_40px_rgba(0,0,0,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                   >
                     <div>
                       <div className="flex items-start justify-between">
                         <div>
-                          <h3 className="text-lg font-bold text-slate-900 group-hover:text-emerald-600 transition">{listing.title}</h3>
-                          <p className="text-xs text-slate-500 mt-0.5">{listing.desc}</p>
+                          <h3 className="text-lg font-bold text-ink-900 group-hover:text-brand-600 transition">{listing.title}</h3>
+                          <p className="text-xs text-fg-subtle mt-0.5">{listing.desc}</p>
                         </div>
-                        <span className="rounded bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-600 uppercase tracking-wider">
+                        <span className="rounded bg-brand-500/10 px-2 py-0.5 text-[10px] font-bold text-brand-600 uppercase tracking-wider">
                           {listing.status}
                         </span>
                       </div>
 
-                      <div className="mt-6 grid grid-cols-4 gap-2 border-t border-slate-100 pt-4">
+                      <div className="mt-6 grid grid-cols-4 gap-2 border-t border-paper-sunk pt-4">
                         <div>
-                          <p className="text-[10px] font-bold text-slate-400 uppercase">MRR</p>
-                          <p className="text-sm font-semibold text-slate-800">{listing.mrr}</p>
+                          <p className="text-[10px] font-bold text-on-ink-muted uppercase">MRR</p>
+                          <p className="text-sm font-semibold text-ink-800">{listing.mrr}</p>
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold text-slate-400 uppercase">TTM</p>
-                          <p className="text-sm font-semibold text-slate-800">{listing.ttm}</p>
+                          <p className="text-[10px] font-bold text-on-ink-muted uppercase">TTM</p>
+                          <p className="text-sm font-semibold text-ink-800">{listing.ttm}</p>
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold text-slate-400 uppercase">Churn</p>
-                          <p className="text-sm font-semibold text-slate-800">{listing.churn}</p>
+                          <p className="text-[10px] font-bold text-on-ink-muted uppercase">Churn</p>
+                          <p className="text-sm font-semibold text-ink-800">{listing.churn}</p>
                         </div>
                         <div>
-                          <p className="text-[10px] font-bold text-slate-400 uppercase">Mult</p>
-                          <p className="text-sm font-semibold text-slate-800">{listing.mult}</p>
+                          <p className="text-[10px] font-bold text-on-ink-muted uppercase">Mult</p>
+                          <p className="text-sm font-semibold text-ink-800">{listing.mult}</p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="mt-6 flex items-center justify-between border-t border-slate-100 pt-4">
+                    <div className="mt-6 flex items-center justify-between border-t border-paper-sunk pt-4">
                       <div>
-                        <p className="text-[10px] font-bold text-slate-400 uppercase">Asking Price</p>
-                        <p className="text-xl font-extrabold text-emerald-600">{listing.asking}</p>
+                        <p className="text-[10px] font-bold text-on-ink-muted uppercase">Asking Price</p>
+                        <p className="text-xl font-extrabold text-brand-600">{listing.asking}</p>
                       </div>
-                      <span className="inline-flex items-center gap-1 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-bold text-slate-700 transition group-hover:border-emerald-500/40 group-hover:bg-emerald-500/5 group-hover:text-emerald-600">
+                      <span className="inline-flex items-center gap-1 rounded-lg border border-line bg-paper px-3 py-1.5 text-xs font-bold text-ink-700 transition group-hover:border-brand-500/40 group-hover:bg-brand-500/5 group-hover:text-brand-600">
                         Details
                         <ChevronRight className="h-3 w-3" />
                       </span>
@@ -806,12 +806,12 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
 
             {/* Playbook / Step Walkthrough */}
-            <div className="rounded-[32px] bg-slate-950 p-8 text-white relative overflow-hidden">
-              <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+            <div className="rounded-[32px] bg-ink-950 p-8 text-white relative overflow-hidden">
+              <div className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full bg-brand-500/10 blur-3xl" />
               <div className="relative z-10 text-center max-w-2xl mx-auto mb-12">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-400">The Playbook</p>
+                <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand-300">The Playbook</p>
                 <h2 className="mt-2 text-3xl font-extrabold text-white">How BharatExit works</h2>
-                <p className="mt-3 text-slate-400">We verify pipeline listings and release escrow directly to your INR account — designed for digital business builders.</p>
+                <p className="mt-3 text-on-ink-muted">We verify pipeline listings and release escrow directly to your INR account — designed for digital business builders.</p>
               </div>
 
               <div className="relative z-10 grid gap-6 md:grid-cols-4 max-w-6xl mx-auto">
@@ -841,26 +841,26 @@ export default async function ProductPage({ params }: PageProps) {
                     icon: Lock
                   }
                 ].map((item) => (
-                  <div key={item.step} className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-6 transition duration-300 hover:border-emerald-500/20 hover:bg-white/10">
+                  <div key={item.step} className="group relative overflow-hidden rounded-2xl border border-white/5 bg-white/5 p-6 transition duration-300 hover:border-brand-500/20 hover:bg-white/10">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-xs font-bold text-slate-500 border border-white/10 rounded px-2 py-0.5">{item.step}</span>
-                      <item.icon className="h-5 w-5 text-emerald-400" />
+                      <span className="font-mono text-xs font-bold text-fg-subtle border border-white/10 rounded px-2 py-0.5">{item.step}</span>
+                      <item.icon className="h-5 w-5 text-brand-300" />
                     </div>
-                    <h3 className="mt-6 text-lg font-bold text-white group-hover:text-emerald-400 transition">{item.title}</h3>
-                    <p className="mt-2.5 text-xs leading-5 text-slate-400">{item.desc}</p>
+                    <h3 className="mt-6 text-lg font-bold text-white group-hover:text-brand-300 transition">{item.title}</h3>
+                    <p className="mt-2.5 text-xs leading-5 text-on-ink-muted">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* BharatExit FAQ */}
-            <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_20px_50px_rgba(15,23,42,0.04)] sm:p-10">
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-slate-100 pb-6">
+            <div className="rounded-[32px] border border-line bg-white p-6 shadow-[0_20px_50px_rgba(6,48,27,0.04)] sm:p-10">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-paper-sunk pb-6">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-emerald-500">FAQ</p>
-                  <h2 className="mt-2 text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
+                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-brand-500">FAQ</p>
+                  <h2 className="mt-2 text-3xl font-extrabold text-ink-900">Frequently Asked Questions</h2>
                 </div>
-                <span className="inline-flex rounded-full bg-emerald-50 px-3.5 py-1.5 text-xs font-bold text-emerald-600">
+                <span className="inline-flex rounded-full bg-brand-50 px-3.5 py-1.5 text-xs font-bold text-brand-600">
                   Secure M&amp;A Layer
                 </span>
               </div>
@@ -884,12 +884,12 @@ export default async function ProductPage({ params }: PageProps) {
                     answer: "Sellers list completely free of charge. Upon successful escrow execution and asset handover completion, BharatExit takes a flat 4% matching escrow fee. No hidden broker charges."
                   }
                 ].map((faq) => (
-                  <div key={faq.question} className="rounded-2xl bg-slate-50 border border-slate-100 p-5">
-                    <h3 className="text-base font-bold text-slate-900 flex items-start gap-2">
-                      <HelpCircle className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
+                  <div key={faq.question} className="rounded-2xl bg-paper border border-paper-sunk p-5">
+                    <h3 className="text-base font-bold text-ink-900 flex items-start gap-2">
+                      <HelpCircle className="h-5 w-5 text-brand-500 shrink-0 mt-0.5" />
                       {faq.question}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600 pl-7">{faq.answer}</p>
+                    <p className="mt-2 text-sm leading-6 text-fg-muted pl-7">{faq.answer}</p>
                   </div>
                 ))}
               </div>

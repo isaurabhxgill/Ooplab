@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import "../globals.css";
 
@@ -41,7 +42,7 @@ export default function Footer() {
             </h2>
             <a
               href="/contact"
-              className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 text-sm font-semibold text-[#111827] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
+              className="mt-8 inline-flex h-12 items-center justify-center rounded-xl bg-white px-8 text-sm font-semibold text-[#0c2517] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-xl"
             >
               Contact Us
             </a>
@@ -53,7 +54,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {/* Logo + tagline */}
         <div className="p-6">
-          <a aria-label="Ooplab home" href="/">
+          <Link aria-label="Ooplab home" href="/">
             <Image
               src="/Assest/Ologo.png"
               alt="Ooplab Logo"
@@ -61,8 +62,8 @@ export default function Footer() {
               height={250}
               style={{ width: "auto", height: "auto", maxHeight: "95px" }}
             />
-          </a>
-          <p className="mt-4 max-w-[260px] text-sm leading-6 font-medium text-neutral-600">
+          </Link>
+          <p className="mt-4 max-w-[260px] text-sm leading-6 font-medium text-fg-muted">
             Building Scalable Digital Solutions for Modern Businesses
           </p>
         </div>
@@ -70,7 +71,7 @@ export default function Footer() {
         {/* Company links */}
         <div className=" p-6">
           <h3 className="mb-5 text-lg font-semibold sm:text-xl">Company</h3>
-          <ul className="space-y-3 text-sm text-neutral-600">
+          <ul className="space-y-3 text-sm text-fg-muted">
             <li><a href="/about" className="text-brand-hover">About Us</a></li>
             <li><a href="/services#team" className="text-brand-hover">Our Team</a></li>
             <li><a href="/contact" className="text-brand-hover">Contact</a></li>
@@ -84,13 +85,13 @@ export default function Footer() {
         {/* Discover + Social */}
         <div className="p-6 sm:col-span-2 lg:col-span-1">
           <h3 className="text-lg font-semibold sm:text-xl">Discover More</h3>
-          <p className="mt-4 text-sm leading-7 text-neutral-600">
+          <p className="mt-4 text-sm leading-7 text-fg-muted">
             Keeping you informed
           </p>
 
           {/* Interactive subscription flow */}
           {status === "success" ? (
-            <p className="mt-3 text-sm font-semibold text-green-700">
+            <p className="mt-3 text-sm font-semibold text-brand-700">
               ✓ You&apos;re subscribed! We&apos;ll keep you updated.
             </p>
           ) : !showForm ? (
@@ -102,7 +103,7 @@ export default function Footer() {
             </button>
           ) : (
             <form onSubmit={handleSubscribe} className="mt-3 space-y-2">
-              <label htmlFor="newsletter-email" className="block text-xs font-semibold text-neutral-600">
+              <label htmlFor="newsletter-email" className="block text-xs font-semibold text-fg-muted">
                 Enter your email address
               </label>
               <div className="flex gap-2 max-w-sm">
@@ -113,7 +114,7 @@ export default function Footer() {
                   placeholder="your@email.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 min-w-0 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 bg-white border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent"
+                  className="flex-1 min-w-0 px-3 py-2 text-sm text-ink-900 placeholder-on-ink-muted bg-white border border-line-strong rounded-xl focus:outline-none focus:ring-2 focus:ring-[#079447] focus:border-transparent"
                 />
                 <button
                   type="submit"
@@ -130,7 +131,7 @@ export default function Footer() {
             <h4 className="mb-3 text-sm font-semibold">Follow Us</h4>
             <div className="flex flex-wrap gap-3 social-icons">
               <a
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-line-strong transition hover:border-[#079447] hover:text-[#079447]"
                 href="https://www.linkedin.com/company/cgi/"
                 title="Follow Ooplab on LinkedIn"
                 target="_blank"
@@ -141,7 +142,7 @@ export default function Footer() {
               </a>
               <a
                 href="https://github.com"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-line-strong transition hover:border-[#079447] hover:text-[#079447]"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="GitHub"
@@ -151,7 +152,7 @@ export default function Footer() {
               </a>
               <a
                 href="https://twitter.com"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-line-strong transition hover:border-[#079447] hover:text-[#079447]"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Twitter"
@@ -161,7 +162,7 @@ export default function Footer() {
               </a>
               <a
                 href="https://instagram.com"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-neutral-300 transition hover:border-[#079447] hover:text-[#079447]"
+                className="flex h-12 w-12 items-center justify-center rounded-full border border-line-strong transition hover:border-[#079447] hover:text-[#079447]"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Instagram"
@@ -175,7 +176,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-neutral-200 bg-white py-4 text-center text-sm text-neutral-600">
+      <div className="border-t border-line bg-white py-4 text-center text-sm text-fg-muted">
         © 2026 OopLabs Inc. All Rights Reserved.
       </div>
     </footer>

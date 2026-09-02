@@ -38,14 +38,14 @@ export default function Article({ articles }: ArticleProps) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-[32px] uppercase tracking-[0.24em] text-Black">Latest Articles</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">Insights for growth-minded teams.</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink-950">Insights for growth-minded teams.</h2>
         </div>
 
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => scrollArticles("left")}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink-700 shadow-sm transition hover:border-line-strong hover:bg-paper"
             aria-label="Scroll articles left"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -53,7 +53,7 @@ export default function Article({ articles }: ArticleProps) {
           <button
             type="button"
             onClick={() => scrollArticles("right")}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink-700 shadow-sm transition hover:border-line-strong hover:bg-paper"
             aria-label="Scroll articles right"
           >
             <ChevronRight className="h-5 w-5" />
@@ -68,7 +68,7 @@ export default function Article({ articles }: ArticleProps) {
         {articles.map((article) => (
           <article
             key={article.title}
-            className="snap-start min-w-[285px] max-w-[320px] flex-shrink-0 overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+            className="snap-start min-w-[285px] max-w-[320px] flex-shrink-0 overflow-hidden rounded-[28px] border border-line bg-white shadow-[0_20px_60px_rgba(6,48,27,0.08)]"
           >
               <div className="relative h-52 w-full overflow-hidden">
               <Image
@@ -80,15 +80,15 @@ export default function Article({ articles }: ArticleProps) {
               />
             </div>
             <div className="p-6">
-              <div className="mb-3 flex items-center justify-between text-xs uppercase tracking-[0.24em] text-slate-500">
+              <div className="mb-3 flex items-center justify-between text-xs uppercase tracking-[0.24em] text-fg-subtle">
                 <span>{article.category}</span>
                 <span>{article.date}</span>
               </div>
-              <h3 className="text-xl font-semibold text-slate-950">{article.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-600">{article.description}</p>
+              <h3 className="text-xl font-semibold text-ink-950">{article.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-fg-muted">{article.description}</p>
               <a
                 href={article.href}
-                className="mt-6 inline-flex text-sm font-semibold text-cyan-600 hover:text-cyan-500"
+                className="mt-6 inline-flex text-sm font-semibold text-brand-600 hover:text-brand-500"
               >
                 Read article →
               </a>

@@ -22,12 +22,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { title: "Web Application Development", description: "Modern web experiences built for performance, accessibility, and rapid growth.", icon: "🖥️", accent: "#dbeafe" },
-  { title: "Mobile App Development", description: "Native and cross-platform apps designed to delight users on every device.", icon: "📱", accent: "#d1fae5" },
-  { title: "AI Integrations", description: "Intelligent automations and data-driven features that scale with your business.", icon: "🤖", accent: "#ede9fe" },
-  { title: "UI/UX Design", description: "Thoughtful interfaces and experiences that make your product feel premium.", icon: "🎨", accent: "#fee2e2" },
-  { title: "Cloud Solutions", description: "Secure cloud architectures and infrastructure that support enterprise growth.", icon: "☁️", accent: "#cffafe" },
-  { title: "Enterprise Systems", description: "Robust backend platforms crafted for reliability, security, and scale.", icon: "⚙️", accent: "#fef3c7" },
+  { title: "Web Application Development", description: "Modern web experiences built for performance, accessibility, and rapid growth.", icon: "🖥️", accent: "#e4f4c9" },
+  { title: "Mobile App Development", description: "Native and cross-platform apps designed to delight users on every device.", icon: "📱", accent: "#e4f4c9" },
+  { title: "AI Integrations", description: "Intelligent automations and data-driven features that scale with your business.", icon: "🤖", accent: "#f3f9ea" },
+  { title: "UI/UX Design", description: "Thoughtful interfaces and experiences that make your product feel premium.", icon: "🎨", accent: "#f3f9ea" },
+  { title: "Cloud Solutions", description: "Secure cloud architectures and infrastructure that support enterprise growth.", icon: "☁️", accent: "#e4f4c9" },
+  { title: "Enterprise Systems", description: "Robust backend platforms crafted for reliability, security, and scale.", icon: "⚙️", accent: "#f3f9ea" },
 ];
 
 const steps = [
@@ -87,12 +87,12 @@ const values = [
 // ── Page ───────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f5fbff] text-[#0f172a]">
+    <main className="min-h-screen overflow-hidden bg-[#fafaf5] text-[#11201a]">
       <div className="mx-auto w-full max-w-[1440px]">
         <Header />
 
         {/* ── 1. HERO ─────────────────────────────────────────────────── */}
-        {/* <section className="relative flex min-h-[560px] w-full items-center justify-center overflow-hidden bg-gradient-to-r from-[#fb2c36] to-[#8b1a23] px-6 py-20 sm:py-28 mt-6">
+        {/* <section className="relative flex min-h-[560px] w-full items-center justify-center overflow-hidden bg-gradient-to-r from-[#079447] to-[#0a5e33] px-6 py-20 sm:py-28 mt-6">
        
           <div className="pointer-events-none absolute -left-24 -top-24 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
           <div className="pointer-events-none absolute -right-24 -bottom-24 h-96 w-96 rounded-full bg-black/20 blur-3xl" />
@@ -108,7 +108,7 @@ export default function AboutPage() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex h-11 items-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-[#fb2c36] shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition hover:bg-white/90"
+                className="inline-flex h-11 items-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-[#079447] shadow-[0_10px_28px_rgba(0,0,0,0.2)] transition hover:bg-white/90"
               >
                 Start a Project <ArrowRight className="h-4 w-4" />
               </Link>
@@ -177,14 +177,14 @@ export default function AboutPage() {
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Who We Are</p>
-              <h2 className="mt-3 text-[36px] font-bold leading-tight text-slate-950 sm:text-[44px]">
+              <h2 className="mt-3 text-[36px] font-bold leading-tight text-ink-950 sm:text-[44px]">
                 A Premium Digital Product Studio
               </h2>
-              <p className="mt-5 text-base leading-8 text-slate-600">
+              <p className="mt-5 text-base leading-8 text-fg-muted">
                 Ooplab is a boutique software studio headquartered in Indrapuram, India. We partner with ambitious founders, enterprises, and product teams to design, build, and ship world-class digital products.
               </p>
-              <p className="mt-4 text-base leading-8 text-slate-600">
-                From AI-powered platforms like <strong className="text-slate-900">CarzPark</strong> to verified acquisition marketplaces like <strong className="text-slate-900">BharatExit</strong>, everything we build is crafted with care, built for performance, and designed to last.
+              <p className="mt-4 text-base leading-8 text-fg-muted">
+                From AI-powered platforms like <strong className="text-ink-900">CarzPark</strong> to verified acquisition marketplaces like <strong className="text-ink-900">BharatExit</strong>, everything we build is crafted with care, built for performance, and designed to last.
               </p>
               <div className="mt-8 flex gap-4">
                 <Link
@@ -195,7 +195,7 @@ export default function AboutPage() {
                 </Link>
                 <Link
                   href="/#products"
-                  className="inline-flex h-11 items-center gap-2 rounded-md border border-slate-200 bg-white px-6 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
+                  className="inline-flex h-11 items-center gap-2 rounded-md border border-line bg-white px-6 text-sm font-semibold text-ink-700 transition hover:bg-paper"
                 >
                   See Our Products
                 </Link>
@@ -215,9 +215,9 @@ export default function AboutPage() {
         </section>
 
         {/* ── 3. HIGHLIGHTS ───────────────────────────────────────────── */}
-        <section className="w-full bg-slate-950 py-16">
+        <section className="w-full bg-ink-950 py-16">
           <div className="mx-auto max-w-[1120px] px-6">
-            <p className="text-center text-[13px] font-semibold uppercase tracking-[0.24em] text-slate-400">By the numbers</p>
+            <p className="text-center text-[13px] font-semibold uppercase tracking-[0.24em] text-on-ink-muted">By the numbers</p>
             <h2 className="mt-3 text-center text-3xl font-bold text-white">Trusted by teams across India and beyond.</h2>
             <StatCards />
           </div>
@@ -225,22 +225,22 @@ export default function AboutPage() {
 
         {/* ── 4. SERVICES ─────────────────────────────────────────────── */}
         <section className="mx-auto w-full max-w-[1120px] py-20" id="about-services">
-          <div className="relative overflow-hidden rounded-[32px] bg-[#eef8ff] px-5 py-10 shadow-[0_20px_80px_rgba(47,106,233,0.07)] sm:px-8 sm:py-12">
+          <div className="relative overflow-hidden rounded-[32px] bg-[#f1f2ea] px-5 py-10 shadow-[0_20px_80px_rgba(6,48,27,0.07)] sm:px-8 sm:py-12">
             {/* Bg blobs */}
-            <div className="pointer-events-none absolute -right-16 top-8 h-44 w-44 rounded-full bg-[#c7e7ff] opacity-70 blur-3xl" />
-            <div className="pointer-events-none absolute left-0 top-24 h-64 w-64 rounded-full bg-[#f5f3ff] opacity-80 blur-3xl" />
-            <div className="pointer-events-none absolute bottom-4 right-10 h-52 w-52 rounded-full bg-[#dff6f7] opacity-75 blur-3xl" />
+            <div className="pointer-events-none absolute -right-16 top-8 h-44 w-44 rounded-full bg-[#e4f4c9] opacity-70 blur-3xl" />
+            <div className="pointer-events-none absolute left-0 top-24 h-64 w-64 rounded-full bg-[#f3f9ea] opacity-80 blur-3xl" />
+            <div className="pointer-events-none absolute bottom-4 right-10 h-52 w-52 rounded-full bg-[#e4f4c9] opacity-75 blur-3xl" />
 
             <div className="relative">
               <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">What We Do</p>
-              <h2 className="mt-3 text-3xl font-bold text-slate-950">Modern technical solutions tailored for startups and enterprises.</h2>
+              <h2 className="mt-3 text-3xl font-bold text-ink-950">Modern technical solutions tailored for startups and enterprises.</h2>
             </div>
 
             <div className="relative mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
                 <article
                   key={service.title}
-                  className="group relative overflow-hidden rounded-[28px] border border-white/90 bg-white/95 p-7 shadow-[0_18px_48px_rgba(15,23,42,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(47,106,233,0.16)] brand-hover"
+                  className="group relative overflow-hidden rounded-[28px] border border-white/90 bg-white/95 p-7 shadow-[0_18px_48px_rgba(6,48,27,0.04)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(6,48,27,0.16)] brand-hover"
                 >
                   <div
                     className="absolute -right-10 -top-10 h-36 w-36 rounded-full opacity-30 blur-3xl"
@@ -248,10 +248,10 @@ export default function AboutPage() {
                   />
                   <div className="relative z-10 text-4xl">{service.icon}</div>
                   <div className="relative z-10 mt-5">
-                    <h3 className="text-xl font-semibold leading-[1.2] text-[#0f172a] transition duration-300 group-hover:text-white">
+                    <h3 className="text-xl font-semibold leading-[1.2] text-[#11201a] transition duration-300 group-hover:text-white">
                       {service.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-6 text-[#475569] transition duration-300 group-hover:text-white">
+                    <p className="mt-3 text-sm leading-6 text-[#4f5d54] transition duration-300 group-hover:text-white">
                       {service.description}
                     </p>
                   </div>
@@ -262,12 +262,12 @@ export default function AboutPage() {
         </section>
 
         {/* ── 5. PRODUCTS ─────────────────────────────────────────────── */}
-        <section className="w-full bg-slate-950 py-16" id="about-products">
+        <section className="w-full bg-ink-950 py-16" id="about-products">
           <div className="mx-auto max-w-[1120px] px-6">
             <div className="mb-10">
-              <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-slate-400">What We've Built</p>
+              <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-on-ink-muted">What We&apos;ve Built</p>
               <h2 className="mt-3 text-[32px] font-bold text-white sm:text-[38px]">Our Products</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-400 sm:text-base">
+              <p className="mt-3 text-sm leading-6 text-on-ink-muted sm:text-base">
                 Products built for Indian micro-SaaS, B2B tools, bootstrapped digital businesses, and vehicle privacy &amp; safety platforms.
               </p>
             </div>
@@ -281,15 +281,15 @@ export default function AboutPage() {
                   >
                     <div className="grid items-center gap-12 lg:grid-cols-2">
                       <div className="min-w-0">
-                        <p className={`text-xl font-bold uppercase tracking-[0.24em] ${isBharatExit ? "text-lime-400" : "text-cyan-300"}`}>
+                        <p className={`text-xl font-bold uppercase tracking-[0.24em] ${isBharatExit ? "text-lime-400" : "text-brand-200"}`}>
                           {product.tag}
                         </p>
                         <h3 className="mt-3 text-2xl font-semibold text-white">{product.title}</h3>
-                        <p className="mt-3 text-sm leading-6 text-slate-300">{product.description}</p>
-                        <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                        <p className="mt-3 text-sm leading-6 text-line-strong">{product.description}</p>
+                        <ul className="mt-4 space-y-3 text-sm text-line-strong">
                           {product.features.map((f) => (
                             <li key={f} className="flex items-start gap-2">
-                              <span className={`mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full ${isBharatExit ? "bg-lime-400" : "bg-cyan-300"}`} />
+                              <span className={`mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full ${isBharatExit ? "bg-lime-400" : "bg-brand-200"}`} />
                               <span>{f}</span>
                             </li>
                           ))}
@@ -340,7 +340,7 @@ export default function AboutPage() {
         {/* ── 6. PROCESS ──────────────────────────────────────────────── */}
         <section className="mx-auto w-full max-w-[1120px] py-20">
           <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">How We Work</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">Our Development Process</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink-950">Our Development Process</h2>
           <div className="relative mt-12">
             {/* Connector line */}
             <div className="absolute left-[19px] top-0 hidden h-full w-px bg-gradient-to-b from-[#079447]/40 via-[#079447]/20 to-transparent sm:block" />
@@ -350,10 +350,10 @@ export default function AboutPage() {
                   <div className="relative z-10 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full brand-bg text-sm font-bold text-white shadow-[0_4px_16px_rgba(7,148,71,0.4)]">
                     {i + 1}
                   </div>
-                  <div className="rounded-[20px] border border-slate-200 bg-white p-6 shadow-[0_8px_32px_rgba(15,23,42,0.04)] flex-1 transition hover:-translate-y-0.5 hover:shadow-[0_16px_48px_rgba(47,106,233,0.1)]">
+                  <div className="rounded-[20px] border border-line bg-white p-6 shadow-[0_8px_32px_rgba(6,48,27,0.04)] flex-1 transition hover:-translate-y-0.5 hover:shadow-[0_16px_48px_rgba(6,48,27,0.1)]">
                     <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#079447]">Step {step.num}</p>
-                    <h3 className="mt-1 text-lg font-semibold text-slate-950">{step.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-500">{step.desc}</p>
+                    <h3 className="mt-1 text-lg font-semibold text-ink-950">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-fg-subtle">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -362,16 +362,16 @@ export default function AboutPage() {
         </section>
 
         {/* ── 7. WHY CHOOSE ───────────────────────────────────────────── */}
-        <section className="w-full bg-[#eef8ff] py-16">
+        <section className="w-full bg-[#f1f2ea] py-16">
           <div className="mx-auto max-w-[1120px] px-6">
             <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Why Ooplab</p>
-            <h2 className="mt-3 text-3xl font-bold text-slate-950">The Ooplab Advantage</h2>
+            <h2 className="mt-3 text-3xl font-bold text-ink-950">The Ooplab Advantage</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {strengths.map((s) => (
-                <div key={s.title} className="rounded-[24px] border border-white/90 bg-white p-7 shadow-[0_8px_32px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(47,106,233,0.12)]">
+                <div key={s.title} className="rounded-[24px] border border-white/90 bg-white p-7 shadow-[0_8px_32px_rgba(6,48,27,0.04)] transition hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(6,48,27,0.12)]">
                   <i className={`bi ${s.icon} text-3xl text-[#079447]`} aria-hidden />
-                  <h3 className="mt-4 text-lg font-semibold text-slate-950">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-500">{s.desc}</p>
+                  <h3 className="mt-4 text-lg font-semibold text-ink-950">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-fg-subtle">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -381,29 +381,29 @@ export default function AboutPage() {
         {/* ── 8. TECH STACK ───────────────────────────────────────────── */}
         <section className="mx-auto w-full max-w-[1120px] py-20">
           <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Tech Stack</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">Built with the Best</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink-950">Built with the Best</h2>
           <div className="mt-10 flex flex-wrap gap-4">
             {techStack.map((t) => (
               <div
                 key={t.label}
-                className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 shadow-sm transition hover:border-[#079447]/50 hover:shadow-md"
+                className="flex items-center gap-2 rounded-full border border-line bg-white px-5 py-2.5 shadow-sm transition hover:border-[#079447]/50 hover:shadow-md"
               >
                 <i className={`bi ${t.icon} text-[#079447]`} />
-                <span className="text-sm font-medium text-slate-700">{t.label}</span>
+                <span className="text-sm font-medium text-ink-700">{t.label}</span>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── 9. INDUSTRIES ───────────────────────────────────────────── */}
-        <section className="w-full bg-slate-950 py-16">
+        <section className="w-full bg-ink-950 py-16">
           <div className="mx-auto max-w-[1120px] px-6">
-            <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-slate-400">Industries</p>
+            <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-on-ink-muted">Industries</p>
             <h2 className="mt-3 text-3xl font-bold text-white">We Build Across Sectors</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {industries.map((ind) => (
                 <div key={ind.label} className="flex items-center gap-4 rounded-[20px] border border-white/10 bg-white/5 p-5 transition hover:border-[#079447]/60 hover:bg-white/10">
-                  <i className={`bi ${ind.icon} text-2xl text-cyan-300`} aria-hidden />
+                  <i className={`bi ${ind.icon} text-2xl text-brand-200`} aria-hidden />
                   <span className="text-base font-semibold text-white">{ind.label}</span>
                 </div>
               ))}
@@ -414,13 +414,13 @@ export default function AboutPage() {
         {/* ── 10. VALUES ──────────────────────────────────────────────── */}
         <section className="mx-auto w-full max-w-[1120px] py-20">
           <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Core Values</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">What Drives Us</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink-950">What Drives Us</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
-              <div key={v.title} className="rounded-[24px] border border-slate-200 bg-white p-7 shadow-[0_8px_32px_rgba(15,23,42,0.04)] transition hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(47,106,233,0.12)]">
+              <div key={v.title} className="rounded-[24px] border border-line bg-white p-7 shadow-[0_8px_32px_rgba(6,48,27,0.04)] transition hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(6,48,27,0.12)]">
                 <i className={`bi ${v.icon} text-3xl text-[#079447]`} aria-hidden />
-                <h3 className="mt-4 text-base font-semibold text-slate-950">{v.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-500">{v.desc}</p>
+                <h3 className="mt-4 text-base font-semibold text-ink-950">{v.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-fg-subtle">{v.desc}</p>
               </div>
             ))}
           </div>

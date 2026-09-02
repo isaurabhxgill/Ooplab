@@ -85,7 +85,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="py-12 sm:py-24 bg-gray-50">
+        <section className="py-12 sm:py-24 bg-paper">
           <div className="mx-auto max-w-[1120px] px-4 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
               {/* Form Column */}
@@ -96,44 +96,44 @@ export default function ContactPage() {
               {/* Other Ways to Contact */}
               <div className="space-y-8">
                 <div>
-                  <h2 className="text-xl font-bold mb-3 text-gray-900 sm:text-2xl">
+                  <h2 className="text-xl font-bold mb-3 text-ink-900 sm:text-2xl">
                     Other ways to contact us
                   </h2>
-                  <p className="text-gray-600 text-sm">
+                  <p className="text-fg-muted text-sm">
                     Connect with us through alternative channels to find what works best for you.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   {/* Find a location */}
-                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#079447] hover:shadow-md transition">
+                  <div className="p-4 bg-white rounded-lg border border-line hover:border-[#079447] hover:shadow-md transition">
                     <div className="flex items-start gap-3">
                       <i className="bi bi-geo-alt text-[#079447] text-xl mt-1" aria-hidden="true"></i>
                       <div>
-                        <h3 className="font-semibold text-gray-900">Find a location</h3>
-                        <p className="text-sm text-gray-600 mt-1">Discover our offices worldwide</p>
+                        <h3 className="font-semibold text-ink-900">Find a location</h3>
+                        <p className="text-sm text-fg-muted mt-1">Discover our offices worldwide</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Stay up to date */}
-                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#079447] hover:shadow-md transition">
+                  <div className="p-4 bg-white rounded-lg border border-line hover:border-[#079447] hover:shadow-md transition">
                     <div className="flex items-start gap-3">
                       <i className="bi bi-bell text-[#079447] text-xl mt-1" aria-hidden="true"></i>
                       <div>
-                        <h3 className="font-semibold text-gray-900">Stay up to date</h3>
-                        <p className="text-sm text-gray-600 mt-1">Subscribe to our newsletter</p>
+                        <h3 className="font-semibold text-ink-900">Stay up to date</h3>
+                        <p className="text-sm text-fg-muted mt-1">Subscribe to our newsletter</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Follow us */}
-                  <div className="p-4 bg-white rounded-lg border border-gray-200 hover:border-[#079447] hover:shadow-md transition">
+                  <div className="p-4 bg-white rounded-lg border border-line hover:border-[#079447] hover:shadow-md transition">
                     <div className="flex items-start gap-3">
                       <i className="bi bi-share text-[#079447] text-xl mt-1" aria-hidden="true"></i>
                       <div>
-                        <h3 className="font-semibold text-gray-900">Follow us on social media</h3>
-                        <p className="text-sm text-gray-600 mt-1">Connect with us online</p>
+                        <h3 className="font-semibold text-ink-900">Follow us on social media</h3>
+                        <p className="text-sm text-fg-muted mt-1">Connect with us online</p>
                       </div>
                     </div>
                   </div>

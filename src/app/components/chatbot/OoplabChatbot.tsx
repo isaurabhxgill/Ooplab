@@ -295,11 +295,11 @@ export default function OoplabChatbot() {
         /* ── Variables ── */
         :root {
           --oopbot-green:      #079447;
-          --oopbot-green-dark: #006838;
-          --oopbot-green-mid:  #43b649;
-          --oopbot-green-deep: #004d2a;
+          --oopbot-green-dark: #0a5e33;
+          --oopbot-green-mid:  #54a848;
+          --oopbot-green-deep: #06301b;
           --oopbot-radius:     20px;
-          --oopbot-shadow:     0 24px 80px rgba(7, 148, 71, 0.18), 0 4px 24px rgba(15, 23, 42, 0.12);
+          --oopbot-shadow:     0 24px 80px rgba(7,148,71,0.18), 0 4px 24px rgba(6,48,27,0.12);
           --oopbot-w:          370px;
           --oopbot-h:          485px;
         }
@@ -315,25 +315,25 @@ export default function OoplabChatbot() {
           border-radius: 50%;
           border: none;
           cursor: pointer;
-          background: linear-gradient(135deg, #43b649 0%, #079447 50%, #006838 100%);
+          background: linear-gradient(135deg, #54a848 0%, #079447 50%, #0a5e33 100%);
           color: #fff;
           display: flex;
           align-items: center;
           justify-content: center;
-          box-shadow: 0 8px 28px rgba(7, 148, 71, 0.40), 0 2px 8px rgba(7, 148, 71, 0.20);
+          box-shadow: 0 8px 28px rgba(7,148,71,0.40), 0 2px 8px rgba(7,148,71,0.20);
           transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s ease, background 0.2s ease;
           outline: none;
         }
         .oopbot-fab:hover {
           transform: scale(1.10);
-          box-shadow: 0 12px 36px rgba(7, 148, 71, 0.50), 0 4px 12px rgba(7, 148, 71, 0.25);
+          box-shadow: 0 12px 36px rgba(7,148,71,0.50), 0 4px 12px rgba(7,148,71,0.25);
         }
         .oopbot-fab:focus-visible {
-          outline: 3px solid #43b649;
+          outline: 3px solid #54a848;
           outline-offset: 3px;
         }
         .oopbot-fab--open {
-          background: linear-gradient(135deg, #006838 0%, #079447 100%);
+          background: linear-gradient(135deg, #0a5e33 0%, #079447 100%);
           transform: rotate(0deg) scale(1);
         }
         .oopbot-fab-icon {
@@ -376,7 +376,7 @@ export default function OoplabChatbot() {
           display: flex;
           flex-direction: column;
           overflow: hidden;
-          border: 1px solid rgba(7, 148, 71, 0.14);
+          border: 1px solid rgba(7,148,71,0.14);
           opacity: 0;
           transform: translateY(16px) scale(0.96);
           pointer-events: none;
@@ -393,7 +393,7 @@ export default function OoplabChatbot() {
         /* ── Header ── */
         .oopbot-header {
           position: relative;
-          background: linear-gradient(110deg, #43b649 0%, #079447 45%, #006838 75%, #004d2a 100%);
+          background: linear-gradient(110deg, #54a848 0%, #079447 45%, #0a5e33 75%, #06301b 100%);
           padding: 14px 16px;
           display: flex;
           align-items: center;
@@ -455,8 +455,8 @@ export default function OoplabChatbot() {
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background: #7effa0;
-          box-shadow: 0 0 6px #7effa0;
+          background: #b7e06b;
+          box-shadow: 0 0 6px #b7e06b;
           flex-shrink: 0;
           animation: oopbot-pulse 2.5s ease-in-out infinite;
         }
@@ -498,7 +498,7 @@ export default function OoplabChatbot() {
         }
         .oopbot-messages::-webkit-scrollbar { width: 4px; }
         .oopbot-messages::-webkit-scrollbar-track { background: transparent; }
-        .oopbot-messages::-webkit-scrollbar-thumb { background: #d1fae5; border-radius: 4px; }
+        .oopbot-messages::-webkit-scrollbar-thumb { background: #e4f4c9; border-radius: 4px; }
 
         /* ── Message Row ── */
         .oopbot-message {
@@ -520,8 +520,8 @@ export default function OoplabChatbot() {
           width: 32px;
           height: 32px;
           border-radius: 50%;
-          background: #f0fdf4;
-          border: 1.5px solid #bbf7d0;
+          background: #f3f9ea;
+          border: 1.5px solid #b7e06b;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -555,13 +555,13 @@ export default function OoplabChatbot() {
           max-width: 100%;
         }
         .oopbot-bubble--bot {
-          background: #f0fdf4;
-          border: 1px solid #bbf7d0;
-          color: #0f172a;
+          background: #f3f9ea;
+          border: 1px solid #b7e06b;
+          color: #11201a;
           border-top-left-radius: 4px;
         }
         .oopbot-bubble--user {
-          background: linear-gradient(135deg, #43b649 0%, #079447 100%);
+          background: linear-gradient(135deg, #54a848 0%, #079447 100%);
           color: #fff;
           border-top-right-radius: 4px;
           box-shadow: 0 3px 12px rgba(7,148,71,0.25);
@@ -602,7 +602,7 @@ export default function OoplabChatbot() {
           gap: 6px;
           padding: 8px 16px;
           border-radius: 100px;
-          background: linear-gradient(135deg, #43b649 0%, #079447 100%);
+          background: linear-gradient(135deg, #54a848 0%, #079447 100%);
           color: #fff;
           font-size: 12.5px;
           font-weight: 600;
@@ -618,8 +618,8 @@ export default function OoplabChatbot() {
 
         /* ── Question Menu ── */
         .oopbot-menu {
-          background: #f8fafc;
-          border: 1px solid #e2e8f0;
+          background: #f1f2ea;
+          border: 1px solid #e3e6dc;
           border-radius: 14px;
           padding: 10px;
           width: 100%;
@@ -629,7 +629,7 @@ export default function OoplabChatbot() {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.08em;
-          color: #94a3b8;
+          color: #85938a;
           margin: 0 0 8px 2px;
         }
         .oopbot-menu-list {
@@ -644,11 +644,11 @@ export default function OoplabChatbot() {
           width: 100%;
           text-align: left;
           background: #fff;
-          border: 1px solid #e2e8f0;
+          border: 1px solid #e3e6dc;
           border-radius: 10px;
           padding: 8px 10px;
           font-size: 12.5px;
-          color: #0f172a;
+          color: #11201a;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -659,7 +659,7 @@ export default function OoplabChatbot() {
         }
         .oopbot-menu-btn:hover {
           border-color: #079447;
-          background: #f0fdf4;
+          background: #f3f9ea;
           color: #079447;
           transform: translateX(2px);
         }
@@ -680,15 +680,15 @@ export default function OoplabChatbot() {
         /* ── Footer ── */
         .oopbot-footer {
           padding: 8px 14px;
-          border-top: 1px solid #f1f5f9;
-          background: #fafafa;
+          border-top: 1px solid #f1f2ea;
+          background: #fafaf5;
           flex-shrink: 0;
         }
         .oopbot-footer-text {
           margin: 0;
           text-align: center;
           font-size: 11px;
-          color: #94a3b8;
+          color: #85938a;
           display: flex;
           align-items: center;
           justify-content: center;

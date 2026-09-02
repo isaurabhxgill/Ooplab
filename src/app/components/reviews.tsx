@@ -27,13 +27,13 @@ const getInitials = (name: string) => {
 const getAvatarBg = (name: string) => {
   const colors = [
     "bg-orange-100 text-orange-700 border-orange-200/50",
-    "bg-blue-100 text-blue-700 border-blue-200/50",
-    "bg-emerald-100 text-emerald-700 border-emerald-200/50",
-    "bg-purple-100 text-purple-700 border-purple-200/50",
-    "bg-cyan-100 text-cyan-700 border-cyan-200/50",
+    "bg-brand-50 text-brand-700 border-brand-100/50",
+    "bg-brand-50 text-brand-700 border-brand-100/50",
+    "bg-brand-50 text-brand-700 border-brand-100/50",
+    "bg-brand-50 text-brand-700 border-brand-100/50",
     "bg-pink-100 text-pink-700 border-pink-200/50",
     "bg-yellow-100 text-yellow-700 border-yellow-200/50",
-    "bg-indigo-100 text-indigo-700 border-indigo-200/50",
+    "bg-brand-50 text-brand-700 border-brand-100/50",
   ];
   let hash = 0;
   for (let i = 0; i < name.length; i++) {
@@ -100,7 +100,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-[32px] text-black uppercase tracking-[0.24em]">Reviews</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">Trusted by product teams worldwide.</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink-950">Trusted by product teams worldwide.</h2>
         </div>
       </div>
 
@@ -112,7 +112,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
           <div
             role="review-card"
             key={review.author}
-            className="snap-start min-w-[285px] max-w-[360px] flex-shrink-0 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] flex flex-col justify-between"
+            className="snap-start min-w-[285px] max-w-[360px] flex-shrink-0 rounded-[28px] border border-line bg-white p-6 shadow-[0_20px_60px_rgba(6,48,27,0.08)] flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between gap-4">
@@ -132,8 +132,8 @@ export default function Reviews({ reviews }: ReviewsProps) {
                     )}
                   </div>
                   <div>
-                    <p className="text-lg font-semibold text-slate-950">{review.author}</p>
-                    <p className="text-sm text-slate-500">{review.role} · {review.company}</p>
+                    <p className="text-lg font-semibold text-ink-950">{review.author}</p>
+                    <p className="text-sm text-fg-subtle">{review.role} · {review.company}</p>
                   </div>
                 </div>
 
@@ -153,7 +153,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
                 </div>
               </div>
 
-              <p className="mt-5 text-sm leading-7 text-slate-600 font-semibold">{review.text}</p>
+              <p className="mt-5 text-sm leading-7 text-fg-muted font-semibold">{review.text}</p>
             </div>
           </div>
         ))}
