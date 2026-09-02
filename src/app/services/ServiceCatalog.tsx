@@ -52,7 +52,7 @@ export default function ServiceCatalog() {
         })}
       </div>
 
-      <p className="sr-only" aria-live="polite">
+      <p className="visually-hidden" aria-live="polite">
         {visible.length} services shown
       </p>
 

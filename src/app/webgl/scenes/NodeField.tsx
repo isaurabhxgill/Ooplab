@@ -92,10 +92,13 @@ export default function NodeField({ points, lines }: Props) {
       dt
     );
 
+    // The field belongs to the ink bands, where additive blending makes it
+    // glow. Over paper it can only ever read as dust on the screen, so it
+    // leaves entirely and the shards carry that section instead.
     let opacity = 1;
-    opacity = lerp(opacity, 0.14, smoothstep(0.05, 0.45, s.services));
-    opacity = lerp(opacity, 0.3, smoothstep(0.1, 0.5, s.products));
-    opacity = lerp(opacity, 0.16, smoothstep(0.15, 0.6, s.outro));
+    opacity = lerp(opacity, 0, smoothstep(0.02, 0.32, s.services));
+    opacity = lerp(opacity, 0.34, smoothstep(0.08, 0.45, s.products));
+    opacity = lerp(opacity, 0, smoothstep(0.05, 0.4, s.outro));
     u.uOpacity.value = damp(u.uOpacity.value, opacity * intro, 4, dt);
 
     u.uInk.value = damp(u.uInk.value, stage.ink, 6, dt);

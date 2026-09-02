@@ -37,25 +37,25 @@ export default function Landing() {
       <StageMount slides={slides} serviceCount={featuredServices.length} />
 
       <main className="stage-content min-h-screen">
-        <div className="mx-auto w-full max-w-[1440px]">
+        <div className="w-full">
           <Header variant="ink" />
 
           {/* --------------------------------------------------------- hero */}
           <SceneAnchor id="section:hero">
-            <section className="band-ink on-ink relative flex min-h-[86vh] items-center overflow-hidden px-5 py-24 sm:px-9">
+            <section className="band-ink on-ink hero relative overflow-hidden">
               <div className="stage-fallback" aria-hidden="true" />
               <div className="hero-scrim" aria-hidden="true" />
 
               <HeroSurface>
-                <div className="relative z-10 mx-auto w-full max-w-[1120px]">
+                <div className="shell relative z-10">
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-300">
                     Digital product studio
                   </p>
-                  <h1 className="mt-6 max-w-[900px] text-[42px] font-extrabold leading-[1.04] tracking-tight sm:text-[68px]">
+                  <h1 className="hero-title mt-6 max-w-[56rem] font-extrabold">
                     Building scalable digital solutions for{" "}
                     <span className="text-gradient-lime">modern businesses</span>
                   </h1>
-                  <p className="mt-7 max-w-[620px] text-base leading-7 text-on-ink-muted sm:text-lg">
+                  <p className="hero-lead mt-6 max-w-[39rem] leading-7 text-on-ink-muted">
                     We build high-performance web applications, AI-powered
                     products and enterprise software that help startups launch
                     faster and businesses scale with confidence.
@@ -77,7 +77,7 @@ export default function Landing() {
                     </Link>
                   </div>
 
-                  <p className="mt-16 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-on-ink-muted/70">
+                  <p className="mt-10 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-on-ink-muted/70">
                     <i className="bi bi-cursor" aria-hidden="true" />
                     <span className="[@media(pointer:coarse)]:hidden">
                       Move your cursor — the field responds
@@ -93,11 +93,9 @@ export default function Landing() {
 
           {/* ----------------------------------------------------- services */}
           <SceneAnchor id="section:services">
-            <section
-              id="services"
-              className="mx-auto w-full max-w-[1280px] px-5 py-28 sm:px-9 sm:py-36"
-            >
-              <div className="mx-auto max-w-[720px] text-center">
+            <section id="services" className="section">
+              <div className="shell">
+              <div className="mx-auto max-w-[45rem] text-center">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
                   Our services
                 </p>
@@ -123,6 +121,7 @@ export default function Landing() {
                   <i className="bi bi-arrow-right" aria-hidden="true" />
                 </Link>
               </div>
+              </div>
             </section>
           </SceneAnchor>
 
@@ -130,9 +129,9 @@ export default function Landing() {
           <SceneAnchor id="section:products">
             <section
               id="products"
-              className="band-ink on-ink relative overflow-hidden px-5 py-28 sm:px-9 sm:py-36"
+              className="band-ink on-ink section relative overflow-hidden"
             >
-              <div className="relative z-10 mx-auto w-full max-w-[1200px]">
+              <div className="shell relative z-10">
                 <div className="max-w-[680px]">
                   <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-300">
                     Our products
@@ -155,11 +154,10 @@ export default function Landing() {
 
           {/* ------------------------------------------------- testimonials */}
           <SceneAnchor id="section:outro">
-            <section
-              className="mx-auto w-full max-w-[1120px] px-5 py-28 sm:px-9 sm:py-36"
-              id="testimonials"
-            >
-              <Reviews reviews={reviews} />
+            <section className="section" id="testimonials">
+              <div className="shell">
+                <Reviews reviews={reviews} />
+              </div>
             </section>
           </SceneAnchor>
 

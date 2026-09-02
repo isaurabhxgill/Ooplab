@@ -15,7 +15,7 @@ const TAU = Math.PI * 2;
 const target = new THREE.Vector3();
 const orbit = new THREE.Vector3();
 const docked: AnchorRect = { cx: 0, cy: 0, w: 0, h: 0, visibility: 0 };
-const ORBIT_R = 4.5;
+const ORBIT_R = 3.75;
 const SHARD_Z = 1.4;
 
 type ShardProps = { index: number; count: number; rich: boolean };
@@ -36,11 +36,11 @@ function Shard({ index, count, rich }: ShardProps) {
   const geometry = useMemo(() => {
     switch (index % 3) {
       case 0:
-        return new THREE.IcosahedronGeometry(0.17, 0);
+        return new THREE.IcosahedronGeometry(0.26, 0);
       case 1:
-        return new THREE.OctahedronGeometry(0.2, 0);
+        return new THREE.OctahedronGeometry(0.3, 0);
       default:
-        return new THREE.DodecahedronGeometry(0.155, 0);
+        return new THREE.DodecahedronGeometry(0.24, 0);
     }
   }, [index]);
 

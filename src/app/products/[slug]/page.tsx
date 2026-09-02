@@ -180,7 +180,7 @@ export default async function ProductPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-[#fafaf5] text-ink-800">
       <Header />
-      <div className="mx-auto w-full max-w-[1440px] px-4 py-8 sm:px-8 sm:py-12">
+      <div className="shell section-tight">
         {isEventSync ? (
           // ==========================================
           // EVENTSYNC PRODUCT LAYOUT

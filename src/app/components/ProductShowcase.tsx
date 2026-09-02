@@ -83,7 +83,7 @@ export default function ProductShowcase({ products }: { products: Product[] }) {
       </div>
 
       {/* Every product stays reachable regardless of the deck's state. */}
-      <ul className="sr-only">
+      <ul className="visually-hidden">
         {products.map((product) => (
           <li key={product.slug}>
             <Link href={`/products/${product.slug}`}>

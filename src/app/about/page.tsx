@@ -89,7 +89,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#fafaf5] text-[#11201a]">
       <div className="mx-auto w-full max-w-[1440px]">
-        <Header />
+        <Header variant="ink" />
 
         {/* ── 1. HERO ─────────────────────────────────────────────────── */}
         {/* <section className="relative flex min-h-[560px] w-full items-center justify-center overflow-hidden bg-gradient-to-r from-[#079447] to-[#0a5e33] px-6 py-20 sm:py-28 mt-6">
@@ -123,22 +123,21 @@ export default function AboutPage() {
         </section> */}
 
 
-        <section className="relative min-h-[480px] w-full overflow-hidden sm:min-h-[560px] lg:h-screen">
+        <section className="band-ink on-ink hero relative w-full overflow-hidden">
           {/* Background Image */}
           <Image
             src="/Assest/bg-about.png"
             alt="Ooplab Hero Background"
             fill
             priority
-            className="object-cover"
+            className="art-brand-shift object-cover"
           />
 
-          {/* Optional Overlay */}
-          <div className="absolute inset-0 bg-black/45" />
+          <div className="art-brand-wash" aria-hidden="true" />
 
           {/* Content */}
-          <div className="relative z-10 flex h-full items-center justify-center px-6">
-            <div className="max-w-[720px] text-center text-white">
+          <div className="shell relative z-10">
+            <div className="mx-auto max-w-[45rem] text-center text-white">
               <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-white/70">
                 About Ooplab
               </p>
@@ -173,7 +172,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── 2. COMPANY OVERVIEW ─────────────────────────────────────── */}
-        <section className="mx-auto w-full max-w-[1120px] px-4 py-12 sm:px-6 sm:py-20">
+        <section className="section shell">
           <div className="grid items-center gap-14 lg:grid-cols-2">
             <div>
               <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Who We Are</p>
@@ -215,8 +214,8 @@ export default function AboutPage() {
         </section>
 
         {/* ── 3. HIGHLIGHTS ───────────────────────────────────────────── */}
-        <section className="w-full bg-ink-950 py-16">
-          <div className="mx-auto max-w-[1120px] px-6">
+        <section className="band-ink-soft on-ink section">
+          <div className="shell">
             <p className="text-center text-[13px] font-semibold uppercase tracking-[0.24em] text-on-ink-muted">By the numbers</p>
             <h2 className="mt-3 text-center text-3xl font-bold text-white">Trusted by teams across India and beyond.</h2>
             <StatCards />
@@ -224,7 +223,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── 4. SERVICES ─────────────────────────────────────────────── */}
-        <section className="mx-auto w-full max-w-[1120px] py-20" id="about-services">
+        <section className="section shell" id="about-services">
           <div className="relative overflow-hidden rounded-[32px] bg-[#f1f2ea] px-5 py-10 shadow-[0_20px_80px_rgba(6,48,27,0.07)] sm:px-8 sm:py-12">
             {/* Bg blobs */}
             <div className="pointer-events-none absolute -right-16 top-8 h-44 w-44 rounded-full bg-[#e4f4c9] opacity-70 blur-3xl" />
@@ -262,8 +261,8 @@ export default function AboutPage() {
         </section>
 
         {/* ── 5. PRODUCTS ─────────────────────────────────────────────── */}
-        <section className="w-full bg-ink-950 py-16" id="about-products">
-          <div className="mx-auto max-w-[1120px] px-6">
+        <section className="band-ink-soft on-ink section" id="about-products">
+          <div className="shell">
             <div className="mb-10">
               <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-on-ink-muted">What We&apos;ve Built</p>
               <h2 className="mt-3 text-[32px] font-bold text-white sm:text-[38px]">Our Products</h2>
@@ -363,7 +362,7 @@ export default function AboutPage() {
 
         {/* ── 7. WHY CHOOSE ───────────────────────────────────────────── */}
         <section className="w-full bg-[#f1f2ea] py-16">
-          <div className="mx-auto max-w-[1120px] px-6">
+          <div className="shell">
             <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-[#079447]">Why Ooplab</p>
             <h2 className="mt-3 text-3xl font-bold text-ink-950">The Ooplab Advantage</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -396,8 +395,8 @@ export default function AboutPage() {
         </section>
 
         {/* ── 9. INDUSTRIES ───────────────────────────────────────────── */}
-        <section className="w-full bg-ink-950 py-16">
-          <div className="mx-auto max-w-[1120px] px-6">
+        <section className="band-ink-soft on-ink section">
+          <div className="shell">
             <p className="text-[13px] font-semibold uppercase tracking-[0.24em] text-on-ink-muted">Industries</p>
             <h2 className="mt-3 text-3xl font-bold text-white">We Build Across Sectors</h2>
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

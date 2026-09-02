@@ -19,24 +19,24 @@ export default function ServicesPage() {
       <StageMount slides={[]} serviceCount={0} />
 
       <main className="stage-content min-h-screen">
-      <div className="stage-content mx-auto w-full max-w-[1440px]">
+      <div className="w-full">
         <Header variant="ink" />
 
         {/* ------------------------------------------------------------ hero */}
         <SceneAnchor id="section:hero">
-        <section className="band-ink on-ink relative overflow-hidden px-5 pb-24 pt-20 sm:px-9 sm:pb-32 sm:pt-28">
+        <section className="band-ink on-ink section relative overflow-hidden">
           <div className="stage-fallback" aria-hidden="true" />
           <div className="hero-scrim" aria-hidden="true" />
 
-          <div className="relative z-10 mx-auto w-full max-w-[1120px]">
+          <div className="shell relative z-10">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-300">
               What we do
             </p>
-            <h1 className="mt-5 max-w-[900px] text-[40px] font-extrabold leading-[1.05] tracking-tight sm:text-[62px]">
+            <h1 className="hero-title mt-5 max-w-[56rem] font-extrabold">
               Every discipline needed to take a product from{" "}
               <span className="text-gradient-lime">idea to scale</span>.
             </h1>
-            <p className="mt-6 max-w-[640px] text-base leading-7 text-on-ink-muted sm:text-lg">
+            <p className="hero-lead mt-6 max-w-[40rem] leading-7 text-on-ink-muted">
               Ooplab is a full-stack product studio. Strategy, design,
               engineering and the platform work underneath — delivered by one
               team, under one roadmap, with no handoffs between agencies.
@@ -60,15 +60,12 @@ export default function ServicesPage() {
 
             <dl className="mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line-inv pt-10 lg:grid-cols-4">
               {stats.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="sr-only">{stat.label}</dt>
-                  <dd>
-                    <span className="block text-3xl font-bold text-brand-300 sm:text-4xl">
-                      {stat.value}
-                    </span>
-                    <span className="mt-2 block text-sm leading-6 text-on-ink-muted">
-                      {stat.label}
-                    </span>
+                <div key={stat.label} className="flex flex-col-reverse gap-2">
+                  <dt className="text-sm leading-6 text-on-ink-muted">
+                    {stat.label}
+                  </dt>
+                  <dd className="text-3xl font-bold text-brand-300 sm:text-4xl">
+                    {stat.value}
                   </dd>
                 </div>
               ))}
@@ -78,11 +75,9 @@ export default function ServicesPage() {
         </SceneAnchor>
 
         {/* ------------------------------------------------------- catalogue */}
-        <section
-          id="catalogue"
-          className="mx-auto w-full max-w-[1280px] px-5 py-24 sm:px-9 sm:py-32"
-        >
-          <div className="mx-auto max-w-[760px] text-center">
+        <section id="catalogue" className="section">
+          <div className="shell">
+          <div className="mx-auto max-w-[47rem] text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
               Capabilities
             </p>
@@ -99,11 +94,12 @@ export default function ServicesPage() {
           <div className="mt-14">
             <ServiceCatalog />
           </div>
+          </div>
         </section>
 
         {/* --------------------------------------------------------- process */}
-        <section className="band-ink-soft on-ink relative overflow-hidden px-5 py-24 sm:px-9 sm:py-32">
-          <div className="relative z-10 mx-auto w-full max-w-[1120px]">
+        <section className="band-ink-soft on-ink section relative overflow-hidden">
+          <div className="shell relative z-10">
             <div className="max-w-[680px]">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-300">
                 How we work
@@ -143,8 +139,9 @@ export default function ServicesPage() {
         </section>
 
         {/* ------------------------------------------------------ engagement */}
-        <section className="mx-auto w-full max-w-[1120px] px-5 py-24 sm:px-9 sm:py-32">
-          <div className="max-w-[680px]">
+        <section className="section">
+          <div className="shell">
+          <div className="max-w-[42.5rem]">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-700">
               Engagement models
             </p>
@@ -199,10 +196,12 @@ export default function ServicesPage() {
               </article>
             ))}
           </div>
+          </div>
         </section>
 
         {/* ------------------------------------------------------------- cta */}
-        <section className="mx-auto w-full max-w-[1120px] px-5 pb-24 sm:px-9 sm:pb-32">
+        <section className="section-tight pb-[var(--section-py)]">
+          <div className="shell">
           <div className="brand-gradient relative overflow-hidden rounded-[32px] px-8 py-16 text-center sm:px-16 sm:py-20">
             <div
               className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-brand-200 opacity-25 blur-3xl"
@@ -221,6 +220,7 @@ export default function ServicesPage() {
             >
               Book a consultation
             </Link>
+          </div>
           </div>
         </section>
 
