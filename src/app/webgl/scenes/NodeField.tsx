@@ -80,7 +80,8 @@ export default function NodeField({ points, lines }: Props) {
     const camera = state.camera;
     const t = state.clock.elapsedTime;
     const s = stage.sections;
-    u.uTime.value = t;
+    const still = stage.quality?.tier === "static";
+    u.uTime.value = still ? 0 : t;
 
     // Assemble on load, then release the ring as the services band arrives.
     const intro = smoothstep(0, 1, clamp((t - 0.25) / 2.4));
@@ -99,6 +100,24 @@ export default function NodeField({ points, lines }: Props) {
     opacity = lerp(opacity, 0, smoothstep(0.02, 0.32, s.services));
     opacity = lerp(opacity, 0.34, smoothstep(0.08, 0.45, s.products));
     opacity = lerp(opacity, 0, smoothstep(0.05, 0.4, s.outro));
+    if (still) {
+      // A settled frame: ring fully formed, no drift, no pointer well, no
+      // rotation. Opacity still follows the band so the field belongs to the
+      // ink sections exactly as it does when animating.
+      u.uForm.value = 1;
+      u.uDrift.value = 0;
+      u.uPointerStrength.value = 0;
+      u.uOpacity.value = opacity;
+      u.uInk.value = stage.ink;
+      for (let i = 0; i < 4; i++) u.uRipples.value[i].w = 0;
+      if (group.current) {
+        group.current.rotation.set(0, 0, 0);
+        group.current.position.x = state.size.width >= 1024 ? 2.05 : 0;
+        group.current.scale.setScalar(state.size.width >= 1024 ? 0.86 : 0.74);
+      }
+      return;
+    }
+
     u.uOpacity.value = damp(u.uOpacity.value, opacity * intro, 4, dt);
 
     u.uInk.value = damp(u.uInk.value, stage.ink, 6, dt);

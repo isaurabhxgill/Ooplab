@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree } from "@react-three/fiber";
 import type { QualitySettings } from "./quality";
 import CameraRig from "./rig/CameraRig";
 import Lighting from "./rig/Lighting";
@@ -15,7 +15,30 @@ type Props = {
   serviceCount: number;
 };
 
+/**
+ * In static mode the loop is on demand: we redraw only when the page scrolls or
+ * resizes, so the scene stays correct for its band without ever animating on
+ * its own.
+ */
+function DemandRedraw() {
+  const invalidate = useThree((s) => s.invalidate);
+
+  useEffect(() => {
+    const redraw = () => invalidate();
+    redraw();
+    window.addEventListener("scroll", redraw, { passive: true });
+    window.addEventListener("resize", redraw);
+    return () => {
+      window.removeEventListener("scroll", redraw);
+      window.removeEventListener("resize", redraw);
+    };
+  }, [invalidate]);
+
+  return null;
+}
+
 export default function Stage({ quality, slides, serviceCount }: Props) {
+  const isStatic = quality.tier === "static";
   const [frameloop, setFrameloop] = useState<"always" | "never">("always");
 
   // A hidden tab should cost nothing.
@@ -28,7 +51,7 @@ export default function Stage({ quality, slides, serviceCount }: Props) {
 
   return (
     <Canvas
-      frameloop={frameloop}
+      frameloop={isStatic ? "demand" : frameloop}
       dpr={quality.dpr}
       camera={{ position: [0, 0, 7.4], fov: 42, near: 0.1, far: 60 }}
       gl={{
@@ -39,6 +62,7 @@ export default function Stage({ quality, slides, serviceCount }: Props) {
       }}
       onCreated={({ gl }) => gl.setClearAlpha(0)}
     >
+      {isStatic && <DemandRedraw />}
       <CameraRig />
       <Lighting rich={quality.transmission} />
       <NodeField points={quality.points} lines={quality.lines} />

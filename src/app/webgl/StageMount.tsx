@@ -23,7 +23,9 @@ export default function StageMount({ slides, serviceCount }: Props) {
   useEffect(() => {
     const quality = detectQuality();
     stage.quality = quality;
-    stage.ready = quality.tier !== "off";
+    // "ready" gates interactive affordances (ripples, deck dragging). A static
+    // scene still draws, but nothing about it responds to input.
+    stage.ready = quality.tier !== "off" && quality.tier !== "static";
     setUiState({ tier: quality.tier, stageReady: stage.ready });
 
     if (process.env.NODE_ENV === "development") {
@@ -34,7 +36,7 @@ export default function StageMount({ slides, serviceCount }: Props) {
       else console.info(`${msg} (points ${quality.points}, lines ${quality.lines})`);
     }
 
-    if (!stage.ready) return;
+    if (quality.tier === "off") return;
 
     // `.stage-active` hands the section grounds over to the canvas backdrop.
     // Until it is set, every band paints its own solid colour, so the page is
@@ -50,6 +52,7 @@ export default function StageMount({ slides, serviceCount }: Props) {
   }, []);
 
   const quality = stage.quality;
+  // The canvas renders for every tier except "off" — including "static".
   const active = tier !== "pending" && tier !== "off" && quality !== null;
 
   useScrollDriver(active);

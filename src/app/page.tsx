@@ -7,6 +7,7 @@ import ServiceGrid from "./components/ServiceGrid";
 import SceneAnchor from "./webgl/SceneAnchor";
 import StageMount from "./webgl/StageMount";
 import HeroSurface from "./webgl/controls/HeroSurface";
+import StageHint from "./webgl/controls/StageHint";
 import type { Slide } from "./webgl/scenes/ProductDeck";
 import { products } from "./products/data";
 import { reviews } from "./data/reviews";
@@ -77,15 +78,7 @@ export default function Landing() {
                     </Link>
                   </div>
 
-                  <p className="mt-10 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-on-ink-muted/70">
-                    <i className="bi bi-cursor" aria-hidden="true" />
-                    <span className="[@media(pointer:coarse)]:hidden">
-                      Move your cursor — the field responds
-                    </span>
-                    <span className="hidden [@media(pointer:coarse)]:inline">
-                      Tap the field — it responds
-                    </span>
-                  </p>
+                  <StageHint />
                 </div>
               </HeroSurface>
             </section>

@@ -1,4 +1,9 @@
-export type Tier = "high" | "medium" | "low" | "off";
+/**
+ * "static" renders the scene as a still image: no autonomous animation, no
+ * pointer reactivity, no time-based drift. Reduced motion is a request for
+ * less movement, not for a blank page — the composition still belongs there.
+ */
+export type Tier = "high" | "medium" | "low" | "static" | "off";
 
 export type QualitySettings = {
   tier: Tier;
@@ -43,8 +48,19 @@ export function detectQuality(): QualitySettings {
     return off("server");
   }
 
-  if (prefersReducedMotion()) return off("prefers-reduced-motion is enabled");
   if (!hasWebGL2()) return off("WebGL2 unavailable");
+
+  if (prefersReducedMotion()) {
+    return {
+      tier: "static",
+      reason: "prefers-reduced-motion is enabled — rendering a still scene",
+      points: 2600,
+      lines: 1400,
+      dpr: [1, 1.5],
+      transmission: false,
+      shadows: false,
+    };
+  }
 
   const nav = navigator as Navigator & { deviceMemory?: number };
 
