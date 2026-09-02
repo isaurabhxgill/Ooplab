@@ -2,6 +2,9 @@ export type Tier = "high" | "medium" | "low" | "off";
 
 export type QualitySettings = {
   tier: Tier;
+  /** Why this tier was chosen. Surfaced in development to make a silent
+   *  downgrade diagnosable instead of looking like a broken scene. */
+  reason: string;
   /** Point count in the hero node field. */
   points: number;
   /** Max neighbour line segments. Zero disables the line pass entirely. */
@@ -37,22 +40,30 @@ export function prefersReducedMotion(): boolean {
  */
 export function detectQuality(): QualitySettings {
   if (typeof window === "undefined") {
-    return { tier: "off", points: 0, lines: 0, dpr: [1, 1], transmission: false, shadows: false };
+    return off("server");
   }
 
-  if (prefersReducedMotion() || !hasWebGL2()) {
-    return { tier: "off", points: 0, lines: 0, dpr: [1, 1], transmission: false, shadows: false };
-  }
+  if (prefersReducedMotion()) return off("prefers-reduced-motion is enabled");
+  if (!hasWebGL2()) return off("WebGL2 unavailable");
 
   const nav = navigator as Navigator & { deviceMemory?: number };
-  const cores = nav.hardwareConcurrency ?? 4;
-  const memory = nav.deviceMemory ?? 4;
+
+  // `deviceMemory` is Chrome-only and `hardwareConcurrency` can be absent too.
+  // An unreported value means "unknown", not "weak" — defaulting these low
+  // pinned every Safari and Firefox visitor to the lowest tier.
+  const cores = nav.hardwareConcurrency ?? 8;
+  const memory = nav.deviceMemory ?? 8;
   const coarse = window.matchMedia("(pointer: coarse)").matches;
   const narrow = window.innerWidth < 768;
 
-  if (coarse || narrow || cores <= 4 || memory <= 4) {
+  if (coarse || narrow || cores <= 4 || memory <= 2) {
     return {
       tier: "low",
+      reason: coarse
+        ? "coarse pointer"
+        : narrow
+          ? "viewport under 768px"
+          : `low capability (cores ${cores}, memory ${memory})`,
       points: 1200,
       lines: 0,
       dpr: [1, 1],
@@ -64,6 +75,7 @@ export function detectQuality(): QualitySettings {
   if (cores <= 8) {
     return {
       tier: "medium",
+      reason: `${cores} cores`,
       points: 2600,
       lines: 1400,
       dpr: [1, 1.5],
@@ -74,10 +86,23 @@ export function detectQuality(): QualitySettings {
 
   return {
     tier: "high",
+    reason: `${cores} cores, memory ${memory}`,
     points: 4200,
     lines: 2600,
     dpr: [1, 2],
     transmission: true,
+    shadows: false,
+  };
+}
+
+function off(reason: string): QualitySettings {
+  return {
+    tier: "off",
+    reason,
+    points: 0,
+    lines: 0,
+    dpr: [1, 1],
+    transmission: false,
     shadows: false,
   };
 }

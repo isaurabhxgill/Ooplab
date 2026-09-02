@@ -26,6 +26,14 @@ export default function StageMount({ slides, serviceCount }: Props) {
     stage.ready = quality.tier !== "off";
     setUiState({ tier: quality.tier, stageReady: stage.ready });
 
+    if (process.env.NODE_ENV === "development") {
+      // A downgrade is invisible by design, which makes "the animation is not
+      // running" impossible to diagnose from the page alone. Say so.
+      const msg = `[Ooplab stage] tier="${quality.tier}" — ${quality.reason}`;
+      if (quality.tier === "off") console.warn(`${msg}. No canvas will render.`);
+      else console.info(`${msg} (points ${quality.points}, lines ${quality.lines})`);
+    }
+
     if (!stage.ready) return;
 
     // `.stage-active` hands the section grounds over to the canvas backdrop.
