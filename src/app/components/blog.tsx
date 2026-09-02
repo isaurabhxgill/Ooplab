@@ -36,13 +36,13 @@ export default function Blog({ posts }: BlogProps) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-[32px] text-black uppercase tracking-[0.24em]">From the blog</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">Updates, guides, and product thinking.</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink-950">Updates, guides, and product thinking.</h2>
         </div>
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => scrollPosts("left")}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink-700 shadow-sm transition hover:border-line-strong hover:bg-paper"
             aria-label="Scroll blog posts left"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -50,7 +50,7 @@ export default function Blog({ posts }: BlogProps) {
           <button
             type="button"
             onClick={() => scrollPosts("right")}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink-700 shadow-sm transition hover:border-line-strong hover:bg-paper"
             aria-label="Scroll blog posts right"
           >
             <ChevronRight className="h-5 w-5" />
@@ -64,17 +64,17 @@ export default function Blog({ posts }: BlogProps) {
         {posts.map((post) => (
           <article
             key={post.title}
-            className="snap-start min-w-[285px] max-w-[420px] flex-shrink-0 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+            className="snap-start min-w-[285px] max-w-[420px] flex-shrink-0 rounded-[28px] border border-line bg-white p-6 shadow-[0_20px_60px_rgba(6,48,27,0.08)]"
           >
-            <div className="flex items-center justify-between text-xs uppercase tracking-[0.24em] text-slate-500">
+            <div className="flex items-center justify-between text-xs uppercase tracking-[0.24em] text-fg-subtle">
               <span>{post.tag}</span>
               <span>{post.date}</span>
             </div>
-            <h3 className="mt-4 text-2xl font-semibold text-slate-950">{post.title}</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">{post.excerpt}</p>
+            <h3 className="mt-4 text-2xl font-semibold text-ink-950">{post.title}</h3>
+            <p className="mt-4 text-sm leading-7 text-fg-muted">{post.excerpt}</p>
             <a
               href={post.href}
-              className="mt-6 inline-flex text-sm font-semibold text-cyan-600 hover:text-cyan-500"
+              className="mt-6 inline-flex text-sm font-semibold text-brand-600 hover:text-brand-500"
             >
               Continue reading →
             </a>

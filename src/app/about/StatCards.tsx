@@ -42,7 +42,7 @@ function StatCard({ value, suffix, label }: { value: number; suffix: string; lab
       <span ref={ref} className="text-5xl font-extrabold text-white">
         {count}{suffix}
       </span>
-      <p className="mt-2 text-sm text-slate-400">{label}</p>
+      <p className="mt-2 text-sm text-on-ink-muted">{label}</p>
     </div>
   );
 }

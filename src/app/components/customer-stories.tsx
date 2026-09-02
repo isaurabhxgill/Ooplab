@@ -37,14 +37,14 @@ export default function CustomerStories({ stories }: CustomerStoriesProps) {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-[32px] text-black uppercase tracking-[0.24em]">Customer Stories</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">See how customers use our products.</h2>
+          <h2 className="mt-3 text-3xl font-bold text-ink-950">See how customers use our products.</h2>
         </div>
 
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => scrollStories("left")}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink-700 shadow-sm transition hover:border-line-strong hover:bg-paper"
             aria-label="Scroll stories left"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -52,7 +52,7 @@ export default function CustomerStories({ stories }: CustomerStoriesProps) {
           <button
             type="button"
             onClick={() => scrollStories("right")}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-ink-700 shadow-sm transition hover:border-line-strong hover:bg-paper"
             aria-label="Scroll stories right"
           >
             <ChevronRight className="h-5 w-5" />
@@ -67,10 +67,10 @@ export default function CustomerStories({ stories }: CustomerStoriesProps) {
         {stories.map((story) => (
           <article
             key={story.title}
-            className="snap-start min-w-[285px] max-w-[360px] flex-shrink-0 overflow-hidden rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
+            className="snap-start min-w-[285px] max-w-[360px] flex-shrink-0 overflow-hidden rounded-[28px] border border-line bg-white p-6 shadow-[0_20px_60px_rgba(6,48,27,0.08)]"
           >
             <div className="flex items-center gap-4">
-              <div className="relative h-16 w-16 overflow-hidden rounded-3xl bg-slate-100">
+              <div className="relative h-16 w-16 overflow-hidden rounded-3xl bg-paper-sunk">
                 <Image
                   src={story.image}
                   alt={story.company}
@@ -80,12 +80,12 @@ export default function CustomerStories({ stories }: CustomerStoriesProps) {
                 />
               </div>
               <div>
-                <p className="text-base font-semibold text-slate-950">{story.title}</p>
-                <p className="mt-1 text-sm text-slate-500">{story.subtitle}</p>
+                <p className="text-base font-semibold text-ink-950">{story.title}</p>
+                <p className="mt-1 text-sm text-fg-subtle">{story.subtitle}</p>
               </div>
             </div>
-            <p className="mt-6 text-sm leading-7 text-slate-600">{story.quote}</p>
-            <div className="mt-6 text-sm font-semibold text-slate-900">{story.company}</div>
+            <p className="mt-6 text-sm leading-7 text-fg-muted">{story.quote}</p>
+            <div className="mt-6 text-sm font-semibold text-ink-900">{story.company}</div>
           </article>
         ))}
       </div>

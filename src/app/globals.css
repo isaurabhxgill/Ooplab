@@ -3,27 +3,217 @@
 @custom-variant hover (&:hover);
 @custom-variant group-hover (.group:hover &);
 
+/* ==========================================================================
+   Ooplab design tokens
 
-:root {
-  --background: #f5fbff;
-  --foreground: #0f172a;
-}
+   The brand ramp is sampled from public/Assest/Ologo.png, which contains
+   three greens — a deep forest (#0A5E33), a mid (#54A848) and a lime
+   (#84C030). The lime is the accent; the previous blue accent (#2563eb)
+   belonged to no part of the identity and has been removed.
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+   Contrast rules, measured (WCAG 2.1):
+     brand-700 on paper .... 7.9:1  small text OK
+     brand-600 on white .... 3.9:1  large text / UI only, never body copy
+     brand-300 on white .... 2.2:1  NEVER text on light — fills/rules/glow
+     brand-300 on ink-900 .. 8.2:1  text OK on dark; lime lives here
+     fg-muted  on paper .... 6.6:1  body copy OK
+   ========================================================================== */
+
+@theme {
+  /* Brand ramp */
+  --color-brand-50: #f3f9ea;
+  --color-brand-100: #e4f4c9;
+  --color-brand-200: #b7e06b;
+  --color-brand-300: #84c030;  /* logo lime — the accent */
+  --color-brand-400: #54a848;  /* logo mid green */
+  --color-brand-500: #17a85a;
+  --color-brand-600: #079447;  /* primary CTA — unchanged, logo equity */
+  --color-brand-700: #0a5e33;  /* logo deep green */
+  --color-brand-800: #0a4527;
+  --color-brand-900: #06301b;
+
+  /* Ink — green-tinted near-blacks, so dark bands read as the same brand */
+  --color-ink-600: #1e4531;
+  --color-ink-700: #143222;
+  --color-ink-800: #0c2517;
+  --color-ink-900: #071a0f;
+  --color-ink-950: #04120a;
+
+  /* Paper — warm neutral, replaces the cold #f5fbff */
+  --color-paper: #fafaf5;
+  --color-paper-raised: #ffffff;
+  --color-paper-sunk: #f1f2ea;
+
+  /* Lines */
+  --color-line: #e3e6dc;
+  --color-line-strong: #c9cfbf;
+  --color-line-inv: #1b3324;
+
+  /* Foreground */
+  --color-fg: #11201a;
+  --color-fg-muted: #4f5d54;
+  --color-fg-subtle: #85938a;
+  --color-on-ink: #e9f2e6;
+  --color-on-ink-muted: #9fb3a5;
+
+  /* Elevation — green-tinted, never blue */
+  --shadow-card: 0 1px 2px rgba(6, 48, 27, 0.04), 0 12px 32px rgba(6, 48, 27, 0.06);
+  --shadow-lift: 0 2px 4px rgba(6, 48, 27, 0.05), 0 24px 60px rgba(6, 48, 27, 0.10);
+  --shadow-cta: 0 8px 24px rgba(7, 148, 71, 0.28);
+  --shadow-glow: 0 0 0 1px rgba(132, 192, 48, 0.35), 0 0 32px rgba(132, 192, 48, 0.25);
+  --shadow-ink: 0 24px 80px rgba(4, 18, 10, 0.45);
+
   --font-sans: var(--font-inter);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+:root {
+  --background: var(--color-paper);
+  --foreground: var(--color-fg);
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-paper);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-fg);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-brand-300);
+  color: var(--color-ink-950);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.on-ink :focus-visible {
+  outline-color: var(--color-brand-300);
+}
+
+/* ==========================================================================
+   Bands — the page alternates paper and ink grounds
+   ========================================================================== */
+
+.band-ink {
+  background: var(--color-ink-950);
+  color: var(--color-on-ink);
+}
+
+.band-ink-soft {
+  background: var(--color-ink-900);
+  color: var(--color-on-ink);
+}
+
+/* ==========================================================================
+   Brand helpers (legacy class names kept, repointed to tokens)
+   ========================================================================== */
+
+.brand-bg {
+  background-color: var(--color-brand-600);
+}
+
+.brand-hover:hover {
+  background-color: var(--color-brand-700);
+}
+
+.text-brand-hover {
+  transition: color 0.25s ease;
+}
+
+.text-brand-hover:hover {
+  color: var(--color-brand-600);
+}
+
+.border-brand {
+  border-color: var(--color-brand-600);
+}
+
+.brand-gradient {
+  background: linear-gradient(
+    110deg,
+    var(--color-brand-400) 0%,
+    var(--color-brand-600) 45%,
+    var(--color-brand-700) 75%,
+    var(--color-brand-900) 100%
+  );
+}
+
+/* Lime is a fill, never text, on light grounds. */
+.accent-rule {
+  position: relative;
+}
+
+.accent-rule::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 28px;
+  background: var(--color-brand-300);
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .accent-rule::after {
+  width: 100%;
+}
+
+.text-gradient-ink {
+  background: linear-gradient(120deg, var(--color-fg) 0%, var(--color-brand-700) 60%, var(--color-brand-500) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-lime {
+  background: linear-gradient(120deg, var(--color-on-ink) 0%, var(--color-brand-200) 55%, var(--color-brand-300) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================================================
+   Cards — one treatment, no pastel confetti
+   ========================================================================== */
+
+.card {
+  background: var(--color-paper-raised);
+  border: 1px solid var(--color-line);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lift);
+  border-color: var(--color-line-strong);
+}
+
+.card-ink {
+  background: var(--color-ink-800);
+  border: 1px solid var(--color-line-inv);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s ease, box-shadow 0.45s ease;
+}
+
+.card-ink:hover {
+  transform: translateY(-4px);
+  border-color: rgba(132, 192, 48, 0.45);
+  box-shadow: var(--shadow-glow);
 }
 
 .case-study-card {
@@ -35,7 +225,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(125deg, transparent 30%, rgba(255, 255, 255, 0.24) 50%, transparent 70%);
+  background: linear-gradient(125deg, transparent 30%, rgba(183, 224, 107, 0.22) 50%, transparent 70%);
   transform: translateX(-120%) skewX(-20deg);
   transition: transform 0.7s ease;
   z-index: 1;
@@ -46,46 +236,157 @@ body {
   transform: translateX(120%) skewX(-20deg);
 }
 
+/* ==========================================================================
+   Motion
+   ========================================================================== */
+
 @keyframes float {
-  0% {
-    transform: translateY(0px);
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal[data-revealed="true"] {
+  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ==========================================================================
+   WebGL stage
+
+   Layering, bottom to top:
+     body background ......... paper
+     .stage-backdrop ......... ink, faded in by --stage-ink
+     .webgl-stage (canvas) ... the 3D layer
+     .stage-content .......... all page content
+
+   Sections are transparent so the canvas shows through them everywhere. The
+   backdrop supplies the dark ground for the ink bands, driven by the scroll
+   driver, so the page and the canvas change ground on the same frame.
+
+   Without JavaScript, WebGL, or with reduced motion, `.stage-active` is never
+   set: each band falls back to painting its own solid colour and the page
+   reads correctly with no canvas at all.
+   ========================================================================== */
+
+.stage-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-ink-950);
+  opacity: var(--stage-ink, 0);
+  pointer-events: none;
+}
+
+.webgl-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.webgl-stage canvas {
+  display: block;
+}
+
+.stage-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Bands paint themselves until the stage takes over. */
+.stage-active .band-ink,
+.stage-active .band-ink-soft {
+  background: transparent;
+}
+
+/* Cards over the canvas stay translucent so shards glow through them. */
+.stage-active .card {
+  background: color-mix(in srgb, var(--color-paper-raised) 86%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+.stage-active .card-ink {
+  background: color-mix(in srgb, var(--color-ink-800) 72%, transparent);
+  backdrop-filter: blur(10px);
+}
+
+/* Keeps hero copy legible over the particle field no matter where the ring
+   drifts. Weighted to the left, where the headline sits. */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    /* Bottom band: keeps full-width content (stat rows, hints) legible. */
+    linear-gradient(
+      to top,
+      var(--color-ink-950) 0%,
+      color-mix(in srgb, var(--color-ink-950) 82%, transparent) 14%,
+      transparent 42%
+    ),
+    /* Left column: where the headline sits. */
+    linear-gradient(
+      100deg,
+      var(--color-ink-950) 0%,
+      color-mix(in srgb, var(--color-ink-950) 88%, transparent) 32%,
+      color-mix(in srgb, var(--color-ink-950) 45%, transparent) 58%,
+      transparent 82%
+    );
+}
+
+@media (max-width: 1023px) {
+  .hero-scrim {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-ink-950) 82%, transparent) 0%,
+      color-mix(in srgb, var(--color-ink-950) 74%, transparent) 60%,
+      color-mix(in srgb, var(--color-ink-950) 40%, transparent) 100%
+    );
+  }
+}
+
+/* Static hero used when the stage is unavailable. */
+.stage-fallback {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 15% 10%, rgba(23, 168, 90, 0.22), transparent 60%),
+    radial-gradient(90% 70% at 85% 30%, rgba(132, 192, 48, 0.16), transparent 62%),
+    radial-gradient(140% 120% at 50% 110%, rgba(10, 94, 51, 0.35), transparent 70%);
+}
+
+.stage-active .stage-fallback {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .reveal {
+    opacity: 1;
+    animation: none !important;
   }
 
-  50% {
-    transform: translateY(-8px);
+  .card:hover,
+  .card-ink:hover {
+    transform: none;
   }
 
-  100% {
-    transform: translateY(0px);
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-}
-
-/* OopLab Brand Colors */
-.brand-bg {
-  background-color: #079447;
-}
-
-
-.brand-hover:hover {
-  background-color: #006838;
-}
-
-.text-brand-hover {
-  transition: color 0.3s ease;
-}
-
-.text-brand-hover:hover {
-  color: #079447;
-}
-
-.border-brand {
-  border-color: #079447;
-}
-
-.brand-gradient {
-  background: linear-gradient(110deg,
-      #43b649 0%,
-      #079447 45%,
-      #006838 75%,
-      #004d2a 100%);
 }
